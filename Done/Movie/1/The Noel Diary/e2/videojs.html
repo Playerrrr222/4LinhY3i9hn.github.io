@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+        poster="https://image.tmdb.org/t/p/original/kP5k4gA6yJiQCeN5FNcGwRtGDuq.jpg">
+        <source src="https://rheb3nbjgb1tbbroleiq.vs7000.pics/dl/47740080f86fa2a7Xs9nSm4KGjaO0Y3Px.shAnTkfQjBNIeqpHrlkuWw__.Q0NrbnVzTWgvblJlYnp3MlZ4bHRWMjZWcGtwS1VSSGxYeW9RMTJiRmxlK3Y2eWhreFpPZzYrM1oya254WFhlMGVabGxEVWhta3BwV3QvOTdpOE8rL0ZTQ0d3RG9zUE1jdTl5NTdKMk9JbGhpbTdpZjE2MEtFdW5XSTUyN0s4cGVKbjhuZXRic0h2ZGsyMkkwWnAzVCtSVXBvRTN0bDdzMUNBVmNFbnpoVVo3NTdhLzhaYW1rTW5rMFptdEFKQldJNDkwRTZvd2hTQTlPM0pIcm0ya1BMb0RTNUM3clVNWjhLcXVPcDNvWjVMOUZpUkFlWGVxc0Jhb0I1UFVjNGU0YXA3OHQ0c0EzUW45VXhiY2thYWdsTkcvUzhjMndnSksyK1dQK005UFJaaVVhWGhQdFZEZnJiVnZwSHYycklteFR5MzhRRWdiY0tlaXlYZ1V5T3RqN25ZNlNaNzVVZEpMZDduOVZ6aE1Obkp6cm1hekZOZWlyZ3JsU2t2Y0RzS3F5Z0ZYcnZWdzNtTGxseE9MTjlYUk53MWdpdTR3UEtSMHZGb05uMTFaM3cxYXR2YXlnRkpiSjJjZzFvY0xoM1pzOUpmNW1GUkdSYlIreTd1MmFrc1RETG1yck41dU85RFV5RkNzRzJqbFVYdGpwOWVneDFKcDB3VEJ2MFFiZw__/stream.mp4" data-quality="1080p" title='1080p' label='1080p' res='1080' size='1080'>
+
+    </video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

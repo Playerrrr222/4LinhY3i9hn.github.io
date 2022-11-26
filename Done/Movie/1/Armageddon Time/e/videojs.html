@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+        poster="https://image.tmdb.org/t/p/original/giveZjQGE4Pn3kJvsTn7uHqLjZS.jpg">
+        <source
+            src="https://c-1.dokicloud.one/_v8/8f59787b8af7299e3d466484ff1512420b77bc396cfd27ddc6c0295d7343afb1296ca4711ea0edbbb8c5feea7a5930f822194b9e09566bd97c85265db8a11369ca4161f8b0b096fb934b0c9d1dc67188b505af3baa9ee4841d2f18df627e73af4031cae3b4ebd53dce416d0a0b95e7e3a5cb5045d73547863d6e5a8e49b67161/1080/index.m3u8"
+            type="application/x-mpegURL">
+
+        <track kind="subtitles"
+            src="https://gonarrowcher.monster/storage2/1669425344/movies/10343028-armageddon-time-2022-1669103047/subtitles/ar_e300d742042952f5ea3a7410d0995652.vtt"
+            srclang="ar" label="Arabic" default>
+        <track kind="subtitles"
+            src="https://gonarrowcher.monster/storage2/1669425401/movies/10343028-armageddon-time-2022-1669103047/subtitles/en_735dfd19281aac35214dcb95f05686e4.vtt"
+            srclang="en" label="English">
+    </video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

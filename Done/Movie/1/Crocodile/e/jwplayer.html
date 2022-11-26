@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JW Player DNA Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="//samples.streamroot.io/web/assets/demo-pages.css">
+
+    <!-- Makes the header -->
+    <script src="//samples.streamroot.io/web/assets/header.js"></script>
+
+    <!-- JW Player Builds -->
+    <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
+
+    <!-- Streamroot Plugin -->
+    <script
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script>
+
+    <!-- Graphs -->
+    <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <div class='video'>
+        <script src="https://use.fontawesome.com/20603b964f.js"></script>
+        <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
+        <script type="text/javascript">
+            jwplayer.key = 'ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=';
+          // jwplayer.key = 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=';
+        </script>
+        <div id="myElement" style="scrollbar-width: none; display: none;"></div>
+        <script type="text/javascript">
+            jwplayer("myElement").setup({
+                //aspectratio: "16:9",
+                // width: '100%',
+                height: window.innerHeight,
+                image: "https://image.tmdb.org/t/p/original/c1bz69r0v065TGFA5nqBiKzPDys.jpg",
+                autostart: false,
+                sources: [
+                {
+                    file: "https://qyke1slmxtjbohakmfpb.vs7000.pics/dl/cb48658ac2b4cfb8uwGA2t2nR7zNK5%7CQs.qI4CkwglP8WhAGkQrGQh3A__.NWljSHRZcXJGVmg2ZGs0dTVPaHkyL2R4TnBuZCtsTWJ5dEdvd3Zqc3R4M2tJL0h0NXRuSXdWN3VuM3Z2Q3FlYWtXYU4xKzdZL0VGTHQ5YWlFT1g5L0R2NmJqeHNEWmFLWDVQckZlRzBYMS9xUTFKRHFWbXE2LytHUUR3NjUzYnR2UE5LS3ZjazFBcDZaMi95Q2RCOXVyRFRhOTV0cXljNko0V1pXN0FpMG1YQ3lkU1BFci8wSnJ3cGh2UzNpcW5FcjRVT1g4WjV4NFd6RTFLTFA4RW5KWU82T0k1OWIwd0RCNTBnYlR6cG9oaVFNSDQ0Wi9UYmVlWGtFVHZmQkJlSW9MR3lOelFiYXVEc2V4U2JpWEN2Vk9EbGVTaUNLVEl3VjdFQ3RyM0p2aXBUY1VXQXhKdXEwRTcvcitBMkhDbU5EN3BQRCt3UnVkZGNNYmM5UC9mOFBERk5YTk9YVlgwSjUxSjI0c1E1M2FTWnRiOVJqSlFrOWFDcFZwUnBlV1JObk83dGJTVlVwWVZLZmFQSzYrN3B2MjF4Y1NTbWNOcHZQZnQxTm9pRUJJNmMyaGh0bU9Rc3BzcDFGTkFBTHpaZFRTWTJSbWtGMzRtWi93SUlMblpwTVdxL3BwTTc2NFh6RnVmdElnWnB6ajJIcE5Bc3lTZXNXdjMwNXdWZWQ2RExCZz09/stream.mp4",
+                    type: "mp4",
+                    label: 'HD',
+                    res: 720,
+                }],
+                title: 'Lyle, Lyle, Crocodile',
+                aboutlink: 'https://www.jwplayer.com/',
+                tracks: [{ "file": "<?php echo $cc; ?>", "label": "Indonesia", "kind": "captions", "default": "true" }],
+                captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
+                sharing: {
+                    sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+                    code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+                    link: "<?php echo $sharing;?>"
+                }
+            })
+        </script>
+    </div>
+</body>
+
+</html>

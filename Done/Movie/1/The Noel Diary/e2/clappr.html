@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CDNBye Clappr Demo</title>
+    <!-- Clappr Builds -->
+    <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.7/dist/clappr.min.js"></script>
+    <!-- CDNBye P2PEngine -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <!-- CDNBye Clappr Plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/clappr-plugin.min.js"></script>
+</head>
+
+<body style="background-color: black;">
+    <div id="player"></div>
+    <script>
+        var player = new Clappr.Player(
+            {
+
+                source: "https://rheb3nbjgb1tbbroleiq.vs7000.pics/dl/47740080f86fa2a7Xs9nSm4KGjaO0Y3Px.shAnTkfQjBNIeqpHrlkuWw__.Q0NrbnVzTWgvblJlYnp3MlZ4bHRWMjZWcGtwS1VSSGxYeW9RMTJiRmxlK3Y2eWhreFpPZzYrM1oya254WFhlMGVabGxEVWhta3BwV3QvOTdpOE8rL0ZTQ0d3RG9zUE1jdTl5NTdKMk9JbGhpbTdpZjE2MEtFdW5XSTUyN0s4cGVKbjhuZXRic0h2ZGsyMkkwWnAzVCtSVXBvRTN0bDdzMUNBVmNFbnpoVVo3NTdhLzhaYW1rTW5rMFptdEFKQldJNDkwRTZvd2hTQTlPM0pIcm0ya1BMb0RTNUM3clVNWjhLcXVPcDNvWjVMOUZpUkFlWGVxc0Jhb0I1UFVjNGU0YXA3OHQ0c0EzUW45VXhiY2thYWdsTkcvUzhjMndnSksyK1dQK005UFJaaVVhWGhQdFZEZnJiVnZwSHYycklteFR5MzhRRWdiY0tlaXlYZ1V5T3RqN25ZNlNaNzVVZEpMZDduOVZ6aE1Obkp6cm1hekZOZWlyZ3JsU2t2Y0RzS3F5Z0ZYcnZWdzNtTGxseE9MTjlYUk53MWdpdTR3UEtSMHZGb05uMTFaM3cxYXR2YXlnRkpiSjJjZzFvY0xoM1pzOUpmNW1GUkdSYlIreTd1MmFrc1RETG1yck41dU85RFV5RkNzRzJqbFVYdGpwOWVneDFKcDB3VEJ2MFFiZw__/stream.mp4",
+                aspectratio: "16:9",
+                width: '100%',
+                height: window.innerHeight,
+                parentId: "#player",
+                autoPlay: false,
+                poster: "https://image.tmdb.org/t/p/original/kP5k4gA6yJiQCeN5FNcGwRtGDuq.jpg",
+                plugins: [CDNByeClapprPlugin],
+                playback: {
+                    hlsjsConfig: {
+                        maxBufferSize: 0,      // Highly recommended setting in live mode 
+                        maxBufferLength: 10,   // Highly recommended setting in live mode
+                        liveSyncDurationCount: 10,  // Highly recommended setting in live mode
+                        // Other hlsjsConfig options provided by hls.js
+                        p2pConfig: {
+                            live: true,        // set false in vod mode
+                            // announceLocation: 'hk',        // if using Hongkong tracker
+                            // announceLocation: 'us',        // if using USA tracker
+                            // Other p2pConfig options provided by CDNBye
+                        }
+                    }
+                }
+            });
+    </script>
+</body>
+
+</html>

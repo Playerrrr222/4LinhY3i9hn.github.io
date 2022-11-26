@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+<div class="container">
+    <video controls crossorigin playsinline>
+
+        <track kind="subtitles" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12386121.vtt" srclang="ar"
+            label="Arabic">
+        <track kind="subtitles"
+            src="https://gonarrowcher.monster/storage3/1669415848/movies/21958986-tom-and-jerry-snowmanx27s-land-2022-1668528203/subtitles/en_399ca280ed67f83a1351f266f106b27a.vtt"
+            srclang="en" label="English">
+    </video>
+</div>
+<p id="version"></p>
+<p id="info"></p>
+<link rel="stylesheet" href="//cdn.plyr.io/3.4.7/plyr.css">
+<script src="//cdn.plyr.io/3.4.7/plyr.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+<script>
+    document.querySelector('#version').innerText = ``;
+    document.addEventListener('DOMContentLoaded', () => {
+        var source = "https://e-7.dokicloud.one/_v8/4cbdf595320fb86e0005d0f8b6ffd4b4389a4724f9d42da62f70925cfed7b6b864da428663af5af179321fb1f2d537cb4074f04d36119b63b6a29972f63275395e7f32af26d205e44882fe4d32991c1846efceb62a2a909caae3c7fadc0f65459dca90a544752ae6d83d126a6b4764d0b55209e0d0e8d15d7e1491c737700c14/1080/index.m3u8"
+        var video = document.querySelector('video');
+
+        // For more options see: https://github.com/sampotts/plyr/#options
+        // captions.update is required for captions to work with hls.js
+        var player = new Plyr(video, {
+            captions: { active: true, update: true, language: 'en' },
+            // autoplay: true,
+        });
+
+        if (!Hls.isSupported()) {
+            video.src = source;
+        } else {
+            // For more Hls.js options, see https://github.com/dailymotion/hls.js
+            var hls = new Hls({
+                p2pConfig: {
+                    live: true,        // set false in vod mode
+                    // announceLocation: 'hk',        // if using Hongkong tracker
+                    // announceLocation: 'us',        // if using USA tracker
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = ``;
+                    },
+                    // Other p2pConfig options provided by CDNBye
+                }
+            });
+            hls.loadSource(source);
+            hls.attachMedia(video);
+            window.hls = hls;
+
+            // Handle changing captions
+            player.on('languagechange', () => {
+                // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+                setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+            });
+        }
+
+        // Expose player so it can be used from the console
+        window.player = player;
+    });
+</script>
