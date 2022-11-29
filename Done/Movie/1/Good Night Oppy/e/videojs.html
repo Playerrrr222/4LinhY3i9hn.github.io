@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+        poster="https://image.tmdb.org/t/p/original/bfYDeFDmoweRdmTt0ifHPOMgNXV.jpg">
+        <source
+            src="https://c-1.dokicloud.one/_v8/a6808e2a753f786563b71a3ee755c116d5b3622332d15bfed34cf3a95abf8fce3968dcf2ce1b6261886013f06508d25b03cc0f1130e81283ad5e4c5f9a445ba91270a3b85233959d71515745e17eeeda7af99a6a11d2193e085b7a593ea0df06ceb953c9fffa9f766f7a69eafee18b72ad0438ab6e111b497791e8c95d2d85db/1080/index.m3u8"
+            type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p' res='1080' size='1080'>
+        <source
+            src="https://nl2b.capailition.online/aes/uJ2aRCBS7yy_xB7uod7Utw/1669731374/storage3/movies/14179942-good-night-oppy-2022-1669165938/35b7e8153ff75c7eadc31e73de5f4087.mp4/index.m3u8"
+            type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p' size='720p'>
+
+        <track kind="subtitles" src="https://cc.2cdns.com/6c/b5/6cb51fb89c48e2edccffa4df4ba1cea0/ara-3.vtt" srclang="ar"
+            label="Arabic">
+        <track kind="subtitles" src="https://cc.2cdns.com/6c/b5/6cb51fb89c48e2edccffa4df4ba1cea0/eng-2.vtt" srclang="en"
+            label="English">
+    </video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

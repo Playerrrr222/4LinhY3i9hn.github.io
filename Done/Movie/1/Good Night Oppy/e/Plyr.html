@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+
+<div class="container">
+    <video controls crossorigin playsinline poster="https://image.tmdb.org/t/p/original/bfYDeFDmoweRdmTt0ifHPOMgNXV.jpg">
+
+        <track kind="subtitles"
+            src="https://cc.2cdns.com/6c/b5/6cb51fb89c48e2edccffa4df4ba1cea0/ara-3.vtt"
+            srclang="ar" label="Arabic">
+        <track kind="subtitles"
+            src="https://cc.2cdns.com/6c/b5/6cb51fb89c48e2edccffa4df4ba1cea0/eng-2.vtt"
+            srclang="en" label="English">
+    </video>
+</div>
+<p id="version"></p>
+<p id="info"></p>
+<link rel="stylesheet" href="//cdn.plyr.io/3.4.7/plyr.css">
+<script src="//cdn.plyr.io/3.4.7/plyr.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+
+<script>
+    document.querySelector('#version').innerText = ``;
+    document.addEventListener('DOMContentLoaded', () => {
+        var source = "https://c-1.dokicloud.one/_v8/a6808e2a753f786563b71a3ee755c116d5b3622332d15bfed34cf3a95abf8fce3968dcf2ce1b6261886013f06508d25b03cc0f1130e81283ad5e4c5f9a445ba91270a3b85233959d71515745e17eeeda7af99a6a11d2193e085b7a593ea0df06ceb953c9fffa9f766f7a69eafee18b72ad0438ab6e111b497791e8c95d2d85db/1080/index.m3u8"
+        var video = document.querySelector('video');
+
+        // For more options see: https://github.com/sampotts/plyr/#options
+        // captions.update is required for captions to work with hls.js
+        var player = new Plyr(video, {
+            captions: { active: true, update: true, language: 'en' },
+            // autoplay: true,
+        });
+
+        if (!Hls.isSupported()) {
+            video.src = source;
+        } else {
+            // For more Hls.js options, see https://github.com/dailymotion/hls.js
+            var hls = new Hls({
+                p2pConfig: {
+                    live: true,        // set false in vod mode
+                    // announceLocation: 'hk',        // if using Hongkong tracker
+                    // announceLocation: 'us',        // if using USA tracker
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = ``;
+                    },
+                    // Other p2pConfig options provided by CDNBye
+                }
+            });
+            hls.loadSource(source);
+            hls.attachMedia(video);
+            window.hls = hls;
+
+            // Handle changing captions
+            player.on('languagechange', () => {
+                // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+                setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+            });
+        }
+
+        // Expose player so it can be used from the console
+        window.player = player;
+    });
+</script>

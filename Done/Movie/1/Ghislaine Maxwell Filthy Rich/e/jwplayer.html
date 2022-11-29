@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JW Player DNA Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="//samples.streamroot.io/web/assets/demo-pages.css">
+
+    <!-- Makes the header -->
+    <script src="//samples.streamroot.io/web/assets/header.js"></script>
+
+    <!-- JW Player Builds -->
+    <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
+
+    <!-- Streamroot Plugin -->
+    <script
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script>
+
+    <!-- Graphs -->
+    <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <div class='video'>
+        <script src="https://use.fontawesome.com/20603b964f.js"></script>
+        <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
+        <script type="text/javascript">
+            jwplayer.key = 'ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=';
+          // jwplayer.key = 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=';
+        </script>
+        <div id="myElement" style="scrollbar-width: none; display: none;"></div>
+        <script type="text/javascript">
+            jwplayer("myElement").setup({
+                //aspectratio: "16:9",
+                // width: '100%',
+                height: window.innerHeight,
+                image: "https://image.tmdb.org/t/p/original/jKpqLSB0FzpyQf9xxIhwVjGX6Wi.jpg",
+                autostart: false,
+                sources: [
+                    {
+                        file: "https://e-3.dokicloud.one/_v8/5d1cf739d2dc37a5d5f290f3845bde8253e2458d9921b7cd1cf9edc182c19b96e2ac67b9ba33bf8af83fae2e9d72e2e9d9faeb811a5d002468730bde7f88a333abd4eb0760cb990fcffc17901818326991bb878e76db48be30828ee34dbf9afe72d35a7dc0e04b08e5047e9f827f2432c719f41d99bae008923945013b6dc4ed/1080/index.m3u8",
+                        type: "application/vnd.apple.mpegurl",
+                        label: '1080',
+                        res: 1080,
+
+                    }],
+                // title: 'Tom and Jerry: Snowmans Land',
+                aboutlink: 'https://www.jwplayer.com/',
+                tracks: [{ "file": "https://injuradiaging.monster/storage1/1669708874/movies/22892896-ghislaine-maxwell-filthy-rich-2022-1669367157/subtitles/ar.vtt", "label": "Arabic", "kind": "captions", "default": "true" },
+                { "file": "https://injuradiaging.monster/storage1/1669708874/movies/22892896-ghislaine-maxwell-filthy-rich-2022-1669367157/subtitles/en_d374748d275af08feef335ba13390bc4.vtt", "label": "English", "kind": "captions", "false": "false" }
+
+                ],
+                captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
+                sharing: {
+                    sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+                    code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+                    link: "<?php echo $sharing;?>"
+                }
+            })
+        </script>
+    </div>
+</body>
+
+</html>

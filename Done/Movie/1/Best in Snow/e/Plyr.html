@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+
+<div class="container">
+    <video controls crossorigin playsinline
+        poster="https://image.tmdb.org/t/p/original/m3rdVgeHfwuRh2kVES6MSO9YrOR.jpg">
+
+        <track kind="subtitles"
+            src="https://injuradiaging.monster/storage5/movies/22028876-best-in-snow-2022-1668763771/subtitles/ar_08ae91e1f57d12d78ada498c476eeca0.vtt"
+            srclang="ar" label="Arabic">
+        <track kind="subtitles"
+            src="https://injuradiaging.monster/storage5/1669726084/movies/22028876-best-in-snow-2022-1668763771/subtitles/en.vtt"
+            srclang="en" label="English">
+    </video>
+</div>
+<p id="version"></p>
+<p id="info"></p>
+<link rel="stylesheet" href="//cdn.plyr.io/3.4.7/plyr.css">
+<script src="//cdn.plyr.io/3.4.7/plyr.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+
+<script>
+    document.querySelector('#version').innerText = ``;
+    document.addEventListener('DOMContentLoaded', () => {
+        var source = "https://e-1.dokicloud.one/_v8/ef476de4849a789d3dd0c7251eae0ce5a1a557cb363420266209089b807072c6081cff3be18a25a2847abaed27b38c8556e66f288fdb0d746d523b71658207056ea8688b1b87f95509ed778fd3045b85089a63d6acc5655b67729e43c76c666240b1d0a114251b1b61550eeba0b270eef8fe24a46293aa266cd567ecfdebc3d4/720/index.m3u8"
+        var video = document.querySelector('video');
+
+        // For more options see: https://github.com/sampotts/plyr/#options
+        // captions.update is required for captions to work with hls.js
+        var player = new Plyr(video, {
+            captions: { active: true, update: true, language: 'en' },
+            // autoplay: true,
+        });
+
+        if (!Hls.isSupported()) {
+            video.src = source;
+        } else {
+            // For more Hls.js options, see https://github.com/dailymotion/hls.js
+            var hls = new Hls({
+                p2pConfig: {
+                    live: true,        // set false in vod mode
+                    // announceLocation: 'hk',        // if using Hongkong tracker
+                    // announceLocation: 'us',        // if using USA tracker
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = ``;
+                    },
+                    // Other p2pConfig options provided by CDNBye
+                }
+            });
+            hls.loadSource(source);
+            hls.attachMedia(video);
+            window.hls = hls;
+
+            // Handle changing captions
+            player.on('languagechange', () => {
+                // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+                setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+            });
+        }
+
+        // Expose player so it can be used from the console
+        window.player = player;
+    });
+</script>

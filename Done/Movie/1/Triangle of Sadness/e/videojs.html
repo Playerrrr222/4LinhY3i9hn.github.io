@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+        poster="https://image.tmdb.org/t/p/original/1AsP4UAv6hCGXUcH8GqMwd5KmCN.jpg">
+        <source
+            src="https://c-4.dokicloud.one/_v8/1cd69add69e711914358f8ae82a979d4b12787f5865a29a45eb9bbf45b99ba864f8e7b2b1a43ef9b8ba8d9de54e5582e5421a76956dd17573909685eb31ffb526e4748a67968a0360530acfdd75209afe4b2f88edbfd068eb1f9384cfa76dad1b9655f1c573ba40ef149088cd73d990e566264552aad34bceac730e8e0d7959c/1080/index.m3u8"
+            type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p' res='1080' size='1080'>
+        <source
+            src="https://nl3c.capailition.online/aes/6ERhvIvCdZ17fMWmUtZMVA/1669738713/storage1/movies/7322224-triangle-of-sadness-2022-1669102158/c9f5eac0ae4a5a76fa9682066e205359.mp4/index.m3u8"
+            type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p' size='720p'>
+
+        <track kind="subtitles"
+            src="https://cc.2cdns.com/25/93/259347e7583367604ff74dc682719d5a/259347e7583367604ff74dc682719d5a.vtt"
+            srclang="ar" label="Arabic">
+        <track kind="subtitles" src="https://cc.2cdns.com/c2/c9/c2c9c7ef9f68d3d261a88559f547f99c/eng-2.vtt" srclang="en"
+            label="English">
+    </video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+
+<div class="container">
+    <video controls crossorigin playsinline poster="https://image.tmdb.org/t/p/original/3t0DcVPuW9JRtc1CWnh1ktCKrrO.jpg">
+
+        <track kind="subtitles"
+            src="https://injuradiaging.monster/storage1/movies/22028912-the-hip-hop-nutcracker-2022-1669374221/subtitles/ar_d2a572cf3d7f92d7a08caf2b3039457e.vtt"
+            srclang="ar" label="Arabic">
+        <track kind="subtitles"
+            src="https://injuradiaging.monster/storage1/1669707813/movies/22028912-the-hip-hop-nutcracker-2022-1669374221/subtitles/en.vtt"
+            srclang="en" label="English">
+    </video>
+</div>
+<p id="version"></p>
+<p id="info"></p>
+<link rel="stylesheet" href="//cdn.plyr.io/3.4.7/plyr.css">
+<script src="//cdn.plyr.io/3.4.7/plyr.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+
+<script>
+    document.querySelector('#version').innerText = ``;
+    document.addEventListener('DOMContentLoaded', () => {
+        var source = "https://e-7.dokicloud.one/_v8/2387723670c7e0261420386e7432d1bccdfdb7fd0b852856f6848f656f1cf2a4a01e8ba0b0c352c4a7de042f0416500158ddbdf7a861bca37435fdab1c5a50f90e381218ba88268ea9eb8eebf5a18ee6441c292b0f57b548823e47608134f67e9d0c99c254e0dae494a93a071da906c3abf29103cf74c79960747c31e6523d02/1080/index.m3u8"
+        var video = document.querySelector('video');
+
+        // For more options see: https://github.com/sampotts/plyr/#options
+        // captions.update is required for captions to work with hls.js
+        var player = new Plyr(video, {
+            captions: { active: true, update: true, language: 'en' },
+            // autoplay: true,
+        });
+
+        if (!Hls.isSupported()) {
+            video.src = source;
+        } else {
+            // For more Hls.js options, see https://github.com/dailymotion/hls.js
+            var hls = new Hls({
+                p2pConfig: {
+                    live: true,        // set false in vod mode
+                    // announceLocation: 'hk',        // if using Hongkong tracker
+                    // announceLocation: 'us',        // if using USA tracker
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = ``;
+                    },
+                    // Other p2pConfig options provided by CDNBye
+                }
+            });
+            hls.loadSource(source);
+            hls.attachMedia(video);
+            window.hls = hls;
+
+            // Handle changing captions
+            player.on('languagechange', () => {
+                // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+                setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+            });
+        }
+
+        // Expose player so it can be used from the console
+        window.player = player;
+    });
+</script>

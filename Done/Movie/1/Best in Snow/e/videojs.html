@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+        poster="https://image.tmdb.org/t/p/original/m3rdVgeHfwuRh2kVES6MSO9YrOR.jpg">
+        <source
+            src="https://e-1.dokicloud.one/_v8/ef476de4849a789d3dd0c7251eae0ce5a1a557cb363420266209089b807072c6081cff3be18a25a2847abaed27b38c8556e66f288fdb0d746d523b71658207056ea8688b1b87f95509ed778fd3045b85089a63d6acc5655b67729e43c76c666240b1d0a114251b1b61550eeba0b270eef8fe24a46293aa266cd567ecfdebc3d4/720/index.m3u8"
+            type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p' size='720p'>
+
+        <source
+            src="https://nl3c.capailition.online/aes/3qjKTPhAkGRHTpwcd18O-w/1669747684/storage5/movies/22028876-best-in-snow-2022-1668763771/673fc00266676ec7a0b52db83df8d3d5.mp4/index.m3u8"
+            type="application/x-mpegURL" data-quality="480p" title='480p' label='480p' res='480p' size='720p'>
+
+        <track kind="subtitles"
+            src="https://injuradiaging.monster/storage5/movies/22028876-best-in-snow-2022-1668763771/subtitles/ar_08ae91e1f57d12d78ada498c476eeca0.vtt"
+            srclang="ar" label="Arabic">
+        <track kind="subtitles"
+            src="https://injuradiaging.monster/storage5/1669726084/movies/22028876-best-in-snow-2022-1668763771/subtitles/en.vtt"
+            srclang="en" label="English">
+    </video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

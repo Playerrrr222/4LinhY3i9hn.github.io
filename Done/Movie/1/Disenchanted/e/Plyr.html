@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+
+<div class="container">
+    <video controls crossorigin playsinline poster="https://image.tmdb.org/t/p/original/kpUre8wWSXn3D5RhrMttBZa6w1v.jpg">
+
+        <track kind="subtitles"
+            src="https://injuradiaging.monster/storage2/1669725005/movies/1596342-il-etait-une-fois-2-2022-1668762767/subtitles/ar_95de882777ebdb24b0c3467ff3595185.vtt"
+            srclang="ar" label="Arabic">
+        <track kind="subtitles"
+            src="https://injuradiaging.monster/storage2/1669725005/movies/1596342-il-etait-une-fois-2-2022-1668762767/subtitles/en_4186bb093120d177ce50f946cbd63757.vtt"
+            srclang="en" label="English">
+    </video>
+</div>
+<p id="version"></p>
+<p id="info"></p>
+<link rel="stylesheet" href="//cdn.plyr.io/3.4.7/plyr.css">
+<script src="//cdn.plyr.io/3.4.7/plyr.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+
+<script>
+    document.querySelector('#version').innerText = ``;
+    document.addEventListener('DOMContentLoaded', () => {
+        var source = "https://c-1.dokicloud.one/_v8/6803d093a743d2a6ede6f4a310e14242e37cd126cd1624ce63e6f8f22a0fd54b06d73df587c7ae8a5ecbf5765ef0fa7e971e3a8b9dee206a04cd640822cd073775bae8bd93338607ffbbf25325dfa607f8a8fd1ac2b12753f143f865abcb981bc36017d2e783e7b323758417f4c831b9f890c948ae14a37bc348eaa1d3ebcc21/1080/index.m3u8"
+        var video = document.querySelector('video');
+
+        // For more options see: https://github.com/sampotts/plyr/#options
+        // captions.update is required for captions to work with hls.js
+        var player = new Plyr(video, {
+            captions: { active: true, update: true, language: 'en' },
+            // autoplay: true,
+        });
+
+        if (!Hls.isSupported()) {
+            video.src = source;
+        } else {
+            // For more Hls.js options, see https://github.com/dailymotion/hls.js
+            var hls = new Hls({
+                p2pConfig: {
+                    live: true,        // set false in vod mode
+                    // announceLocation: 'hk',        // if using Hongkong tracker
+                    // announceLocation: 'us',        // if using USA tracker
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = ``;
+                    },
+                    // Other p2pConfig options provided by CDNBye
+                }
+            });
+            hls.loadSource(source);
+            hls.attachMedia(video);
+            window.hls = hls;
+
+            // Handle changing captions
+            player.on('languagechange', () => {
+                // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+                setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+            });
+        }
+
+        // Expose player so it can be used from the console
+        window.player = player;
+    });
+</script>

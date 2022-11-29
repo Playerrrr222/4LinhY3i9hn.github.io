@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+
+<div class="container">
+    <video controls crossorigin playsinline poster="https://image.tmdb.org/t/p/original/64Btfwp7JWP7qTloYQcoqDaraN3.jpg">
+
+        <track kind="subtitles"
+            src="https://injuradiaging.monster/storage4/1669724432/movies/13320662-la-petite-nemo-et-le-monde-des-reves-2022-1668762694/subtitles/ar_3c74c84c999dce209e31156f618ea787.vtt"
+            srclang="ar" label="Arabic">
+        <track kind="subtitles"
+            src="https://injuradiaging.monster/storage4/1669724432/movies/13320662-la-petite-nemo-et-le-monde-des-reves-2022-1668762694/subtitles/en_d5f7a5a8a6a91196703bb3fe3596993b.vtt"
+            srclang="en" label="English">
+    </video>
+</div>
+<p id="version"></p>
+<p id="info"></p>
+<link rel="stylesheet" href="//cdn.plyr.io/3.4.7/plyr.css">
+<script src="//cdn.plyr.io/3.4.7/plyr.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+
+<script>
+    document.querySelector('#version').innerText = ``;
+    document.addEventListener('DOMContentLoaded', () => {
+        var source = "https://e-6.dokicloud.one/_v8/a2d9ee641f07c644346b451c743aa5adaac0b09c7da34aefa6af4d21acf3c8a5eeac8170e9b0237c4019a4c6c3dcf117229c1b8a7db01d37258e818df2784901b19dd36df72c2c7bfb96ebef71572a5f65ebcdf837c5dc5881916af013bda54c5b93403cb72098f7b49908dc2fa6b0d409bc7b837062747131e7b6d9288bc9f6/1080/index.m3u8"
+        var video = document.querySelector('video');
+
+        // For more options see: https://github.com/sampotts/plyr/#options
+        // captions.update is required for captions to work with hls.js
+        var player = new Plyr(video, {
+            captions: { active: true, update: true, language: 'en' },
+            // autoplay: true,
+        });
+
+        if (!Hls.isSupported()) {
+            video.src = source;
+        } else {
+            // For more Hls.js options, see https://github.com/dailymotion/hls.js
+            var hls = new Hls({
+                p2pConfig: {
+                    live: true,        // set false in vod mode
+                    // announceLocation: 'hk',        // if using Hongkong tracker
+                    // announceLocation: 'us',        // if using USA tracker
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = ``;
+                    },
+                    // Other p2pConfig options provided by CDNBye
+                }
+            });
+            hls.loadSource(source);
+            hls.attachMedia(video);
+            window.hls = hls;
+
+            // Handle changing captions
+            player.on('languagechange', () => {
+                // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+                setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+            });
+        }
+
+        // Expose player so it can be used from the console
+        window.player = player;
+    });
+</script>

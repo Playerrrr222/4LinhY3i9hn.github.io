@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+        poster="https://image.tmdb.org/t/p/original/8b1hJPDDUdX9NBeE6ukEY8Q5b8E.jpg">
+        <source
+                    src="https://nl2b.capailition.online/aes/o1yE3ie8EU-upZV4re72dw/1669745260/storage1/movies/20113586-sachertorte-2022-1668778091/29230b7a0408dc2f2b2b20605aeb261d.mp4/index.m3u8"
+                    type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p' size='720p'>
+
+                <track kind="subtitles"
+                    src="https://injuradiaging.monster/storage1/1669723660/movies/20113586-sachertorte-2022-1668778091/subtitles/ar_5393f4f193ab9886dd42ca02e48f4280.vtt"
+                    srclang="ar" label="Arabic">
+                <track kind="subtitles"
+                    src="https://injuradiaging.monster/storage1/1669723660/movies/20113586-sachertorte-2022-1668778091/subtitles/en_f4301dda1aeebbdada151085472c17a3.vtt"
+                    srclang="en" label="English">
+    </video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>
