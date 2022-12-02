@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JW Player DNA Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="//samples.streamroot.io/web/assets/demo-pages.css">
+
+    <!-- Makes the header -->
+    <script src="//samples.streamroot.io/web/assets/header.js"></script>
+
+    <!-- JW Player Builds -->
+    <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
+
+    <!-- Streamroot Plugin -->
+    <script
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script>
+
+    <!-- Graphs -->
+    <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <div class='video'>
+        <script src="https://use.fontawesome.com/20603b964f.js"></script>
+        <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
+        <script type="text/javascript">
+            jwplayer.key = 'ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=';
+          // jwplayer.key = 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=';
+        </script>
+        <div id="myElement" style="scrollbar-width: none; display: none;"></div>
+        <script type="text/javascript">
+            jwplayer("myElement").setup({
+                //aspectratio: "16:9",
+                // width: '100%',
+                height: window.innerHeight,
+                image: "https://image.tmdb.org/t/p/original/txIt41UgDBJsZ7W33bhXjdqUIv8.jpg",
+                autostart: false,
+                sources: [
+                    {
+                        file: "https://e-10.dokicloud.one/_v8/046dd7258442363f4a9103f5a0a938c971fbc76a50fbde06847188538af190f5f3b98a08c50b390ea1e93a89eca9bee205d9901feae6ee49161e736abe9ce028c071ce700e32406630ed0529bc74834be0839611ab5fbe445672ed72d11cd6cd5dda5eeee21738d2a60709a96edd9f7f00325bd425b0b7f13cdf40bcd859e49e/720/index.m3u8",
+                        type: "application/vnd.apple.mpegurl",
+                        label: '1080',
+                        res: 1080,
+
+                    }],
+                // title: 'Tom and Jerry: Snowmans Land',
+                aboutlink: 'https://www.jwplayer.com/',
+                tracks: [{ "file": "../ChristmasArabic.srt", "label": "Arabic", "kind": "captions" },
+                { "file": "https://cc.2cdns.com/d0/db/d0db47938f848a01874f40da06259d06/eng-2.vtt", "label": "English", "kind": "captions", "false": "false" }
+
+                ],
+                captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
+                sharing: {
+                    sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+                    code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+                    link: "<?php echo $sharing;?>"
+                }
+            })
+        </script>
+    </div>
+</body>
+
+</html>

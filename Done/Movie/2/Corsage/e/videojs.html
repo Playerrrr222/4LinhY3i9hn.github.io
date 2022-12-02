@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+    poster="https://image.tmdb.org/t/p/original/p9R163gjE6Z5g4eWY1qnvU4vbW2.jpg">
+    <source src="https://moon-storage-delivery-s01.filemoon.to/hls2/01/02491/nmvkjzce675r_x/index-v1-a1.m3u8?t=TYH--uCResz5Y6mT5rauzkS-9TiOpUfse3-gdwjuyPg&s=1669891024&e=43200&f=12458941&srv=127.0.0.1&asn=35819&sp=1500" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+        res='1080' size='1080'>
+    <source src="https://q14.s2dstore.to/a/extra/m2/2022/Corsage.2022.mp4?tok=6A6E4732496835704C537072486C397448346633356F46534D695A6C47554A72426E3961533465383135352533444777636448555954446963324E7A754171324B334E6463534D504A66446C39565268666B763232794F6A496151557072386967614731653472344A7638764D2D4D533576476E4D4E4A6D364875314A374F77734A45504D4D3830517032794F6370314A574464636D416A7359417A7352486C626E306E56534B67355A346A3867357978652533446B4C62356F46534E69325958&valid=N1-UTjbizcCepq5l6u2oNg&t=1669905103" type="mp4" data-quality="720p" title='720p' label='720p' res='720p'
+        size='720p'>
+
+    <track kind="subtitles" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12392336.vtt" srclang="ar" label="Arabic" default>
+    <track kind="subtitles" src="https://ledgetitaling.monster/storage2/1669891710/movies/11992694-corsage-2022-1668533284/subtitles/en_73f9b4fb3d941b6614a8542ee12a3981.vtt" srclang="en" label="English">
+</video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

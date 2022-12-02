@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>MediaElement.js - HTML5 video and audio unification framework</title>
+    <meta name="description"
+        content="HTML5 video and audio player with support for YouTube, SoundCloud, Facebook, Vimeo, HLS, Dash, and others." />
+    <meta name="keywords" content="HTML5, video, H.264, Javascript, media, mp3, mp4" />
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i">
+
+    <!-- site -->
+    <link rel="stylesheet" href="css/mejs-site.css">
+
+    <!-- library -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/mediaelementplayer.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            font-family: "Exo", sans-serif;
+            color: #fff;
+            background: rgb(0, 0, 0);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        #player-wrapper {
+            margin: 0 auto;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .player {
+            margin: 0 auto;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no">
+    <div id="player-wrapper">
+        <video class="player" width="640" height="360" preload="none" style="max-width: 100%" controls playsinline webkit-playsinline
+        poster="https://image.tmdb.org/t/p/original/baf8eep8af9y7ekjN9X1OW9y01V.jpg">
+        <source src="https://c-3.dokicloud.one/_v8/88305a772611f5afc6ab132185555fbe83bb50a01e53a36712db036294ea8ca16eb836683f8254363b33de1e6c32562282c1d1df78396ddb91bd6697a6b6b83868c8168653535c07d92021d70777c2b2a2d4ec6b518a08b6f30d8dbe18e79c0851c5e4497e27eed4b8cde2787715b50c353c52a0a14be4d21dee71355f4a88e9/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+            res='1080' size='1080'>
+        <source src="https://c-3.dokicloud.one/_v8/88305a772611f5afc6ab132185555fbe83bb50a01e53a36712db036294ea8ca16eb836683f8254363b33de1e6c32562282c1d1df78396ddb91bd6697a6b6b83868c8168653535c07d92021d70777c2b2a2d4ec6b518a08b6f30d8dbe18e79c0851c5e4497e27eed4b8cde2787715b50c353c52a0a14be4d21dee71355f4a88e9/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+            size='720p'>
+
+        <track kind="subtitles" src="https://ledgetitaling.monster/storage6/1669892382/movies/20168564-alienoid-2022-1668493686/subtitles/ar_fa90da183276b5fb13fb299d59047fc2.vtt" srclang="ar" label="Arabic" default>
+        <track kind="subtitles" src="https://cc.2cdns.com/14/f0/14f080edbeb9ab7374be5f288e1bf637/eng-2.vtt" srclang="en" label="English">
+    </video>
+    </div>
+    <script
+        src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/mediaelement-and-player.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/renderers/dailymotion.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/renderers/facebook.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/renderers/soundcloud.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/renderers/twitch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/renderers/vimeo.min.js"></script>
+    <script src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <script id="rendered-js">
+        var
+            sourcesSelector = document.body.querySelectorAll('select'),
+            sourcesTotal = sourcesSelector.length
+            ;
+
+        for (var i = 0; i < sourcesTotal; i++) {
+            sourcesSelector[i].addEventListener('change', function (e) {
+                var
+                    media = e.target.closest('.media-container').querySelector('.mejs__container').id,
+                    player = mejs.players[media]
+                    ;
+
+                player.setSrc(e.target.value.replace('&amp;', '&'));
+                player.setPoster('');
+                player.load();
+
+            });
+
+            // These media types cannot play at all on iOS, so disabling them
+            if (mejs.Features.isiOS) {
+                if (sourcesSelector[i].querySelector('option[value^="rtmp"]')) {
+                    sourcesSelector[i].querySelector('option[value^="rtmp"]').disabled = true;
+                }
+                if (sourcesSelector[i].querySelector('option[value$="webm"]')) {
+                    sourcesSelector[i].querySelector('option[value$="webm"]').disabled = true;
+                }
+                if (sourcesSelector[i].querySelector('option[value$=".mpd"]')) {
+                    sourcesSelector[i].querySelector('option[value$=".mpd"]').disabled = true;
+                }
+                if (sourcesSelector[i].querySelector('option[value$=".ogg"]')) {
+                    sourcesSelector[i].querySelector('option[value$=".ogg"]').disabled = true;
+                }
+                if (sourcesSelector[i].querySelector('option[value$=".flv"]')) {
+                    sourcesSelector[i].querySelector('option[value*=".flv"]').disabled = true;
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
+
+            for (var i = 0; i < total; i++) {
+                new MediaElementPlayer(mediaElements[i], {
+                    pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/',
+                    shimScriptAccess: 'always',
+                    success: function () {
+                        var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
+                        for (var j = 0; j < targetTotal; j++) {
+                            target[j].style.visibility = 'visible';
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>

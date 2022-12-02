@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+        poster="https://image.tmdb.org/t/p/original/ubtLuy2SsC7q0BIewPPOGeQVtlN.jpg">
+        <source
+            src="https://moon-storage-delivery-s45.filemoon.to/hls2/01/02550/r108n195zn9z_x/index-v1-a1.m3u8?t=FRqI4P7E--01htlUuafL_WW2FmhIWp_QwL8sMp2Qrss&s=1669895770&e=43200&f=12753990&srv=127.0.0.1&asn=35819&sp=1500"
+            type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p' res='1080' size='1080'>
+        <source
+            src="https://nl2b.capailition.online/aes/5uRLsai-x2lFQCEm5KcCjQ/1669917027/storage2/movies/21819228-la-methode-stutz-un-bonheur-a-construire-2022-1668416794/5968eefa3eaa428c60471681fa3656eb.mp4/index.m3u8"
+            type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p' size='720p'>
+
+        <track kind="subtitles" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12394443.vtt" srclang="ar"
+            label="Arabic" default>
+        <track kind="subtitles" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12394441.vtt" srclang="en"
+            label="English">
+    </video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

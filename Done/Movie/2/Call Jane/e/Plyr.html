@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+
+<div class="container">
+    <video controls crossorigin playsinline poster="https://image.tmdb.org/t/p/original/4AT2EM0wOkDB6kuClleU6ElIHyl.jpg">
+
+        <track kind="subtitles"
+            src="https://ledgetitaling.monster/storage4/1669886505/movies/7461272-call-jane-2022-1668629973/subtitles/ar_9c6ea8c0c024bce61c422658770f6d15.vtt"
+            srclang="ar" label="Arabic">
+        <track kind="subtitles"
+            src="https://ledgetitaling.monster/storage4/1669886505/movies/7461272-call-jane-2022-1668629973/subtitles/en_148fda4f5581acea34bf0a05d53d4a56.vtt"
+            srclang="en" label="English">
+    </video>
+</div>
+<p id="version"></p>
+<p id="info"></p>
+<link rel="stylesheet" href="//cdn.plyr.io/3.4.7/plyr.css">
+<script src="//cdn.plyr.io/3.4.7/plyr.js"></script>
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+
+<script>
+    document.querySelector('#version').innerText = ``;
+    document.addEventListener('DOMContentLoaded', () => {
+        var source = "https://e-6.dokicloud.one/_v8/fa16223db6dc070e7bc131f3b3df7d6bb462039ea8a25df8ae0af0fdcc194900692d564784509776e3166c8bd12f9ba0cb50c3721289b708a1801aadfb41cac5a1f9c675601ab507ea578a80f3930695cabc4c03a7ff9aad8d074ca1f44a707bdfa1cfdbaddd4c79357f122c156c310bac5db4d548bf0e78c0b0e7f51b88e003/1080/index.m3u8"
+        var video = document.querySelector('video');
+
+        // For more options see: https://github.com/sampotts/plyr/#options
+        // captions.update is required for captions to work with hls.js
+        var player = new Plyr(video, {
+            captions: { active: true, update: true, language: 'en' },
+            // autoplay: true,
+        });
+
+        if (!Hls.isSupported()) {
+            video.src = source;
+        } else {
+            // For more Hls.js options, see https://github.com/dailymotion/hls.js
+            var hls = new Hls({
+                p2pConfig: {
+                    live: true,        // set false in vod mode
+                    // announceLocation: 'hk',        // if using Hongkong tracker
+                    // announceLocation: 'us',        // if using USA tracker
+                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                        var total = totalHTTPDownloaded + totalP2PDownloaded;
+                        document.querySelector('#info').innerText = ``;
+                    },
+                    // Other p2pConfig options provided by CDNBye
+                }
+            });
+            hls.loadSource(source);
+            hls.attachMedia(video);
+            window.hls = hls;
+
+            // Handle changing captions
+            player.on('languagechange', () => {
+                // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
+                setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
+            });
+        }
+
+        // Expose player so it can be used from the console
+        window.player = player;
+    });
+</script>

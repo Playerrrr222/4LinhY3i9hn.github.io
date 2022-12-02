@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+    poster="https://image.tmdb.org/t/p/original/baf8eep8af9y7ekjN9X1OW9y01V.jpg">
+    <source src="https://c-3.dokicloud.one/_v8/88305a772611f5afc6ab132185555fbe83bb50a01e53a36712db036294ea8ca16eb836683f8254363b33de1e6c32562282c1d1df78396ddb91bd6697a6b6b83868c8168653535c07d92021d70777c2b2a2d4ec6b518a08b6f30d8dbe18e79c0851c5e4497e27eed4b8cde2787715b50c353c52a0a14be4d21dee71355f4a88e9/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+        res='1080' size='1080'>
+    <source src="https://c-3.dokicloud.one/_v8/88305a772611f5afc6ab132185555fbe83bb50a01e53a36712db036294ea8ca16eb836683f8254363b33de1e6c32562282c1d1df78396ddb91bd6697a6b6b83868c8168653535c07d92021d70777c2b2a2d4ec6b518a08b6f30d8dbe18e79c0851c5e4497e27eed4b8cde2787715b50c353c52a0a14be4d21dee71355f4a88e9/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+        size='720p'>
+
+    <track kind="subtitles" src="https://ledgetitaling.monster/storage6/1669892382/movies/20168564-alienoid-2022-1668493686/subtitles/ar_fa90da183276b5fb13fb299d59047fc2.vtt" srclang="ar" label="Arabic" default>
+    <track kind="subtitles" src="https://cc.2cdns.com/14/f0/14f080edbeb9ab7374be5f288e1bf637/eng-2.vtt" srclang="en" label="English">
+</video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>
