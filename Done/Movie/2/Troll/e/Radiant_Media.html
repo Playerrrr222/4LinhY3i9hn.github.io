@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Radiant Media Player - Example Apple HLS</title>
+    <style>
+        /* This CSS is required to avoid layout issues */
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.radiantmediatechs.com/rmp/8.1.1/js/rmp.min.js"></script>
+    <div id="rmp"></div>
+    <script>
+        const src = {
+            hls: 'https://cdn.jwplayer.com/manifests/e0AxbN9T.m3u8'
+        };
+        const ccFiles = [
+            ['ar', 'Arabic', 'https://s1.bunnycdn.ru/sub/cache2/subtitle/12394627.vtt'],
+            ['en', 'English', 'https://cc.2cdns.com/9f/8c/9f8caabf9be26a72135794001a8e1e3b/eng-2.vtt']
+        ];
+        const settings = {
+            // this is a generic license key for testing 
+            // it will not work on your domain - use your own
+            licenseKey: 'Kl8lbz16cz1rN2l2enM9Z2M9NnZvMnllaT9yb201ZGFzaXMzMGRiMEElXyo=',
+            width: 640,
+            height: 360,
+            skin: 's1',
+            hideControls: false,
+            iframeMode: true,
+            contentMetadata: {
+                // title: 'RMP api player',
+                // description: 'example of usage',
+                poster: [
+                    'https://image.tmdb.org/t/p/original/53BC9F2tpZnsGno2cLhzvGprDYS.jpg'
+                ]
+            },
+            ccFiles: ccFiles,
+            googleCast: false, // we disable casting for this example
+            src: src
+        };
+
+        // Reference to the player container (id)
+        const elementID = 'rmp';
+
+        // New Radiant Media Player instance
+        const rmp = new RadiantMP(elementID);
+
+        // player container
+        const rmpContainer = document.getElementById(elementID);
+
+        // log area
+        const logs = document.getElementById('js-api-logs');
+
+        // getters
+        const getReady = document.getElementById('getReady');
+        const getReadyData = document.getElementById('getReadyData');
+        const _getReady = () => {
+            getReadyData.textContent = rmp.getReady();
+        };
+
+        const getPlayerVersion = document.getElementById('getPlayerVersion');
+        const getPlayerVersionData = document.getElementById('getPlayerVersionData');
+        const _getPlayerVersion = () => {
+            getPlayerVersionData.textContent = rmp.getPlayerVersion();
+        };
+
+        const getStreamType = document.getElementById('getStreamType');
+        const getStreamTypeData = document.getElementById('getStreamTypeData');
+        const _getStreamType = () => {
+            getStreamTypeData.textContent = rmp.getStreamType();
+        };
+
+        const getPaused = document.getElementById('getPaused');
+        const getPausedData = document.getElementById('getPausedData');
+        const _getPaused = () => {
+            getPausedData.textContent = rmp.getPaused();
+        };
+
+        const getCurrentTime = document.getElementById('getCurrentTime');
+        const getCurrentTimeData = document.getElementById('getCurrentTimeData');
+        const _getCurrentTime = () => {
+            getCurrentTimeData.textContent = rmp.getCurrentTime();
+        };
+
+        const getDuration = document.getElementById('getDuration');
+        const getDurationData = document.getElementById('getDurationTimeData');
+        const _getDuration = () => {
+            getDurationData.textContent = rmp.getDuration();
+        };
+
+        const getPlaybackRate = document.getElementById('getPlaybackRate');
+        const getPlaybackRateData = document.getElementById('getPlaybackRateData');
+        const _getPlaybackRate = () => {
+            getPlaybackRateData.textContent = rmp.getPlaybackRate();
+        };
+
+        const getBufferLengthAhead = document.getElementById('getBufferLengthAhead');
+        const getBufferLengthAheadData = document.getElementById('getBufferLengthAheadData');
+        const _getBufferLengthAhead = () => {
+            getBufferLengthAheadData.textContent = rmp.getBufferLength('ahead');
+        };
+
+        const getBufferLengthBehind = document.getElementById('getBufferLengthBehind');
+        const getBufferLengthBehindData = document.getElementById('getBufferLengthBehindData');
+        const _getBufferLengthBehind = () => {
+            getBufferLengthBehindData.textContent = rmp.getBufferLength('behind');
+        };
+
+        const getLoop = document.getElementById('getLoop');
+        const getLoopData = document.getElementById('getLoopData');
+        const _getLoop = () => {
+            getLoopData.textContent = rmp.getLoop();
+        };
+
+        const getControls = document.getElementById('getControls');
+        const getControlsData = document.getElementById('getControlsData');
+        const _getControls = () => {
+            getControlsData.textContent = rmp.getControls();
+        };
+
+        const getFullscreen = document.getElementById('getFullscreen');
+        const getFullscreenData = document.getElementById('getFullscreenData');
+        const _getFullscreen = () => {
+            getFullscreenData.textContent = rmp.getFullscreen();
+        };
+
+        const getSrc = document.getElementById('getSrc');
+        const getSrcData = document.getElementById('getSrcData');
+        const _getSrc = () => {
+            getSrcData.textContent = rmp.getSrc();
+        };
+
+        const getPlayerWidth = document.getElementById('getPlayerWidth');
+        const getPlayerWidthData = document.getElementById('getPlayerWidthData');
+        const _getPlayerWidth = () => {
+            getPlayerWidthData.textContent = rmp.getPlayerWidth();
+        };
+
+        const getPlayerHeight = document.getElementById('getPlayerHeight');
+        const getPlayerHeightData = document.getElementById('getPlayerHeightData');
+        const _getPlayerHeight = () => {
+            getPlayerHeightData.textContent = rmp.getPlayerHeight();
+        };
+
+        // analytics
+        const getTimeReady = document.getElementById('getTimeReady');
+        const getTimeReadyData = document.getElementById('getTimeReadyData');
+        const _getTimeReady = () => {
+            getTimeReadyData.textContent = rmp.getTimeReady();
+        };
+
+        const getStartUpTime = document.getElementById('getStartUpTime');
+        const getStartUpTimeData = document.getElementById('getStartUpTimeData');
+        const _getStartUpTime = () => {
+            getStartUpTimeData.textContent = rmp.getStartUpTime();
+        };
+
+        const getTimeViewed = document.getElementById('getTimeViewed');
+        const getTimeViewedData = document.getElementById('getTimeViewedData');
+        const _getTimeViewed = () => {
+            getTimeViewedData.textContent = rmp.getTimeViewed();
+        };
+
+        const getPercentViewed = document.getElementById('getPercentViewed');
+        const getPercentViewedData = document.getElementById('getPercentViewedData');
+        const _getPercentViewed = () => {
+            getPercentViewedData.textContent = rmp.getPercentViewed();
+        };
+
+        // methods
+        const play = document.getElementById('play');
+        const _play = () => {
+            rmp.play();
+        };
+        const pause = document.getElementById('pause');
+        const _pause = () => {
+            rmp.pause();
+        };
+
+        const _stop = () => {
+            rmp.stop();
+        };
+
+        const seekTo10 = document.getElementById('seekTo10');
+        const _seekTo10 = () => {
+            rmp.seekTo(10000);
+        };
+        const seekTo60 = document.getElementById('seekTo60');
+        const _seekTo60 = () => {
+            rmp.seekTo(60000);
+        };
+
+        const volume20 = document.getElementById('volume20');
+        const _volume20 = () => {
+            rmp.setVolume(0.2);
+        };
+        const volume100 = document.getElementById('volume100');
+        const _volume100 = () => {
+            rmp.setVolume(1);
+        };
+
+        const setPlaybackRate05 = document.getElementById('setPlaybackRate05');
+        const _setPlaybackRate05 = () => {
+            rmp.setPlaybackRate(0.5);
+        };
+        const setPlaybackRate1 = document.getElementById('setPlaybackRate1');
+        const _setPlaybackRate1 = () => {
+            rmp.setPlaybackRate(1);
+        };
+        const setPlaybackRate2 = document.getElementById('setPlaybackRate2');
+        const _setPlaybackRate2 = () => {
+            rmp.setPlaybackRate(2);
+        };
+
+        const showCaptionsEn = document.getElementById('showCaptionsEn');
+        const _showCaptionsEn = () => {
+            rmp.showCaptions('en');
+        };
+        const showCaptionsFr = document.getElementById('showCaptionsFr');
+        const _showCaptionsFr = () => {
+            rmp.showCaptions('fr');
+        };
+        const hideCaptions = document.getElementById('hideCaptions');
+        const _hideCaptions = () => {
+            rmp.hideCaptions();
+        };
+
+        const setFullscreen = document.getElementById('setFullscreen');
+        const _setFullscreen = () => {
+            rmp.setFullscreen(true);
+        };
+
+        const setLoopTrue = document.getElementById('setLoopTrue');
+        const _setLoopTrue = () => {
+            rmp.setLoop(true);
+        };
+        const setLoopFalse = document.getElementById('setLoopFalse');
+        const _setLoopFalse = () => {
+            rmp.setLoop(false);
+        };
+
+        const setControlsTrue = document.getElementById('setControlsTrue');
+        const _setControlsTrue = () => {
+            rmp.setControls(true);
+        };
+        const setControlsFalse = document.getElementById('setControlsFalse');
+        const _setControlsFalse = () => {
+            rmp.setControls(false);
+        };
+
+
+        // player events handling
+        const _logEvent = (event) => {
+            if (event && event.type) {
+                logs.insertAdjacentHTML('afterbegin', '<p>' + event.type + '</p>');
+            }
+        };
+        const _events = [
+            'ready',
+            'loadstart',
+            'durationchange',
+            'loadedmetadata',
+            'loadeddata',
+            'play',
+            'pause',
+            'timeupdate',
+            'ended',
+            'waiting',
+            'playing',
+            'seeking',
+            'seeked',
+            'progress',
+            'volumechange',
+            'error',
+            'enterfullscreen',
+            'exitfullscreen',
+            'startuptimeavailable',
+            'resize',
+            'bufferstalled',
+            'buffernotstalledanymore'
+        ];
+        const _attachEvents = () => {
+            for (let i = 0, len = _events.length; i < len; i++) {
+                rmpContainer.addEventListener(_events[i], _logEvent);
+            }
+        };
+        _attachEvents(rmpContainer);
+
+        // wire UI
+        const _wireUI = () => {
+            // methods
+            play.addEventListener('click', _play);
+            pause.addEventListener('click', _pause);
+            document.getElementById('stop').addEventListener('click', _stop);
+
+            seekTo10.addEventListener('click', _seekTo10);
+            seekTo60.addEventListener('click', _seekTo60);
+
+            volume20.addEventListener('click', _volume20);
+            volume100.addEventListener('click', _volume100);
+
+            setPlaybackRate05.addEventListener('click', _setPlaybackRate05);
+            setPlaybackRate1.addEventListener('click', _setPlaybackRate1);
+            setPlaybackRate2.addEventListener('click', _setPlaybackRate2);
+
+            showCaptionsEn.addEventListener('click', _showCaptionsEn);
+            showCaptionsFr.addEventListener('click', _showCaptionsFr);
+            hideCaptions.addEventListener('click', _hideCaptions);
+
+            setFullscreen.addEventListener('click', _setFullscreen);
+
+            setLoopTrue.addEventListener('click', _setLoopTrue);
+            setLoopFalse.addEventListener('click', _setLoopFalse);
+
+            setControlsTrue.addEventListener('click', _setControlsTrue);
+            setControlsFalse.addEventListener('click', _setControlsFalse);
+
+            //getters
+            getReady.addEventListener('click', _getReady);
+            getPlayerVersion.addEventListener('click', _getPlayerVersion);
+            getStreamType.addEventListener('click', _getStreamType);
+            getPaused.addEventListener('click', _getPaused);
+            getCurrentTime.addEventListener('click', _getCurrentTime);
+            getDuration.addEventListener('click', _getDuration);
+            getPlaybackRate.addEventListener('click', _getPlaybackRate);
+            getBufferLengthAhead.addEventListener('click', _getBufferLengthAhead);
+            getBufferLengthBehind.addEventListener('click', _getBufferLengthBehind);
+            getLoop.addEventListener('click', _getLoop);
+            getControls.addEventListener('click', _getControls);
+            getFullscreen.addEventListener('click', _getFullscreen);
+            getSrc.addEventListener('click', _getSrc);
+            getPlayerWidth.addEventListener('click', _getPlayerWidth);
+            getPlayerHeight.addEventListener('click', _getPlayerHeight);
+
+            //analytics
+            getTimeReady.addEventListener('click', _getTimeReady);
+            getStartUpTime.addEventListener('click', _getStartUpTime);
+            getTimeViewed.addEventListener('click', _getTimeViewed);
+            getPercentViewed.addEventListener('click', _getPercentViewed);
+
+        };
+
+        // on player ready wireUI
+        const _makeReady = () => {
+            rmpContainer.removeEventListener('ready', _makeReady);
+            _wireUI();
+        };
+        rmpContainer.addEventListener('ready', _makeReady);
+
+        // Initialize player
+        rmp.init(settings);
+    </script>
+</body>
+
+</html>
