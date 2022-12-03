@@ -40,20 +40,28 @@
                 //aspectratio: "16:9",
                 // width: '100%',
                 height: window.innerHeight,
-                image: "https://image.tmdb.org/t/p/original/fwhN9a0oRZvzc2tDuu5BZ59MOPz.jpg",
+                image: "https://image.tmdb.org/t/p/original/kqdR4iGaKhCG1HTG7YmceYrjZUS.jpg",
                 autostart: false,
                 sources: [
                     {
-                        file: "https://cdn.jwplayer.com/manifests/C57T79SH.m3u8",
-                        type: "application/vnd.apple.mpegurl",
-                        label: '1080',
+                        file: "https://b-g-eu-1.feetcdn.com:2223/v2-hls-playback/8ea6d1dae7c57997a51979b1633d62e33d8095e2b6ce12f475401329cfe4cc972288ff0d58356148720e3fda3d570adbf55c2e2e5be3073252f172aff6f6d7c1c5e2c75bf5ae66e7a89c3bab9865beb62e207a3cbffad9c92a3452463aa74c3a575bfb4a3a2328e9de195e362fca0386667931d7170500376dc3fe59f0b952e238124c582230e106b1d9bd1ae61caa6b1733b0f8dd381b08520182d52d057f23e10715da634ac668237eccf787d5402f2a4ceaf6e9a030fe37301a497d7b19b6/1080/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '1080p',
                         res: 1080,
+
+                    },
+                    {
+                        file: "https://b-g-eu-1.feetcdn.com:2223/v2-hls-playback/8ea6d1dae7c57997a51979b1633d62e33d8095e2b6ce12f475401329cfe4cc972288ff0d58356148720e3fda3d570adbf55c2e2e5be3073252f172aff6f6d7c1c5e2c75bf5ae66e7a89c3bab9865beb62e207a3cbffad9c92a3452463aa74c3a575bfb4a3a2328e9de195e362fca0386667931d7170500376dc3fe59f0b952e238124c582230e106b1d9bd1ae61caa6b1733b0f8dd381b08520182d52d057f23e10715da634ac668237eccf787d5402f2a4ceaf6e9a030fe37301a497d7b19b6/720/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '720p',
+                        res: 720,
 
                     }],
                 // title: 'Tom and Jerry: Snowmans Land',
                 aboutlink: 'https://www.jwplayer.com/',
-                tracks: [{ "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/12387895.vtt", "label": "Arabic", "kind": "captions" },
-                { "file": "https://ledgetitaling.monster/storage1/1669892739/movies/14444726-tar-2022-1668496128/subtitles/en_1ceebadf5f8d90b1040b65e8735faa5b.vtt", "label": "English", "kind": "captions", "false": "false" }
+                tracks: [
+                    { "file": "https://cc.2cdns.com/29/25/292532a6b3124211452c990ed582f40b/ara-5.vtt", "label": "Arabic", "kind": "captions" },
+                    { "file": "https://cc.2cdns.com/29/25/292532a6b3124211452c990ed582f40b/eng-4.vtt", "label": "English", "kind": "captions", "false": "false" }
 
                 ],
                 captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },

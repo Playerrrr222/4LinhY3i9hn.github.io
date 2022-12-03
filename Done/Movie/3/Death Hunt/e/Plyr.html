@@ -18,9 +18,10 @@
     <style>
         :root {
             --plyr-color-main: #1ac266;
-            /* padding-top: 18vh;
-            margin: 20px auto;
-            width: 600px; */
+            padding-top: 0vh;
+            margin: auto auto;
+            width: 100%;
+        
         }
 
         .player {
@@ -54,18 +55,16 @@
     <script src="./plyr-hls.js"></script>
 
     <div class="container">
-        <video controls crossorigin playsinline  poster="https://image.tmdb.org/t/p/original/53BC9F2tpZnsGno2cLhzvGprDYS.jpg">
-            <source
-                src="https://cdn.jwplayer.com/manifests/e0AxbN9T.m3u8"
-                type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p' res='1080' size="Auto">
-          
+        <video controls crossorigin playsinline 
+        poster="https://image.tmdb.org/t/p/original/53a6KHBqunumM2yf2OeYFIkHkqx.jpg">
+        <source src="https://c-2.dokicloud.one/_v8/f11f473f04c39a9c2866461c5dfe2cb92b8b09a67c66bc8a85082aa5402d69238e7ae6792411b50aff4b3a1c580d7805c757597e44a352bb9d91cc509d74feadd785fd32f8478072dc045d5d542be3ad9b56ba4d1bd0d1250e223be1864a2e66e19ebb970c36d917507cb340dc12002cca7972a3431953de6d473295a1a4e5ff/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+            res='1080' size='1080'>
+        <source src="https://c-2.dokicloud.one/_v8/f11f473f04c39a9c2866461c5dfe2cb92b8b09a67c66bc8a85082aa5402d69238e7ae6792411b50aff4b3a1c580d7805c757597e44a352bb9d91cc509d74feadd785fd32f8478072dc045d5d542be3ad9b56ba4d1bd0d1250e223be1864a2e66e19ebb970c36d917507cb340dc12002cca7972a3431953de6d473295a1a4e5ff/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+            size='720p'>
 
-            <track kind="subtitles" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12394627.vtt" srclang="ar"
-                label="Arabic">
-            <track kind="subtitles"
-                src="https://cc.2cdns.com/9f/8c/9f8caabf9be26a72135794001a8e1e3b/eng-2.vtt"
-                srclang="en" label="English">
-        </video>
+        <track kind="subtitles" src="https://mcgregriorst.monster/storage6/1670053073/movies/14100830-death-hunt-2022-1657603715/subtitles/ar_901c8be5d39380571a4ea519a95068f1.vtt" srclang="ar" label="Arabic" default>
+        <track kind="subtitles" src="https://cc.2cdns.com/e1/19/e119f9f12bb637d7d4cde05003f4c385/eng-2.vtt" srclang="en" label="English">
+    </video>
     </div>
 
     <script>

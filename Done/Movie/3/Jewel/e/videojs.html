@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+    poster="https://image.tmdb.org/t/p/original/kqdR4iGaKhCG1HTG7YmceYrjZUS.jpg">
+    <source src="https://b-g-eu-1.feetcdn.com:2223/v2-hls-playback/8ea6d1dae7c57997a51979b1633d62e33d8095e2b6ce12f475401329cfe4cc972288ff0d58356148720e3fda3d570adbf55c2e2e5be3073252f172aff6f6d7c1c5e2c75bf5ae66e7a89c3bab9865beb62e207a3cbffad9c92a3452463aa74c3a575bfb4a3a2328e9de195e362fca0386667931d7170500376dc3fe59f0b952e238124c582230e106b1d9bd1ae61caa6b1733b0f8dd381b08520182d52d057f23e10715da634ac668237eccf787d5402f2a4ceaf6e9a030fe37301a497d7b19b6/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+        res='1080' size='1080'>
+    <source src="https://b-g-eu-1.feetcdn.com:2223/v2-hls-playback/8ea6d1dae7c57997a51979b1633d62e33d8095e2b6ce12f475401329cfe4cc972288ff0d58356148720e3fda3d570adbf55c2e2e5be3073252f172aff6f6d7c1c5e2c75bf5ae66e7a89c3bab9865beb62e207a3cbffad9c92a3452463aa74c3a575bfb4a3a2328e9de195e362fca0386667931d7170500376dc3fe59f0b952e238124c582230e106b1d9bd1ae61caa6b1733b0f8dd381b08520182d52d057f23e10715da634ac668237eccf787d5402f2a4ceaf6e9a030fe37301a497d7b19b6/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+        size='720p'>
+
+    <track kind="subtitles" src="https://cc.2cdns.com/29/25/292532a6b3124211452c990ed582f40b/ara-5.vtt" srclang="ar" label="Arabic" default>
+    <track kind="subtitles" src="https://cc.2cdns.com/29/25/292532a6b3124211452c990ed582f40b/eng-4.vtt" srclang="en" label="English">
+</video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

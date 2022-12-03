@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.js"
+        type="text/javascript"></script>
+    <link href="node_modules/cloudinary-video-player/dist/cld-video-player.min.css" rel="stylesheet">
+    <script src="node_modules/cloudinary-video-player/dist/cld-video-player.min.js" type="text/javascript"></script>
+</head>
+<style>
+    :root {
+        /* --plyr-color-main: #1ac266; */
+        padding-top: 8vh;
+        margin: auto auto;
+        width: 100%;
+        
+    }
+    </style>
+
+<body style="background-color: black;">
+    <div style="">
+        <video id="doc-player" controls muted class="cld-video-player cld-fluid" publicId="book" data-cld-colors='{ "base": "#0071ba", "accent": "#db8226", "text": "#fff" }'
+        poster="https://image.tmdb.org/t/p/original/53a6KHBqunumM2yf2OeYFIkHkqx.jpg">
+        <source src="https://c-2.dokicloud.one/_v8/f11f473f04c39a9c2866461c5dfe2cb92b8b09a67c66bc8a85082aa5402d69238e7ae6792411b50aff4b3a1c580d7805c757597e44a352bb9d91cc509d74feadd785fd32f8478072dc045d5d542be3ad9b56ba4d1bd0d1250e223be1864a2e66e19ebb970c36d917507cb340dc12002cca7972a3431953de6d473295a1a4e5ff/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+            res='1080' size='1080'>
+        <source src="https://c-2.dokicloud.one/_v8/f11f473f04c39a9c2866461c5dfe2cb92b8b09a67c66bc8a85082aa5402d69238e7ae6792411b50aff4b3a1c580d7805c757597e44a352bb9d91cc509d74feadd785fd32f8478072dc045d5d542be3ad9b56ba4d1bd0d1250e223be1864a2e66e19ebb970c36d917507cb340dc12002cca7972a3431953de6d473295a1a4e5ff/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+            size='720p'>
+
+        <track kind="subtitles" src="https://mcgregriorst.monster/storage6/1670053073/movies/14100830-death-hunt-2022-1657603715/subtitles/ar_901c8be5d39380571a4ea519a95068f1.vtt" srclang="ar" label="Arabic" default>
+        <track kind="subtitles" src="https://cc.2cdns.com/e1/19/e119f9f12bb637d7d4cde05003f4c385/eng-2.vtt" srclang="en" label="English">
+    </video>
+    </div>
+</body>
+<script>
+    var player = cloudinary.videoPlayer('doc-player',
+        {
+            cloud_name: "demo",
+            secure: true,
+            sourceTypes: ['webm/vp9', 'mp4/h265', 'mp4', 'hls'],
+            publicId: 'book',
+            loop: true,
+            controls: true,
+            // autoplayMode: 'on-scroll',
+            // floatingWhenNotVisible: 'left',
+            fontFace: 'Yatra One',
+            seekThumbnails: true,
+            transformation: {
+                aspectratio: "16:9",
+                width: '100%',
+                height: window.innerHeight,
+                streaming_profile: 'hd',
+                effect: 'vignette:50',
+                border: "5px_solid_black"
+            }
+        },
+        // In this section we define the list of events that will be triggered to the page, in addition to a predefined list of events
+        {
+            playedEventTimes: [3, 10],
+            // In this section we define the (complete) list of events that will be sent to analytics
+            analytics: { // Enable player analytics
+                events: [
+                    'play',
+                    'pause',
+                    'percentsplayed',
+                    'start',
+                    'ended',
+                    'fullscreenchange']
+            }
+        });
+    // Modify player source
+    player.source(
+        'outdoors',
+        //   {
+        //     textTracks: {
+        //       captions: {
+        //         label: 'English(captions)',
+        //         language: 'en',
+        //         default: true,
+        //         url: 'https://res.cloudinary.com/demo/raw/upload/outdoors.vtt'
+        //       },
+        //       subtitles: [
+        //         {
+        //           label: 'English',
+        //           language: 'en',
+        //           url: 'https://res.cloudinary.com/demo/raw/upload/outdoors.vtt'
+        //         }
+        //       ]
+        //     }
+        //   }
+    ).play();
+</script>
+
+</html>

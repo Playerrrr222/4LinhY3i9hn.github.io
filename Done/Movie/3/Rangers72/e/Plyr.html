@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background-color: black; width: 100%; height: 100%;">
+<html lang="en" style="background-color: black;">
 
 <head>
 
@@ -10,7 +10,12 @@
     <meta name="apple-mobile-web-app-title" content="CodePen">
 
 
-
+    <!-- <svg class="icon" viewBox="0 0 0 0">
+        <use xlink:href="#shape-icon-1" />
+      </svg> -->
+      <!-- <svg class="logo">
+        <use xlink:href="#logo" />
+      </svg> -->
 
 
 
@@ -18,9 +23,9 @@
     <style>
         :root {
             --plyr-color-main: #1ac266;
-            /* padding-top: 18vh;
-            margin: 20px auto;
-            width: 600px; */
+            padding-top: 0vh;
+            margin: auto auto;
+            width: 100%;
         }
 
         .player {
@@ -54,24 +59,23 @@
     <script src="./plyr-hls.js"></script>
 
     <div class="container">
-        <video controls crossorigin playsinline  poster="https://image.tmdb.org/t/p/original/53BC9F2tpZnsGno2cLhzvGprDYS.jpg">
+        <video controls crossorigin playsinline poster="https://image.tmdb.org/t/p/original/2LTZmQPCG6ijpRK8BJXddz39ts4.jpg">
             <source
-                src="https://cdn.jwplayer.com/manifests/e0AxbN9T.m3u8"
-                type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p' res='1080' size="Auto">
-          
+                src="https://e-6.dokicloud.one/_v8/e231bc9849138f5700ffb6cf2b0ceccaa39fde442d5b04448f37d7cf88222592763648e79ad17593b2d15d3d7d1d9c2c0497524cc01feedfab6821cccfc30be660ee81151d70d7a3487be34657d7eed7fa3c5fb8c5becfe2650953b914020ccb442574b2c8bc8ce2de98a5d23856f04566c0a2f162dc3d8863193a26b39d1709/1080/index.m3u8"
+                type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p' res='1080' size="1080">
+            <source
+                src="https://nl3c.capailition.online/aes/h6p_ffWO7wdnCEyeMZ49Zw/1669732364/storage2/movies/4960748-till-2022-1669109699/cd9d0ba5cb61c848ec654042daf5445f.mp4/index.m3u8"
+                type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p' size="1080">
 
-            <track kind="subtitles" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12394627.vtt" srclang="ar"
-                label="Arabic">
-            <track kind="subtitles"
-                src="https://cc.2cdns.com/9f/8c/9f8caabf9be26a72135794001a8e1e3b/eng-2.vtt"
-                srclang="en" label="English">
+            <track kind="subtitles" src="../Rangers72.ar.vtt" srclang="ar" label="Arabic" default>
+            <track kind="subtitles" src="https://cc.2cdns.com/f8/63/f863818303d974eed4c217d4cd58ffc8/eng-2.vtt" srclang="en" label="English">
         </video>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const video = document.querySelector("video");
-            const source = video.getElementsByTagName("source")[0].src;
+            const source = video.querySelector("source").src;
             // const source = video.querySelector("source").src;
 
 

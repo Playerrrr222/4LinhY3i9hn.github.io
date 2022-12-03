@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+    poster="https://image.tmdb.org/t/p/original/lZzMFZrytEY7aVORr2F6ugDJZds.jpg">
+    <source src="https://c-3.dokicloud.one/_v8/ddd823fd5c75410873046fc91894411b86859248a9c1584a4198ae5471f217a01e522bf1dbda38d372ade789232d562ef1993652707de506c04543177c75d0c19a6117d110fd070dd17c0b766e5d1e7273d1fc1578c067350ca811eb568678d55ded42a9782f32f5028540da6928c96fdb1f1e9c3439dbfa4cf7f0236a2cfd25/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+        res='1080' size='1080'>
+    <source src="https://c-3.dokicloud.one/_v8/ddd823fd5c75410873046fc91894411b86859248a9c1584a4198ae5471f217a01e522bf1dbda38d372ade789232d562ef1993652707de506c04543177c75d0c19a6117d110fd070dd17c0b766e5d1e7273d1fc1578c067350ca811eb568678d55ded42a9782f32f5028540da6928c96fdb1f1e9c3439dbfa4cf7f0236a2cfd25/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+        size='720p'>
+
+    <track kind="subtitles" src="https://cc.2cdns.com/37/48/37481f601a8cbd4abc8c8751dadd3aff/ara-4.vtt" srclang="ar" label="Arabic" default>
+    <track kind="subtitles" src="https://cc.2cdns.com/37/48/37481f601a8cbd4abc8c8751dadd3aff/eng-3.vtt" srclang="en" label="English">
+</video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

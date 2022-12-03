@@ -18,9 +18,10 @@
     <style>
         :root {
             --plyr-color-main: #1ac266;
-            /* padding-top: 18vh;
-            margin: 20px auto;
-            width: 600px; */
+            padding-top: 0vh;
+            margin: auto auto;
+            width: 100%;
+        
         }
 
         .player {
@@ -54,18 +55,16 @@
     <script src="./plyr-hls.js"></script>
 
     <div class="container">
-        <video controls crossorigin playsinline  poster="https://image.tmdb.org/t/p/original/53BC9F2tpZnsGno2cLhzvGprDYS.jpg">
-            <source
-                src="https://cdn.jwplayer.com/manifests/e0AxbN9T.m3u8"
-                type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p' res='1080' size="Auto">
-          
+        <video controls crossorigin playsinline 
+        poster="https://image.tmdb.org/t/p/original/8Kbr2lV4XE2zqI564u0xlMLpx8r.jpg">
+        <source src="https://e-3.dokicloud.one/_v8/57edca1564d241e2b70ae2201d0700b246f237039813a5129f536dbb7cb58602520173cb74579293b04723c933ef5ffa9275f2e0bf772c8f757801ec624a80deae05a64513c1774f4f3fe4253cf3240d1f7fe8a23d41a3f45ed69ba9bed68cb541bcbddb2c5ab6bbe84e5a9fd6367ed8703a09f244cda517ff72892495557c7a/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+            res='1080' size='1080'>
+        <source src="https://e-3.dokicloud.one/_v8/57edca1564d241e2b70ae2201d0700b246f237039813a5129f536dbb7cb58602520173cb74579293b04723c933ef5ffa9275f2e0bf772c8f757801ec624a80deae05a64513c1774f4f3fe4253cf3240d1f7fe8a23d41a3f45ed69ba9bed68cb541bcbddb2c5ab6bbe84e5a9fd6367ed8703a09f244cda517ff72892495557c7a/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+            size='720p'>
 
-            <track kind="subtitles" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12394627.vtt" srclang="ar"
-                label="Arabic">
-            <track kind="subtitles"
-                src="https://cc.2cdns.com/9f/8c/9f8caabf9be26a72135794001a8e1e3b/eng-2.vtt"
-                srclang="en" label="English">
-        </video>
+        <track kind="subtitles" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12066616.vtt" srclang="ar" label="Arabic" default>
+        <track kind="subtitles" src="https://cc.2cdns.com/0b/da/0bdacc62d7f0b3184c3b3bce3c868b78/eng-3.vtt" srclang="en" label="English">
+    </video>
     </div>
 
     <script>

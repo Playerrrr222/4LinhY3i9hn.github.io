@@ -40,20 +40,28 @@
                 //aspectratio: "16:9",
                 // width: '100%',
                 height: window.innerHeight,
-                image: "https://image.tmdb.org/t/p/original/fwhN9a0oRZvzc2tDuu5BZ59MOPz.jpg",
+                image: "https://image.tmdb.org/t/p/original/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg",
                 autostart: false,
                 sources: [
                     {
-                        file: "https://cdn.jwplayer.com/manifests/C57T79SH.m3u8",
-                        type: "application/vnd.apple.mpegurl",
-                        label: '1080',
+                        file: "https://e-8.dokicloud.one/_v8/57da9dac87d694109ee08c70c544778e4951cc843649fbe107e94bf416e57cd802308f96c9d9cb6b43f46123541e0860ba5188ec0516cbf61bf562452a449f1371c1efae9c5ee8a849a9ca15725b536aaa817ce4d9ea3cb12a7b8c69523c8b717eba95a6ccb9b748d50da041062b729207f3066f1b731067e0fb5cad20794384/1080/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '1080p',
                         res: 1080,
+
+                    },
+                    {
+                        file: "https://e-8.dokicloud.one/_v8/57da9dac87d694109ee08c70c544778e4951cc843649fbe107e94bf416e57cd802308f96c9d9cb6b43f46123541e0860ba5188ec0516cbf61bf562452a449f1371c1efae9c5ee8a849a9ca15725b536aaa817ce4d9ea3cb12a7b8c69523c8b717eba95a6ccb9b748d50da041062b729207f3066f1b731067e0fb5cad20794384/720/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '720p',
+                        res: 720,
 
                     }],
                 // title: 'Tom and Jerry: Snowmans Land',
                 aboutlink: 'https://www.jwplayer.com/',
-                tracks: [{ "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/12387895.vtt", "label": "Arabic", "kind": "captions" },
-                { "file": "https://ledgetitaling.monster/storage1/1669892739/movies/14444726-tar-2022-1668496128/subtitles/en_1ceebadf5f8d90b1040b65e8735faa5b.vtt", "label": "English", "kind": "captions", "false": "false" }
+                tracks: [
+                    { "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/12103607.vtt", "label": "Arabic", "kind": "captions" },
+                    { "file": "https://cc.2cdns.com/76/24/76246ef57e3ccb4d21b0bc2d5a52dd12/76246ef57e3ccb4d21b0bc2d5a52dd12.vtt", "label": "English", "kind": "captions", "false": "false" }
 
                 ],
                 captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },

@@ -40,20 +40,28 @@
                 //aspectratio: "16:9",
                 // width: '100%',
                 height: window.innerHeight,
-                image: "https://image.tmdb.org/t/p/original/fwhN9a0oRZvzc2tDuu5BZ59MOPz.jpg",
+                image: "https://image.tmdb.org/t/p/original/53a6KHBqunumM2yf2OeYFIkHkqx.jpg",
                 autostart: false,
                 sources: [
                     {
-                        file: "https://cdn.jwplayer.com/manifests/C57T79SH.m3u8",
-                        type: "application/vnd.apple.mpegurl",
-                        label: '1080',
+                        file: "https://c-2.dokicloud.one/_v8/f11f473f04c39a9c2866461c5dfe2cb92b8b09a67c66bc8a85082aa5402d69238e7ae6792411b50aff4b3a1c580d7805c757597e44a352bb9d91cc509d74feadd785fd32f8478072dc045d5d542be3ad9b56ba4d1bd0d1250e223be1864a2e66e19ebb970c36d917507cb340dc12002cca7972a3431953de6d473295a1a4e5ff/1080/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '1080p',
                         res: 1080,
+
+                    },
+                    {
+                        file: "https://c-2.dokicloud.one/_v8/f11f473f04c39a9c2866461c5dfe2cb92b8b09a67c66bc8a85082aa5402d69238e7ae6792411b50aff4b3a1c580d7805c757597e44a352bb9d91cc509d74feadd785fd32f8478072dc045d5d542be3ad9b56ba4d1bd0d1250e223be1864a2e66e19ebb970c36d917507cb340dc12002cca7972a3431953de6d473295a1a4e5ff/720/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '720p',
+                        res: 720,
 
                     }],
                 // title: 'Tom and Jerry: Snowmans Land',
                 aboutlink: 'https://www.jwplayer.com/',
-                tracks: [{ "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/12387895.vtt", "label": "Arabic", "kind": "captions" },
-                { "file": "https://ledgetitaling.monster/storage1/1669892739/movies/14444726-tar-2022-1668496128/subtitles/en_1ceebadf5f8d90b1040b65e8735faa5b.vtt", "label": "English", "kind": "captions", "false": "false" }
+                tracks: [
+                    { "file": "https://mcgregriorst.monster/storage6/1670053073/movies/14100830-death-hunt-2022-1657603715/subtitles/ar_901c8be5d39380571a4ea519a95068f1.vtt", "label": "Arabic", "kind": "captions" },
+                    { "file": "https://cc.2cdns.com/e1/19/e119f9f12bb637d7d4cde05003f4c385/eng-2.vtt", "label": "English", "kind": "captions", "false": "false" }
 
                 ],
                 captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },

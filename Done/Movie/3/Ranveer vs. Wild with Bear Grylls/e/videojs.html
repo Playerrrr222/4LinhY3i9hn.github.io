@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+    poster="https://image.tmdb.org/t/p/original/88EPROTyCKuXVhyJ91E0HaGkSFg.jpg">
+    <source src="https://www-ugv58887.ssl0d.com/l8Y79AR7Mfa9BUy9iOqjPA/1670075137/2001:16a2/I5EXWkZmjUyMzZG-tzFHnppt_6PXGnyOAVi3tdctaR3RIjw1f90P1QewVgi3zfTatRf7QHAiGtkEUgvdnrKE9h79tcxCh7rRUMfmwSzTAvB811qTmTnJ_P203W7SsU_DCt2fzKoIlE0HzSabC8-4BprPn2oFEY17xuw7pzgn7pgsowS3Q-DDpaXWjNslUsY1_9q7ohQDRD89OoOjNTgY9iHmqG1OTn9f9QSTKsouFoTP1Eyiv2X9fHENXcWRBt6Ga_e3K2RuuPR-uZ6i-fHCJ4RTx-0Mq0kzZGw6mUWBjeo/8758366.mp4?stream=1" type="video/mp4" data-quality="1080p" title='1080p' label='1080p'
+        res='1080' size='1080'>
+    <source src="https://www-ugv58887.ssl0d.com/l8Y79AR7Mfa9BUy9iOqjPA/1670075137/2001:16a2/I5EXWkZmjUyMzZG-tzFHnppt_6PXGnyOAVi3tdctaR2RmnzoJ9OdngOKhaglSWX6axmK6FCxYWjJjsqZmjADV1jBqcE3pGzhoZGCJqkavtecssVx0FvGFsshEbkZwWgG34AINWnuDPKCFm1J_xskBfkaiDMJe0_h9-mz6fKeCZLhGHqRopcfASdqqOa46jRZ9LxRRHJii1c3sVzInFH8uF6Rkf70CkYonymIviwo8ow_zxowvBaE34wrcN4DfAlVMTxBFW9UwgV47ki4qDwGD4gWtvi36J17Pe2fIpXqaGY/8758366.mp4?stream=1" type="video/mp4" data-quality="720p" title='720p' label='720p' res='720p'
+        size='720p'>
+    <source src="https://www-ugv58887.ssl0d.com/l8Y79AR7Mfa9BUy9iOqjPA/1670075137/2001:16a2/I5EXWkZmjUyMzZG-tzFHnppt_6PXGnyOAVi3tdctaR0Tajo7ytVyrdt1ZWX3XH7aRYLZmyPDQp-md7BtUW4E_zQ_DCaElRV37_71nbDd1rwhoPfGLh3w9y607ZZQFUQgKGpvRR42PsBPGYwIPhsOZRAOgqrTDALUoPtPyvO2AkxRPwKtmp9U_N8ILFUgkNfZguBp48IbHgq6Spkzwf65rjmQzgzQrEdwgf1b-DxSnAqW8YBOzSKJObf7EdSIUOKoKpvCAtNs30-6B38XHUolWRlHQcvSEBIU6Bm5pxixs8Q/8758366.mp4?stream=1" type="video/mp4" data-quality="480p" title='480p' label='480p' res='480p'
+        size='480p'>
+
+    <track kind="subtitles" src="https://cc.2cdns.com/74/ee/74ee4b8fd75904d4ce6e0c3ef38b8211/ara-4.vtt" srclang="ar" label="Arabic" default>
+    <track kind="subtitles" src="https://cc.2cdns.com/74/ee/74ee4b8fd75904d4ce6e0c3ef38b8211/eng-2.vtt" srclang="en" label="English">
+</video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

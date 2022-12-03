@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.js"
+        type="text/javascript"></script>
+    <link href="node_modules/cloudinary-video-player/dist/cld-video-player.min.css" rel="stylesheet">
+    <script src="node_modules/cloudinary-video-player/dist/cld-video-player.min.js" type="text/javascript"></script>
+</head>
+<!-- <style>
+    :root {
+        /* --plyr-color-main: #1ac266; */
+        padding-top: 8vh;
+        margin: auto auto;
+        width: 100%;
+        
+    }
+    </style> -->
+
+<body style="background-color: black;">
+    <div style="">
+        <video id="doc-player" controls muted class="cld-video-player cld-fluid" publicId="book" data-cld-colors='{ "base": "#0071ba", "accent": "#db8226", "text": "#fff" }'
+        poster="https://image.tmdb.org/t/p/original/yzs1H70eYaRyUhZQgleKwIocMuV.jpg">
+        <source src="https://e-1.dokicloud.one/_v8/b0126d198c14d94447124a57b6b2cab033e24bcc8e3c2c2297bcb4ea991e66a697d3aa54357a590ae7119d3098c92e9eaa821b51c2ae5ac27bff663105b9ffcb8d01fe8a2af3c23dc4855eb13537a2543ff99b2869812cd8af13f3c1573722eaf155e4608c077900ad125ac5db1cd014bc7ffc00e81e9f493dd6b54ef48ff012/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+            res='1080' size='1080'>
+        <source src="https://e-1.dokicloud.one/_v8/b0126d198c14d94447124a57b6b2cab033e24bcc8e3c2c2297bcb4ea991e66a697d3aa54357a590ae7119d3098c92e9eaa821b51c2ae5ac27bff663105b9ffcb8d01fe8a2af3c23dc4855eb13537a2543ff99b2869812cd8af13f3c1573722eaf155e4608c077900ad125ac5db1cd014bc7ffc00e81e9f493dd6b54ef48ff012/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+            size='720p'>
+
+        <track kind="subtitles" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12303943.vtt" srclang="ar" label="Arabic" default>
+        <track kind="subtitles" src="https://cc.2cdns.com/b0/dc/b0dc0c9c335df322dee32abcf0e36d4a/b0dc0c9c335df322dee32abcf0e36d4a.vtt" srclang="en" label="English">
+    </video>
+    </div>
+</body>
+<script>
+    var player = cloudinary.videoPlayer('doc-player',
+        {
+            cloud_name: "demo",
+            secure: true,
+            sourceTypes: ['webm/vp9', 'mp4/h265', 'mp4', 'hls'],
+            publicId: 'book',
+            loop: true,
+            controls: true,
+            // autoplayMode: 'on-scroll',
+            // floatingWhenNotVisible: 'left',
+            fontFace: 'Yatra One',
+            seekThumbnails: true,
+            transformation: {
+                aspectratio: "16:9",
+                width: '100%',
+                height: window.innerHeight,
+                streaming_profile: 'hd',
+                effect: 'vignette:50',
+                border: "5px_solid_black"
+            }
+        },
+        // In this section we define the list of events that will be triggered to the page, in addition to a predefined list of events
+        {
+            playedEventTimes: [3, 10],
+            // In this section we define the (complete) list of events that will be sent to analytics
+            analytics: { // Enable player analytics
+                events: [
+                    'play',
+                    'pause',
+                    'percentsplayed',
+                    'start',
+                    'ended',
+                    'fullscreenchange']
+            }
+        });
+    // Modify player source
+    player.source(
+        'outdoors',
+        //   {
+        //     textTracks: {
+        //       captions: {
+        //         label: 'English(captions)',
+        //         language: 'en',
+        //         default: true,
+        //         url: 'https://res.cloudinary.com/demo/raw/upload/outdoors.vtt'
+        //       },
+        //       subtitles: [
+        //         {
+        //           label: 'English',
+        //           language: 'en',
+        //           url: 'https://res.cloudinary.com/demo/raw/upload/outdoors.vtt'
+        //         }
+        //       ]
+        //     }
+        //   }
+    ).play();
+</script>
+
+</html>
