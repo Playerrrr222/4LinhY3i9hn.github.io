@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="UTF-8">
+    <title>JW Player DNA Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="//samples.streamroot.io/web/assets/demo-pages.css">
+
+    <!-- Makes the header -->
+    <script src="//samples.streamroot.io/web/assets/header.js"></script>
+
+    <!-- JW Player Builds -->
+    <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
+
+    <!-- Streamroot Plugin -->
+    <script
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script>
+
+    <!-- Graphs -->
+    <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
+    <div class='video'>
+        <script src="https://use.fontawesome.com/20603b964f.js"></script>
+        <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
+        <script type="text/javascript">
+            jwplayer.key = 'ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=';
+          // jwplayer.key = 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=';
+        </script>
+        <div id="myElement" style="scrollbar-width: none; display: none;"></div>
+        <script type="text/javascript">
+            jwplayer("myElement").setup({
+                //aspectratio: "16:9",
+                // width: '100%',
+                height: window.innerHeight,
+                image: "https://image.tmdb.org/t/p/original/uMSxXLfH7v30gRNBqsQaSP3yqX5.jpg",
+                autostart: false,
+                sources: [
+                    {
+                        file: "https://e-6.dokicloud.one/_v8/edeb8cd4984fab2a78d931d03f1ae41ebd5402155a707364b80ea612d27b0047a7cdd9fd58f8111cd16d35f53c87b346166f779d25db7b05cf36933bb6a651d6ffe406603f26cef7fc6c43d274dd289568ad15ce7bc215e17fdd37f86d180beabf8013f87792691a8101cdd91001d6a190bf6d472d6a21caef913818c6f2162f/1080/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '1080p',
+                        res: 1080,
+
+                    },
+                    {
+                        file: "https://e-6.dokicloud.one/_v8/edeb8cd4984fab2a78d931d03f1ae41ebd5402155a707364b80ea612d27b0047a7cdd9fd58f8111cd16d35f53c87b346166f779d25db7b05cf36933bb6a651d6ffe406603f26cef7fc6c43d274dd289568ad15ce7bc215e17fdd37f86d180beabf8013f87792691a8101cdd91001d6a190bf6d472d6a21caef913818c6f2162f/720/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '720p',
+                        res: 720,
+
+                    }],
+                // title: 'Tom and Jerry: Snowmans Land',
+                aboutlink: 'https://www.jwplayer.com/',
+                tracks: [
+                    { "file": "https://cc.2cdns.com/1d/09/1d097519dafa1f0ba3d741f2c71cbd9a/1d097519dafa1f0ba3d741f2c71cbd9a.vtt", "label": "Arabic", "kind": "captions" },
+                    { "file": "https://cc.2cdns.com/f1/e7/f1e7fd1bb300096ef558e989b1f5cfb7/eng-3.vtt", "label": "English", "kind": "captions", "false": "false" }
+
+                ],
+                captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
+                sharing: {
+                    sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+                    code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+                    link: "<?php echo $sharing;?>"
+                }
+            })
+        </script>
+    </div>
+</body>
+
+</html>

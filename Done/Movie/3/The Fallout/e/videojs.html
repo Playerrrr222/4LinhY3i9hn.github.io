@@ -1,6 +1,32 @@
 <html>
 
 <head>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
     <title>CDNBye videojs demo</title>
     <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>

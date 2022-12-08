@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+    poster="https://image.tmdb.org/t/p/original/erMMJQNETsbu3ospPonZMAOiEOu.jpg">
+    <source src="https://e-7.dokicloud.one/_v8/de3fdaf975286cd05682af5926d782f6e08bb8ff8e5f9fec40aa4f326daa92bc0f44b44166f72b9e440f42f385891f74ed07274abedda2a81b633bb88b3ca7cabcdc1c24750a6720b39acef1eaf4636dab6332b676cfa58eecf2bd751a0defcb863738350115e863478b465d4ef726db15fa49db3fcaf3043b04503f589d3687/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+        res='1080' size='1080'>
+    <source src="https://e-7.dokicloud.one/_v8/de3fdaf975286cd05682af5926d782f6e08bb8ff8e5f9fec40aa4f326daa92bc0f44b44166f72b9e440f42f385891f74ed07274abedda2a81b633bb88b3ca7cabcdc1c24750a6720b39acef1eaf4636dab6332b676cfa58eecf2bd751a0defcb863738350115e863478b465d4ef726db15fa49db3fcaf3043b04503f589d3687/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+        size='720p'>
+
+    <track kind="subtitles" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12333746.vtt" srclang="ar" label="Arabic">
+    <track kind="subtitles" src="https://cc.2cdns.com/a9/04/a904d2eb87a4990cfefbfa36091a91fe/eng-2.vtt" srclang="en" label="English">
+</video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

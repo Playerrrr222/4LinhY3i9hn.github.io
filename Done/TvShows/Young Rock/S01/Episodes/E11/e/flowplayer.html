@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+
+
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="//unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <title>Kaltura Player V3 Demo</title>
+    <!-- <head> -->
+    <link rel="stylesheet" href="//cdn.flowplayer.com/releases/native/3/stable/style/flowplayer.css" />
+</head>
+<style>
+    .flowplayer:not(.is-loaded) {
+        background-color: #324584;
+    }
+
+    /* make the subtitles bigger, fonts full black on a white background */
+    .fp-captions .fp-cue {
+        font-size: 1.7em;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.447);
+    }
+</style>
+
+<body style="background-color: black;" onLoad="disableClick()" onLoad="disableClick()" oncontextmenu="return false">
+
+
+    <!-- <body> -->
+    <script src="//cdn.flowplayer.com/releases/native/3/stable/plugins/hls.min.js"></script>
+    <script src="//cdn.flowplayer.com/releases/native/3/stable/plugins/chromecast.min.js"></script>
+    <script src="//cdn.flowplayer.com/releases/native/3/stable/flowplayer.min.js"></script>
+    <script src="//cdn.flowplayer.com/releases/native/3/stable/plugins/subtitles.min.js"></script>
+    <script src="//cdn.flowplayer.com/releases/native/3/stable/plugins/hls.min.js"></script>
+    <!-- or
+<script src="//cdn.flowplayer.com/releases/native/3/stable/plugins/hls.min.js"></script>
+-->
+    <script src="//cdn.flowplayer.com/releases/native/3/stable/plugins/qsel.min.js"></script>
+
+    <!-- load playlist plugin if you need subtitles in playlists
+<script src="//cdn.flowplayer.com/releases/native/3/stable/3/plugins/playlist.min.js"></script>
+-->
+    <div id="player" class="flowplayer-embed-container"
+        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width:100%;">
+
+
+    </div>
+    <script>
+        window.player = flowplayer("#player", {
+            token: "eyJraWQiOiJxaEZ6dWR4dmJuTDMiLCJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJjIjoie1wiYWNsXCI6NixcImlkXCI6XCJxaEZ6dWR4dmJuTDNcIixcImRvbWFpblwiOltcImZsb3dwbGF5ZXIuY29tXCJdfSIsImlzcyI6IkZsb3dwbGF5ZXIifQ.pdpIEfbRN_6P-ayyNsEazPPPjr0RSmd8SjJyqp8w8BYXTYsg11FjCODutzLZ6jkSm5hHTqfg05cCVuHcFIfI1w"
+            , src: "https://cdn.jwplayer.com/manifests/S5wD4q2H.m3u8"
+            , poster: "https://image.tmdb.org/t/p/original/dI4BnzgBj05mm61qWU4cpPSU1D3.jpg"
+            , subtitles:
+            {
+                tracks:
+                    [
+                        {
+                            src: "../../../Subs/Arabic/Young.Rock.S01E11.1080p.BluRay.x264-BORDURE.vtt"
+                            , label: "Arabic"
+                            , id: "Arabic-ar"
+                            , default: true
+                            , crossorigin: "anonymous"
+                        }
+                        , {
+                            src: "../../../Subs/English/Young.Rock.S01E11.English.vtt"
+                            , label: "English"
+                            , id: "English-en"
+                            , default: false
+                            , crossorigin: "anonymous"
+                        }
+                    ]
+            }
+            // , qsel: {
+            //     labels:
+            //         [
+            //             // index 1,  default label "800p" will be used, note the comma indicating the next level is the second one
+            //             // , "second" // index 2
+            //             // , "third"  // index 3
+            //             // , false    // index 4, hide fourth level by setting it to false , option will be hidden
+            //             // , "fifth"  // index 5
+            //             // ,          // index 6 uses default label "200p"
+            //             // , false    // index 7, do not show
+            //             // , false    // index 8, do not show
+            //         ]
+            // }
+        })
+    </script>
+</body>
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+
+</html>

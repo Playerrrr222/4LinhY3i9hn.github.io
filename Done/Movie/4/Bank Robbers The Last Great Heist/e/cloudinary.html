@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.js"
+        type="text/javascript"></script>
+    <link href="node_modules/cloudinary-video-player/dist/cld-video-player.min.css" rel="stylesheet">
+    <script src="node_modules/cloudinary-video-player/dist/cld-video-player.min.js" type="text/javascript"></script>
+</head>
+
+<!-- <style>
+    :root {
+        padding-top: 13vh;
+        margin: auto auto;
+        width: 100%;
+    }
+    </style> -->
+
+<body style="background-color: black;" onLoad="disableClick()">
+    <div style="">
+        <video id="doc-player" controls class="cld-video-player cld-fluid" publicId="book"
+            data-cld-colors='{ "base": "#0071ba", "accent": "#db8226", "text": "#fff" }'
+            poster="https://image.tmdb.org/t/p/original/xqTc54YIIL0fkMFDnu51C9Jd7FQ.jpg">
+            <source src="https://c-4.dokicloud.one/_v8/57971a3ca8a01fcb79e128d946dcb4865d05eb0dfad0f40c6621ce0cafc4a665bd3a246a2094d82411129b9d5901d45fda15b49ef12958e8382e7bb376e6c742364e73d267e71c7b20ffc2222bfb9c09a32e6a2852c543da3d877eaaa7619ea7e64ecfa70095e8cb12494af69bdeba5523529f2f20680c77567b52594e801039/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+                res='1080' size='1080'>
+            <source src="https://c-4.dokicloud.one/_v8/57971a3ca8a01fcb79e128d946dcb4865d05eb0dfad0f40c6621ce0cafc4a665bd3a246a2094d82411129b9d5901d45fda15b49ef12958e8382e7bb376e6c742364e73d267e71c7b20ffc2222bfb9c09a32e6a2852c543da3d877eaaa7619ea7e64ecfa70095e8cb12494af69bdeba5523529f2f20680c77567b52594e801039/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+                size='720p'>
+
+            <track kind="subtitles" src="https://cc.2cdns.com/87/aa/87aa1090a104e87d96647dae7d8c2cb7/ara-6.vtt" srclang="ar" label="Arabic">
+            <track kind="subtitles" src="https://cc.2cdns.com/87/aa/87aa1090a104e87d96647dae7d8c2cb7/eng-12.vtt" srclang="en" label="English">
+        </video>
+    </div>
+</body>
+<script>
+    var player = cloudinary.videoPlayer('doc-player',
+        {
+            cloud_name: "demo",
+            secure: true,
+            sourceTypes: ['webm/vp9', 'mp4/h265', 'mp4', 'hls'],
+            publicId: 'book',
+            loop: true,
+            controls: true,
+            // autoplayMode: 'on-scroll',
+            // floatingWhenNotVisible: 'left',
+            fontFace: 'Yatra One',
+            seekThumbnails: true,
+            transformation: {
+                aspectratio: "16:9",
+                width: '100%',
+                height: window.innerHeight,
+                streaming_profile: 'hd',
+                effect: 'vignette:50',
+                border: "5px_solid_black"
+            }
+        },
+        // In this section we define the list of events that will be triggered to the page, in addition to a predefined list of events
+        {
+            playedEventTimes: [3, 10],
+            // In this section we define the (complete) list of events that will be sent to analytics
+            analytics: { // Enable player analytics
+                events: [
+                    'play',
+                    'pause',
+                    'percentsplayed',
+                    'start',
+                    'ended',
+                    'fullscreenchange']
+            }
+        });
+    // Modify player source
+    player.source(
+        'outdoors',
+        //   {
+        //     textTracks: {
+        //       captions: {
+        //         label: 'English(captions)',
+        //         language: 'en',
+        //         default: true,
+        //         url: 'https://res.cloudinary.com/demo/raw/upload/outdoors.vtt'
+        //       },
+        //       subtitles: [
+        //         {
+        //           label: 'English',
+        //           language: 'en',
+        //           url: 'https://res.cloudinary.com/demo/raw/upload/outdoors.vtt'
+        //         }
+        //       ]
+        //     }
+        //   }
+    ).play();
+</script>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="UTF-8">
+    <title>JW Player DNA Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="//samples.streamroot.io/web/assets/demo-pages.css">
+
+    <!-- Makes the header -->
+    <script src="//samples.streamroot.io/web/assets/header.js"></script>
+
+    <!-- JW Player Builds -->
+    <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
+
+    <!-- Streamroot Plugin -->
+    <script
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script>
+
+    <!-- Graphs -->
+    <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
+    <div class='video'>
+        <script src="https://use.fontawesome.com/20603b964f.js"></script>
+        <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
+        <script type="text/javascript">
+            jwplayer.key = 'ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=';
+          // jwplayer.key = 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=';
+        </script>
+        <div id="myElement" style="scrollbar-width: none; display: none;"></div>
+        <script type="text/javascript">
+            jwplayer("myElement").setup({
+                //aspectratio: "16:9",
+                // width: '100%',
+                height: window.innerHeight,
+                image: "https://image.tmdb.org/t/p/original/7RE3dqDcafLRPj3W2q7EJ3ybIm7.jpg",
+                autostart: false,
+                sources: [
+                    {
+                        file: "https://e-1.dokicloud.one/_v8/bbd25eb210253649c19a446831899bd214f8ace8c870ab995b3da27ee3f4e458eca2873d72029d32ee3b1ee6da640db8e360d256f854fe9bc3cb1e0d80b418b7bb6c42ceb06441057b5bde78c75b6d2674b7d9a3b9067667bcff3fd2fb35cd0cd895eec4299d3d02448478c272a9b3b6b07950373666f20bacfaa3e3f5fa1b6b/1080/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '1080p',
+                        res: 1080,
+                        drm: {
+                            fairplay: {
+                                certificateUrl: "http://myfairplay.com/fairplay/cert",
+                                processSpcUrl: "http://myfairplay.com/fairplay/ckc"
+                            }
+                        }
+                    },
+                    {
+                        file: "https://e-1.dokicloud.one/_v8/bbd25eb210253649c19a446831899bd214f8ace8c870ab995b3da27ee3f4e458eca2873d72029d32ee3b1ee6da640db8e360d256f854fe9bc3cb1e0d80b418b7bb6c42ceb06441057b5bde78c75b6d2674b7d9a3b9067667bcff3fd2fb35cd0cd895eec4299d3d02448478c272a9b3b6b07950373666f20bacfaa3e3f5fa1b6b/720/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '720p',
+                        res: 720,
+                        drm: {
+                            fairplay: {
+                                certificateUrl: "http://myfairplay.com/fairplay/cert",
+                                processSpcUrl: "http://myfairplay.com/fairplay/ckc"
+                            }
+                        }
+                    }],
+                // title: 'Tom and Jerry: Snowmans Land',
+                aboutlink: 'https://www.jwplayer.com/',
+                tracks: [
+                    { "file": "../Arabic.vtt", "label": "Arabic", "kind": "captions" },
+                    { "file": "https://cc.2cdns.com/95/b1/95b19ea57e9e11fadae4eaa868741e10/eng-2.vtt", "label": "English", "kind": "captions", "false": "false" }
+
+                ],
+                captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
+                sharing: {
+                    sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+                    code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+                    link: "<?php echo $sharing;?>"
+                }
+            })
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+    poster="https://image.tmdb.org/t/p/original/1SdFi2KuhuzmjaykIjTE7YbjJzw.jpg">
+    <source src="https://c-3.dokicloud.one/_v8/976d91ca79c6667241061be991d8bec8ced9dc2894070c7d043741d9705af81ab0608fc7f064f2028d7c66c420957a8e931637e964c78cf84c6ed6550ff84c6b7e432520bbc28a78404f2b01e72c536a40dff5841f6cf05da8bca88bd54102cb85fe9bfb7aaa1c51dcdc137aa726b841e203715dce988a807f73a851b5510d63/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
+        res='1080' size='1080'>
+    <source src="https://c-3.dokicloud.one/_v8/976d91ca79c6667241061be991d8bec8ced9dc2894070c7d043741d9705af81ab0608fc7f064f2028d7c66c420957a8e931637e964c78cf84c6ed6550ff84c6b7e432520bbc28a78404f2b01e72c536a40dff5841f6cf05da8bca88bd54102cb85fe9bfb7aaa1c51dcdc137aa726b841e203715dce988a807f73a851b5510d63/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
+        size='720p'>
+
+    <track kind="subtitles" src="https://navidered.monster/storage5/1670283429/movies/11851548-esther-2-les-origines-2022-1660892841/subtitles/ar_03b13766d9c2592b1667d3fb5b491c18.vtt" srclang="ar" label="Arabic">
+    <track kind="subtitles" src="https://cc.2cdns.com/61/d6/61d62fa65d99ed594be12e139bf28f34/eng-2.vtt" srclang="en" label="English">
+</video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+</body>
+
+</html>

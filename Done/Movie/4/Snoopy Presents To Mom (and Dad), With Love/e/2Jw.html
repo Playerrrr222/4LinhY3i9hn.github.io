@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="UTF-8">
+    <title>JW Player DNA Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://cdn.jwplayer.com/libraries/Xt5rBv5b.js"></script>
+    <script src="demo.js"></script>
+    <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3_dai.js"></script>
+    <script src="dai.js"></script>
+    <link rel="stylesheet" href="dai.css" type="text/css">
+    <link rel="stylesheet" href="https://hook.jwplayer.com/jw-design-library/5.2.4/css/fonts.css">
+    <link rel="stylesheet" href="https://hook.jwplayer.com/components/0.3.1/ds-components.min.css">
+    <link rel="stylesheet" href="https://hook.jwplayer.com/ds-layout/1.0.6/ds-page.css">
+</head>
+
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
+
+    <div id="myElement">Loading the player...</div>
+    <div class='video'>
+        <script src="https://use.fontawesome.com/20603b964f.js"></script>
+        <script type="text/javascript">
+
+            jwplayer("myElement").setup({
+                height: window.innerHeight,
+                sharing: false,
+                image: "https://image.tmdb.org/t/p/original/eqefJo4uCzBiI4zT0OA6mYoqVTi.jpg",
+                sources: [
+                    {
+                        file: "https://c-4.dokicloud.one/_v8/2214094fe32ed898360d9290eba5688499350543d6d07b677c411704fb37d4cea6771de4f6cbfa47719b7dc273b4a87cf85e0c97df009c38e0c13ec08532be1ec71f193fa48074c62394525e6778b2efec5099f8e81964e6d7d3bfd866d0f6e2ba2cf7ca78716acc0f97f3bd33583dfa6fe6390857d509ce59db5837c4c7ce45/1080/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '1080p',
+                        res: 1080,
+
+                    },
+                    {
+                        file: "https://c-4.dokicloud.one/_v8/2214094fe32ed898360d9290eba5688499350543d6d07b677c411704fb37d4cea6771de4f6cbfa47719b7dc273b4a87cf85e0c97df009c38e0c13ec08532be1ec71f193fa48074c62394525e6778b2efec5099f8e81964e6d7d3bfd866d0f6e2ba2cf7ca78716acc0f97f3bd33583dfa6fe6390857d509ce59db5837c4c7ce45/720/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '720p',
+                        res: 720,
+
+                    }],
+                primary: "html5",
+                hlshtml: true,
+                hlsjsdefault: true,
+                tracks: [
+                    { "file": "https://cc.2cdns.com/49/8e/498eebd5b98f335c4e0b7f5a800bd476/ara-4.vtt", "label": "Arabic", "kind": "captions" },
+                    { "file": "https://cc.2cdns.com/49/8e/498eebd5b98f335c4e0b7f5a800bd476/eng-2.vtt", "label": "English", "kind": "captions", "false": "false" }
+
+                ],
+                captions: { color: '#ffffff', fontSize: 12, backgroundOpacity: 50 },
+                // sharing: {
+                //     sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+                //     code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+                //     link: "<?php echo $sharing;?>"
+                // }
+
+            });
+
+        </script>
+
+</body>
+
+</html>

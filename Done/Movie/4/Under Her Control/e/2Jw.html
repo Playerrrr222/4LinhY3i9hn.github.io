@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="UTF-8">
+    <title>JW Player DNA Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://cdn.jwplayer.com/libraries/Xt5rBv5b.js"></script>
+    <script src="demo.js"></script>
+    <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3_dai.js"></script>
+    <script src="dai.js"></script>
+    <link rel="stylesheet" href="dai.css" type="text/css">
+    <link rel="stylesheet" href="https://hook.jwplayer.com/jw-design-library/5.2.4/css/fonts.css">
+    <link rel="stylesheet" href="https://hook.jwplayer.com/components/0.3.1/ds-components.min.css">
+    <link rel="stylesheet" href="https://hook.jwplayer.com/ds-layout/1.0.6/ds-page.css">
+</head>
+
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
+
+    <div id="myElement">Loading the player...</div>
+    <div class='video'>
+        <script src="https://use.fontawesome.com/20603b964f.js"></script>
+        <script type="text/javascript">
+
+            jwplayer("myElement").setup({
+                height: window.innerHeight,
+                sharing: false,
+                image: "https://image.tmdb.org/t/p/original/bBB3MbdDaNtuNg6nX3Qlx1O6PKf.jpg",
+                sources: [
+                
+                    {
+                        file: "https://e-9.dokicloud.one/_v8/34f2c4c84e48f070183000d7b57a2d981dc3e266f348b79d865e3acff91fa123ab981f7774be9b5b4644350d13de36434efbdae875d2fea178d9dcd1eb4bd9020df3d7ef47e9aa433b7b29aa0ee096842141f6baa6940fe53a138b71fa930d7eacf0262aebca99e542e6ba21d30b3a0ac4fc2d91fc92d4597ae4a99d6fb9b9cf/720/index.m3u8",
+                        type: "application/x-mpegURL",
+                        label: '720p',
+                        res: 720,
+
+                    }
+                ],
+                primary: "html5",
+                hlshtml: true,
+                hlsjsdefault: true,
+                tracks: [
+                    { "file": "https://cc.2cdns.com/2e/47/2e47dcd6b579718761fbfa37a1bcb72a/ara-7.vtt", "label": "Arabic", "kind": "captions" },
+                    { "file": "https://cc.2cdns.com/2e/47/2e47dcd6b579718761fbfa37a1bcb72a/eng-4.vtt", "label": "English", "kind": "captions", "false": "false" }
+
+                ],
+                captions: { color: '#ffffff', fontSize: 12, backgroundOpacity: 50 },
+                // sharing: {
+                //     sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+                //     code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+                //     link: "<?php echo $sharing;?>"
+                // }
+
+            });
+
+        </script>
+
+</body>
+
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+
+</html>
