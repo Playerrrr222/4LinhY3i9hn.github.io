@@ -2,6 +2,75 @@
 <html lang="en">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
     <meta charset="UTF-8">
     <title>JW Player DNA Plugin</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,15 +87,15 @@
     <!-- JW Player Builds -->
     <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
 
-    <!-- Streamroot Plugin -->
+    <!-- Streamroot Plugin
     <script
-        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script>
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script> -->
 
     <!-- Graphs -->
     <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
 </head>
 
-<body style="background-color: rgb(0, 0, 0);">
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
     <div class='video'>
         <script src="https://use.fontawesome.com/20603b964f.js"></script>
         <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
@@ -40,21 +109,31 @@
                 //aspectratio: "16:9",
                 // width: '100%',
                 height: window.innerHeight,
-                image: "https://image.tmdb.org/t/p/original/3JXIf7LLSwpBuAQSBS7ZF4O1GyB.jpg",
                 autostart: false,
+                image: "https://image.tmdb.org/t/p/original/3JXIf7LLSwpBuAQSBS7ZF4O1GyB.jpg",
                 sources: [
                     {
-                        file: "https://e-7.dokicloud.one/_v8/3defa4be069d63801c39eb8e1482a6ee9fd6b47b1d26c4f20dda017943f01ddbfbf471127ba0d3ffe2b916138160fdab3a44c0cdbaecd189b240cc6f9e6cd5e0539577d81167361caef060c50663e937feb1344a843f1cb9a794906d174ca4d8a6a97f3d3e7b726c600c8e679439c6d03bc8ab3e2e92f3513eeed55d163a8508/1080/index.m3u8",
-                        type: "application/vnd.apple.mpegurl",
-                        label: '1080',
-                        res: 1080,
+                        file: "../playlist.m3u8",
+                        type: "application/x-mpegURL"
 
-                    }],
-                // title: 'Tom and Jerry: Snowmans Land',
-                aboutlink: 'https://www.jwplayer.com/',
-                tracks: [{ "file": "../Arabic.vtt", "label": "Arabic", "kind": "captions" },
-                { "file": "https://cc.2cdns.com/24/fc/24fcd2ce38e8b0dcc550ccb78077f8ed/eng-2.vtt", "label": "English", "kind": "captions", "false": "false" }
+                    }
 
+                ],
+                primary: "html5",
+                hlshtml: true,
+                hlsjsdefault: true,
+                tracks: [
+                    {
+                        "file": "../Arabic.vtt",
+                        "label": "Arabic - العربية",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/24/fc/24fcd2ce38e8b0dcc550ccb78077f8ed/eng-2.vtt",
+                        "label": "English - English",
+                        "kind": "captions",
+                        "default": true
+                    },
                 ],
                 captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
                 sharing: {
@@ -67,4 +146,21 @@
     </div>
 </body>
 
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+
 </html>
+
+<!-- hlslabels: {
+    '160': '160p',
+    '415': '240p',
+    '460': '320p',
+    '515': '160p',
+    '650': '480p',
+    '881': '252p',
+    '1200': '720p',
+    '1600': '432p',
+    '2300': '1080p',
+    '3200': '720p'
+}, -->

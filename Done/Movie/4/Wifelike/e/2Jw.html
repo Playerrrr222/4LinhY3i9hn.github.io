@@ -2,6 +2,44 @@
 <html lang="en">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
     <SCRIPT language=JavaScript>
 
         <!-- http://www.spacegun.co.uk -->
@@ -68,26 +106,27 @@
                 image: "https://image.tmdb.org/t/p/original/3xvdNyZ9WsVJpyeGhm85fukeZz4.jpg",
                 sources: [
                     {
-                        file: "https://e-10.dokicloud.one/_v8/3af3492bb5777d92773ce2b11f9562c4178edf2fda31fd784f6732684307f24c198422c2332ee2cb1c6a3e86c478c12fb5f3a7dd16693e09520610903a0496ca275cb6a21605118487cc4382009dee2f87b9d483a1ba174c9fe68fadf09c145dec805f2e1015af970472fa88267ec22658e6022413480e29e219daf06fab8298/1080/index.m3u8",
-                        type: "application/x-mpegURL",
-                        label: '1080p',
-                        res: 1080,
+                        file: "../playlist.m3u8",
+                        type: "application/x-mpegURL"
 
-                    },
-                    {
-                        file: "https://e-10.dokicloud.one/_v8/3af3492bb5777d92773ce2b11f9562c4178edf2fda31fd784f6732684307f24c198422c2332ee2cb1c6a3e86c478c12fb5f3a7dd16693e09520610903a0496ca275cb6a21605118487cc4382009dee2f87b9d483a1ba174c9fe68fadf09c145dec805f2e1015af970472fa88267ec22658e6022413480e29e219daf06fab8298/720/index.m3u8",
-                        type: "application/x-mpegURL",
-                        label: '720p',
-                        res: 720,
+                    }
 
-                    }],
+                ],
                 primary: "html5",
                 hlshtml: true,
                 hlsjsdefault: true,
                 tracks: [
-                    { "file": "../Wifelike-Arabic.srt", "label": "Arabic", "kind": "captions" },
-                    { "file": "https://cc.2cdns.com/86/9f/869f7d841ec80b0220edf54254b1897f/eng-2.vtt", "label": "English", "kind": "captions", "false": "false" }
-
+                    {
+                        "file": "../Wifelike-Arabic.srt",
+                        "label": "Arabic - العربية",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/86/9f/869f7d841ec80b0220edf54254b1897f/eng-2.vtt",
+                        "label": "English - English",
+                        "kind": "captions",
+                        "default": true
+                    },
                 ],
                 captions: { color: '#ffffff', fontSize: 12, backgroundOpacity: 50 },
                 // sharing: {
@@ -101,5 +140,9 @@
         </script>
 
 </body>
+
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
 
 </html>

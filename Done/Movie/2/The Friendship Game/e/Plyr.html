@@ -1,64 +1,197 @@
 <!DOCTYPE html>
-<html lang="en" style="background-color: black;">
+<html lang="en" style="background-color: black; width: 100%; height: 100%;">
 
-<div class="container">
-    <video controls crossorigin playsinline poster="https://image.tmdb.org/t/p/original/729a5iDNxr5l2Zbc8lcwndlJavN.jpg">
+<head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
 
-        <track kind="subtitles"
-            src="../Arabic.vtt"
-            srclang="ar" label="Arabic">
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="UTF-8">
+
+    <link rel="apple-touch-icon" type="image/png"
+        href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+
+
+
+
+
+    <link rel='stylesheet' href='https://cdn.plyr.io/3.4.6/plyr.css'>
+    <style>
+        :root {
+
+            margin: auto auto;
+            width: 100%;
+            height: 100%;
+            --plyr-color-main: #00b3ff;
+            /* --plyr-color-main: #1ac266; */
+            --plyr-font-size-xlarge: 27px;
+        }
+
+        /* .container {
+            padding-top: 9vh;
+        } */
+    </style>
+
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no" onLoad="disableClick()">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/plyr@3/dist/plyr.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
+    <script src="https://unpkg.com/plyr@3"></script>
+    <script src="./plyr-hls.js"></script>
+
+    <div style='max-width: 100%; position: relative; margin: 0 auto; margin-top: 0px; margin-top: 64px;'>
+        <video controls crossorigin playsinline 
+        poster="https://image.tmdb.org/t/p/original/729a5iDNxr5l2Zbc8lcwndlJavN.jpg">
+        <source src="../playlist.m3u8" type="application/x-mpegURL" data-quality="1080p" size="1080">
+
+        <track kind="subtitles" src="../Arabic.vtt" srclang="ar" label="Arabic">
         <track kind="subtitles"
             src="https://ledgetitaling.monster/storage2/1669894497/movies/7339862-the-friendship-game-2022-1668434776/subtitles/en_c9c841ae8f4b2165d9552d62d0f82d5a.vtt"
             srclang="en" label="English">
     </video>
-</div>
-<p id="version"></p>
-<p id="info"></p>
-<link rel="stylesheet" href="//cdn.plyr.io/3.4.7/plyr.css">
-<script src="//cdn.plyr.io/3.4.7/plyr.js"></script>
-<script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+    </div>
 
-<script>
-    document.querySelector('#version').innerText = ``;
-    document.addEventListener('DOMContentLoaded', () => {
-        var source = "https://c-1.dokicloud.one/_v8/5f85e6be0baf6557b31c6b6fb8d3ae4b2314f57b5c9c2a6a4ec1311a81af73df112d1531a1b5bd0f24382ddbfdf0cfb3f2a988c34013597f3ed582aec252bc1ca3c2a663ba03bc86371ce4483d32bcac5dd6810c84f960fb655d5f5a8232b60af2d390e89337dc0db17e2d50fc75915f6de57ac568fa46b1875a582ae8b602ef/1080/index.m3u8"
-        var video = document.querySelector('video');
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const video = document.querySelector("video");
+            const source = video.getElementsByTagName("source")[0].src;
+            // const source = video.querySelector("source").src;
 
-        // For more options see: https://github.com/sampotts/plyr/#options
-        // captions.update is required for captions to work with hls.js
-        var player = new Plyr(video, {
-            captions: { active: true, update: true, language: 'en' },
-            // autoplay: true,
+
+            // For more options see: https://github.com/sampotts/plyr/#options
+            // captions.update is required for captions to work with hls.js
+            const defaultOptions = {};
+
+            if (Hls.isSupported()) {
+                // For more Hls.js options, see https://github.com/dailymotion/hls.js
+                const hls = new Hls();
+                hls.loadSource(source);
+
+                // From the m3u8 playlist, hls parses the manifest and returns
+                // all available video qualities. This is important, in this approach,
+                // we will have one source on the Plyr player.
+                hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+
+                    // Transform available levels into an array of integers (height values).
+                    const availableQualities = hls.levels.map((l) => l.height)
+
+                    // Add new qualities to option
+                    defaultOptions.quality = {
+                        default: availableQualities[0],
+                        options: availableQualities,
+                        // this ensures Plyr to use Hls to update quality level
+                        forced: true,
+                        onChange: (e) => updateQuality(e),
+                    }
+
+                    // Initialize here
+                    const player = new Plyr(video, defaultOptions);
+                });
+                hls.attachMedia(video);
+                window.hls = hls;
+            } else {
+                // default options with no quality update in case Hls is not supported
+                const player = new Plyr(video, defaultOptions);
+            }
+
+            function updateQuality(newQuality) {
+                window.hls.levels.forEach((level, levelIndex) => {
+                    if (level.height === newQuality) {
+                        console.log("Found quality match with " + newQuality);
+                        window.hls.currentLevel = levelIndex;
+                    }
+                });
+            }
         });
+    </script>
+</body>
 
-        if (!Hls.isSupported()) {
-            video.src = source;
-        } else {
-            // For more Hls.js options, see https://github.com/dailymotion/hls.js
-            var hls = new Hls({
-                p2pConfig: {
-                    live: true,        // set false in vod mode
-                    // announceLocation: 'hk',        // if using Hongkong tracker
-                    // announceLocation: 'us',        // if using USA tracker
-                    getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
-                        var total = totalHTTPDownloaded + totalP2PDownloaded;
-                        document.querySelector('#info').innerText = ``;
-                    },
-                    // Other p2pConfig options provided by CDNBye
-                }
-            });
-            hls.loadSource(source);
-            hls.attachMedia(video);
-            window.hls = hls;
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
 
-            // Handle changing captions
-            player.on('languagechange', () => {
-                // Caption support is still flaky. See: https://github.com/sampotts/plyr/issues/994
-                setTimeout(() => hls.subtitleTrack = player.currentTrack, 50);
-            });
-        }
-
-        // Expose player so it can be used from the console
-        window.player = player;
-    });
-</script>
+</html>

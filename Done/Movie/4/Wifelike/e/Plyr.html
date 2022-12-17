@@ -2,6 +2,44 @@
 <html lang="en" style="background-color: black; width: 100%; height: 100%;">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
     <SCRIPT language=JavaScript>
 
         <!-- http://www.spacegun.co.uk -->
@@ -47,18 +85,18 @@
     <link rel='stylesheet' href='https://cdn.plyr.io/3.4.6/plyr.css'>
     <style>
         :root {
-          
+
             margin: auto auto;
             width: 100%;
             height: 100%;
             --plyr-color-main: #00b3ff;
             /* --plyr-color-main: #1ac266; */
-            --plyr-font-size-xlarge: 26px;
+            --plyr-font-size-xlarge: 27px;
         }
 
-        .container {
+        /* .container {
             padding-top: 9vh;
-        }
+        } */
     </style>
 
     <script>
@@ -85,17 +123,14 @@
     <script src="https://unpkg.com/plyr@3"></script>
     <script src="./plyr-hls.js"></script>
 
-    <div class="container">
+    <div style='max-width: 100%; position: relative; margin: 0 auto; margin-top: 0px; margin-top: 64px;'>
         <video controls crossorigin playsinline 
         poster="https://image.tmdb.org/t/p/original/3xvdNyZ9WsVJpyeGhm85fukeZz4.jpg">
-        <source src="https://e-10.dokicloud.one/_v8/3af3492bb5777d92773ce2b11f9562c4178edf2fda31fd784f6732684307f24c198422c2332ee2cb1c6a3e86c478c12fb5f3a7dd16693e09520610903a0496ca275cb6a21605118487cc4382009dee2f87b9d483a1ba174c9fe68fadf09c145dec805f2e1015af970472fa88267ec22658e6022413480e29e219daf06fab8298/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
-            res='1080' size='1080'>
-        <source src="https://e-10.dokicloud.one/_v8/3af3492bb5777d92773ce2b11f9562c4178edf2fda31fd784f6732684307f24c198422c2332ee2cb1c6a3e86c478c12fb5f3a7dd16693e09520610903a0496ca275cb6a21605118487cc4382009dee2f87b9d483a1ba174c9fe68fadf09c145dec805f2e1015af970472fa88267ec22658e6022413480e29e219daf06fab8298/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
-            size='720p'>
+        <source src="../playlist.m3u8" type="application/x-mpegURL" data-quality="1080p" size="1080">
 
-        <track kind="subtitles" src="../Wifelike-Arabic.vtt" srclang="ar" label="Arabic">
-        <track kind="subtitles" src="https://cc.2cdns.com/86/9f/869f7d841ec80b0220edf54254b1897f/eng-2.vtt" srclang="en" label="English">
-    </video>
+        <track kind="captions" src="../Wifelike-Arabic.vtt" srclang="ar" label="Arabic">
+        <track kind="captions" src="https://cc.2cdns.com/86/9f/869f7d841ec80b0220edf54254b1897f/eng-2.vtt" srclang="en" label="English">
+</video>
     </div>
 
     <script>
@@ -152,5 +187,9 @@
         });
     </script>
 </body>
+
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
 
 </html>

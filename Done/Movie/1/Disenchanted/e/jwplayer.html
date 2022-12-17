@@ -2,6 +2,75 @@
 <html lang="en">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
     <meta charset="UTF-8">
     <title>JW Player DNA Plugin</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,15 +87,15 @@
     <!-- JW Player Builds -->
     <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
 
-    <!-- Streamroot Plugin -->
+    <!-- Streamroot Plugin
     <script
-        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script>
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script> -->
 
     <!-- Graphs -->
     <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
 </head>
 
-<body style="background-color: rgb(0, 0, 0);">
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
     <div class='video'>
         <script src="https://use.fontawesome.com/20603b964f.js"></script>
         <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
@@ -40,20 +109,31 @@
                 //aspectratio: "16:9",
                 // width: '100%',
                 height: window.innerHeight,
-                image: "https://image.tmdb.org/t/p/original/kpUre8wWSXn3D5RhrMttBZa6w1v.jpg",
                 autostart: false,
+                image: "https://image.tmdb.org/t/p/original/kpUre8wWSXn3D5RhrMttBZa6w1v.jpg",
                 sources: [
                     {
-                        file: "https://c-1.dokicloud.one/_v8/6803d093a743d2a6ede6f4a310e14242e37cd126cd1624ce63e6f8f22a0fd54b06d73df587c7ae8a5ecbf5765ef0fa7e971e3a8b9dee206a04cd640822cd073775bae8bd93338607ffbbf25325dfa607f8a8fd1ac2b12753f143f865abcb981bc36017d2e783e7b323758417f4c831b9f890c948ae14a37bc348eaa1d3ebcc21/1080/index.m3u8",
-                        type: "application/vnd.apple.mpegurl",
-                        label: '1080',
-                        res: 1080,
+                        file: "../playlist.m3u8",
+                        type: "application/x-mpegURL"
 
-                    }],
-                // title: 'Tom and Jerry: Snowmans Land',
-                aboutlink: 'https://www.jwplayer.com/',
-                tracks: [{ "file": "https://injuradiaging.monster/storage2/1669725005/movies/1596342-il-etait-une-fois-2-2022-1668762767/subtitles/ar_95de882777ebdb24b0c3467ff3595185.vtt", "label": "Arabic", "kind": "captions" },
-                { "file": "https://injuradiaging.monster/storage2/1669725005/movies/1596342-il-etait-une-fois-2-2022-1668762767/subtitles/en_4186bb093120d177ce50f946cbd63757.vtt", "label": "English", "kind": "captions", "false": "false" }
+                    }
+
+                ],
+                primary: "html5",
+                hlshtml: true,
+                hlsjsdefault: true,
+                tracks: [
+                    {
+                        "file": "https://injuradiaging.monster/storage2/1669725005/movies/1596342-il-etait-une-fois-2-2022-1668762767/subtitles/ar_95de882777ebdb24b0c3467ff3595185.vtt",
+                        "label": "Arabic - العربية",
+                        "kind": "captions",
+                        "default": true
+                    },
+                    {
+                        "file": "https://injuradiaging.monster/storage2/1669725005/movies/1596342-il-etait-une-fois-2-2022-1668762767/subtitles/en_4186bb093120d177ce50f946cbd63757.vtt",
+                        "label": "English",
+                        "kind": "captions"
+                    },
 
                 ],
                 captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
@@ -67,4 +147,21 @@
     </div>
 </body>
 
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+
 </html>
+
+<!-- hlslabels: {
+    '160': '160p',
+    '415': '240p',
+    '460': '320p',
+    '515': '160p',
+    '650': '480p',
+    '881': '252p',
+    '1200': '720p',
+    '1600': '432p',
+    '2300': '1080p',
+    '3200': '720p'
+}, -->

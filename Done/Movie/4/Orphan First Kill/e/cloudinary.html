@@ -1,6 +1,44 @@
 <html lang="en">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
     <SCRIPT language=JavaScript>
 
         <!-- http://www.spacegun.co.uk -->
@@ -52,18 +90,15 @@
     </style> -->
 
 <body style="background-color: black;" onLoad="disableClick()">
-    <div style="">
+    <div style='max-width: 100%; position: relative; margin: 0 auto; margin-top: 0px; margin-top: 64px;'>
         <video id="doc-player" controls class="cld-video-player cld-fluid" publicId="book"
             data-cld-colors='{ "base": "#0071ba", "accent": "#db8226", "text": "#fff" }'
             poster="https://image.tmdb.org/t/p/original/1SdFi2KuhuzmjaykIjTE7YbjJzw.jpg">
-            <source src="https://c-3.dokicloud.one/_v8/976d91ca79c6667241061be991d8bec8ced9dc2894070c7d043741d9705af81ab0608fc7f064f2028d7c66c420957a8e931637e964c78cf84c6ed6550ff84c6b7e432520bbc28a78404f2b01e72c536a40dff5841f6cf05da8bca88bd54102cb85fe9bfb7aaa1c51dcdc137aa726b841e203715dce988a807f73a851b5510d63/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
-                res='1080' size='1080'>
-            <source src="https://c-3.dokicloud.one/_v8/976d91ca79c6667241061be991d8bec8ced9dc2894070c7d043741d9705af81ab0608fc7f064f2028d7c66c420957a8e931637e964c78cf84c6ed6550ff84c6b7e432520bbc28a78404f2b01e72c536a40dff5841f6cf05da8bca88bd54102cb85fe9bfb7aaa1c51dcdc137aa726b841e203715dce988a807f73a851b5510d63/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
-                size='720p'>
-
-            <track kind="subtitles" src="https://navidered.monster/storage5/1670283429/movies/11851548-esther-2-les-origines-2022-1660892841/subtitles/ar_03b13766d9c2592b1667d3fb5b491c18.vtt" srclang="ar" label="Arabic">
-            <track kind="subtitles" src="https://cc.2cdns.com/61/d6/61d62fa65d99ed594be12e139bf28f34/eng-2.vtt" srclang="en" label="English">
-        </video>
+            <source src="../playlist.m3u8" type="application/x-mpegURL" data-quality="1080p" size="1080">
+    
+            <track kind="captions" src="https://navidered.monster/storage5/1670283429/movies/11851548-esther-2-les-origines-2022-1660892841/subtitles/ar_03b13766d9c2592b1667d3fb5b491c18.vtt" srclang="ar" label="Arabic">
+            <track kind="captions" src="https://cc.2cdns.com/61/d6/61d62fa65d99ed594be12e139bf28f34/eng-2.vtt" srclang="en" label="English">
+    </video>
     </div>
 </body>
 <script>
@@ -75,6 +110,7 @@
             publicId: 'book',
             loop: true,
             controls: true,
+            // posterOptions: { publicId: '.jpg'},
             // autoplayMode: 'on-scroll',
             // floatingWhenNotVisible: 'left',
             fontFace: 'Yatra One',
@@ -103,26 +139,11 @@
             }
         });
     // Modify player source
-    player.source(
-        'outdoors',
-        //   {
-        //     textTracks: {
-        //       captions: {
-        //         label: 'English(captions)',
-        //         language: 'en',
-        //         default: true,
-        //         url: 'https://res.cloudinary.com/demo/raw/upload/outdoors.vtt'
-        //       },
-        //       subtitles: [
-        //         {
-        //           label: 'English',
-        //           language: 'en',
-        //           url: 'https://res.cloudinary.com/demo/raw/upload/outdoors.vtt'
-        //         }
-        //       ]
-        //     }
-        //   }
-    ).play();
+    player.source('rafting', { sourceTypes: ['hls'],
+transformation: { streaming_profile: 'full_hd' } }).play();
 </script>
 
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
 </html>

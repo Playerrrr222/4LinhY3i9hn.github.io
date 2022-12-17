@@ -1,6 +1,44 @@
 <html>
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
     <SCRIPT language=JavaScript>
 
         <!-- http://www.spacegun.co.uk -->
@@ -60,13 +98,10 @@
 <body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
     <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
     poster="https://image.tmdb.org/t/p/original/70PqQkemafUczcAFpedTEKRrwm8.jpg">
-    <source src="https://e-9.dokicloud.one/_v8/80f294350e428274ad6750083f51fd7ca39af91d5496f4e8b29e3c74c0443edfb9d161ef961adb28f7e9b4def1da49e2f81d404d242d79c8c555e40ff05b61978273ba80fe354ddeb9286a684f00ba9be93c0011e5dede92a5c20096626435728785531ad31107e565f5fc1d90246208209d47a8e7e76b81888010a878fd76d0/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
-        res='1080' size='1080'>
-    <source src="https://e-9.dokicloud.one/_v8/80f294350e428274ad6750083f51fd7ca39af91d5496f4e8b29e3c74c0443edfb9d161ef961adb28f7e9b4def1da49e2f81d404d242d79c8c555e40ff05b61978273ba80fe354ddeb9286a684f00ba9be93c0011e5dede92a5c20096626435728785531ad31107e565f5fc1d90246208209d47a8e7e76b81888010a878fd76d0/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
-        size='720p'>
+    <source src="../playlist.m3u8" type="application/x-mpegURL" data-quality="1080p" size="1080">
 
-    <track kind="subtitles" src="https://cc.2cdns.com/8a/ab/8aaba2d2d5efb5b5a27d03a2141bd2a8/ara-3.vtt" srclang="ar" label="Arabic">
-    <track kind="subtitles" src="https://cc.2cdns.com/8a/ab/8aaba2d2d5efb5b5a27d03a2141bd2a8/eng-2.vtt" srclang="en" label="English">
+    <track kind="captions" src="https://cc.2cdns.com/8a/ab/8aaba2d2d5efb5b5a27d03a2141bd2a8/ara-3.vtt" srclang="ar" label="Arabic" default>
+    <track kind="captions" src="https://cc.2cdns.com/8a/ab/8aaba2d2d5efb5b5a27d03a2141bd2a8/eng-2.vtt" srclang="en" label="English">
 </video>
     <script src="video.js"></script>
     <script src="videojs.hls.min.js"></script>
@@ -76,4 +111,7 @@
     </script>
 </body>
 
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
 </html>

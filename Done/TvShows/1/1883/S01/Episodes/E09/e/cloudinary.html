@@ -1,0 +1,148 @@
+<html lang="en">
+
+<head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.js"
+        type="text/javascript"></script>
+    <link href="node_modules/cloudinary-video-player/dist/cld-video-player.min.css" rel="stylesheet">
+    <script src="node_modules/cloudinary-video-player/dist/cld-video-player.min.js" type="text/javascript"></script>
+</head>
+
+<!-- <style>
+    :root {
+        padding-top: 13vh;
+        margin: auto auto;
+        width: 100%;
+    }
+    </style> -->
+
+<body style="background-color: black;" onLoad="disableClick()">
+    <div style='max-width: 100%; position: relative; margin: 0 auto; margin-top: 0px; margin-top: 64px;'>
+        <video id="doc-player" controls class="cld-video-player cld-fluid" publicId="book"
+            data-cld-colors='{ "base": "#0071ba", "accent": "#db8226", "text": "#fff" }'
+            >
+
+            <track kind="captions" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/11874776.vtt" srclang="ar" label="Arabic">
+            <track kind="captions" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/11874774.vtt" srclang="en" label="English">
+        </video>
+    </div>
+</body>
+<script>
+    var player = cloudinary.videoPlayer('doc-player',
+        {
+            cloud_name: "demo",
+            secure: true,
+            sourceTypes: ['webm/vp9', 'mp4/h265', 'mp4', 'hls'],
+            // publicId: 'book',
+            loop: true,
+            controls: true,
+            posterOptions: { publicId: 'https://image.tmdb.org/t/p/original/1l12HBWtjJOJgX4O6SeG3DDqp55.jpg.jpg'},
+            // autoplayMode: 'on-scroll',
+            // floatingWhenNotVisible: 'left',
+            fontFace: 'Yatra One',
+            seekThumbnails: true,
+            transformation: {
+                aspectratio: "16:9",
+                width: '100%',
+                height: window.innerHeight,
+                streaming_profile: 'hd',
+                effect: 'vignette:50',
+                border: "5px_solid_black"
+            }
+        },
+        // In this section we define the list of events that will be triggered to the page, in addition to a predefined list of events
+        {
+            playedEventTimes: [3, 10],
+            // In this section we define the (complete) list of events that will be sent to analytics
+            analytics: { // Enable player analytics
+                events: [
+                    'play',
+                    'pause',
+                    'percentsplayed',
+                    'start',
+                    'ended',
+                    'fullscreenchange']
+            }
+        });
+    // Modify player source
+    player.source('https://c-4.dokicloud.one/_v8/05b02426cc5c32c80c2e0bdc70f9dd82a2ec36bb82c61300565b28278cd086dea43f19b19e89e2f55ee128bc47fe6c7182c04f9b8388591e2eb8419e461de5223a4c8498931c7d5949bce64a67774d99a91c9b82d339b153802a2a789369adafc00086c242f811a9eecdefe2e19cdfa3fd89394fcc029c2e7f9233a58dc2ca39/playlist.m3u8', { sourceTypes: ['hls'],
+transformation: { streaming_profile: 'full_hd' } }).play();
+</script>
+
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+</html>

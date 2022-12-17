@@ -2,6 +2,75 @@
 <html lang="en">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -15,7 +84,6 @@
     <!-- fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <!-- site -->
     <link rel="stylesheet" href="css/mejs-site.css">
@@ -62,17 +130,14 @@
 
 </head>
 
-<body translate="no">
+<body translate="no" onLoad="disableClick()">
     <div id="player-wrapper">
-        <video class="player" width="640" height="360" preload="none" style="max-width: 100%" controls playsinline webkit-playsinline
-        poster="https://image.tmdb.org/t/p/original/lT2XzBV5DFtbfcmB1OZxcD0RgRO.jpg">
-        <source src="https://e-2.dokicloud.one/_v8/74a03618097f082193e06d41a1b54b5c23a93a6d5bd2a7e56058490bf8b38d22d8612f5d9174f16a5d3a71a073898e192c5912da23825d39e441dd6a7b77e1f6b300e9df55b72ae51d1f1097ecfb75d4976e59fc8e57f9c0e431a6d13b64cc38058c56a51da7bda0dd4ee86eb4c484d0d0a65a297993e57befd29a64747df2c6/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
-            res='1080' size='1080'>
-        <source src="https://e-2.dokicloud.one/_v8/74a03618097f082193e06d41a1b54b5c23a93a6d5bd2a7e56058490bf8b38d22d8612f5d9174f16a5d3a71a073898e192c5912da23825d39e441dd6a7b77e1f6b300e9df55b72ae51d1f1097ecfb75d4976e59fc8e57f9c0e431a6d13b64cc38058c56a51da7bda0dd4ee86eb4c484d0d0a65a297993e57befd29a64747df2c6/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
-            size='720p'>
-
-        <track kind="subtitles" src="https://cc.2cdns.com/c1/ee/c1ee2d754f8495bfc8db50bcb0699561/c1ee2d754f8495bfc8db50bcb0699561.vtt" srclang="ar" label="Arabic">
-        <track kind="subtitles" src="https://cc.2cdns.com/8b/e1/8be18b2e10557029cbd98ca02c3741eb/eng-2.vtt" srclang="en" label="English">
+        <video class="player" width="640" height="360" preload="none" style="max-width: 100%" controls playsinline webkit-playsinline 
+            poster="https://image.tmdb.org/t/p/original/lT2XzBV5DFtbfcmB1OZxcD0RgRO.jpg">
+            <source src="../playlist.m3u8" type="application/x-mpegURL" data-quality="1080p" size="1080">
+    
+            <track kind="captions" src="https://cc.2cdns.com/c1/ee/c1ee2d754f8495bfc8db50bcb0699561/c1ee2d754f8495bfc8db50bcb0699561.vtt" srclang="ar" label="Arabic">
+            <track kind="captions" src="https://cc.2cdns.com/8b/e1/8be18b2e10557029cbd98ca02c3741eb/eng-2.vtt" srclang="en" label="English">
     </video>
     </div>
     <script
@@ -147,4 +212,7 @@
 
 </body>
 
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
 </html>

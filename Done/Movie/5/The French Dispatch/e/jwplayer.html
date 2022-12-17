@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="UTF-8">
+    <title>JW Player DNA Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="//samples.streamroot.io/web/assets/demo-pages.css">
+
+    <!-- Makes the header -->
+    <script src="//samples.streamroot.io/web/assets/header.js"></script>
+
+    <!-- JW Player Builds -->
+    <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
+
+    <!-- Streamroot Plugin
+    <script
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script> -->
+
+    <!-- Graphs -->
+    <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
+    <div class='video'>
+        <script src="https://use.fontawesome.com/20603b964f.js"></script>
+        <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
+        <script type="text/javascript">
+            jwplayer.key = 'ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=';
+          // jwplayer.key = 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=';
+        </script>
+        <div id="myElement" style="scrollbar-width: none; display: none;"></div>
+        <script type="text/javascript">
+            jwplayer("myElement").setup({
+                //aspectratio: "16:9",
+                // width: '100%',
+                height: window.innerHeight,
+                autostart: false,
+                image: "https://image.tmdb.org/t/p/original/sU6H9OMXhdYwBnhf771rubz8BQz.jpg",
+                sources: [
+                    {
+                        file: "../playlist.m3u8",
+                        type: "application/x-mpegURL"
+
+                    }
+
+                ],
+                primary: "html5",
+                hlshtml: true,
+                hlsjsdefault: true,
+                tracks: [
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903663.vtt",
+                        "label": "Arabic - العربية",
+                        "kind": "captions"
+                    },
+              
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11971192.vtt",
+                        "label": "Bengali",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903736.vtt",
+                        "label": "Brazillian Portuguese",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903670.vtt",
+                        "label": "Bulgarian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903734.vtt",
+                        "label": "Chinese (BG code)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903643.vtt",
+                        "label": "Chinese (Simplified)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903706.vtt",
+                        "label": "Croatian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903708.vtt",
+                        "label": "Czech",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903710.vtt",
+                        "label": "Danish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903712.vtt",
+                        "label": "Dutch",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903726.vtt",
+                        "label": "English",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903704.vtt",
+                        "label": "Estonian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903738.vtt",
+                        "label": "Farsi/Persian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903718.vtt",
+                        "label": "Finnish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903720.vtt",
+                        "label": "French",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903722.vtt",
+                        "label": "German",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903714.vtt",
+                        "label": "Greek",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903702.vtt",
+                        "label": "Hebrew",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903672.vtt",
+                        "label": "Hindi",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903698.vtt",
+                        "label": "Hungarian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903696.vtt",
+                        "label": "Icelandic",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903667.vtt",
+                        "label": "Indonesian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903700.vtt",
+                        "label": "Italian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903732.vtt",
+                        "label": "Japanese",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903693.vtt",
+                        "label": "Korean",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903691.vtt",
+                        "label": "Latvian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903689.vtt",
+                        "label": "Lithuanian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903687.vtt",
+                        "label": "Norwegian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903728.vtt",
+                        "label": "Polish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903685.vtt",
+                        "label": "Portuguese",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903637.vtt",
+                        "label": "Portuguese (Brazilian)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903622.vtt",
+                        "label": "Romanian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903730.vtt",
+                        "label": "Russian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11971191.vtt",
+                        "label": "Slovak",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903683.vtt",
+                        "label": "Slovenian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903740.vtt",
+                        "label": "Spanish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11971190.vtt",
+                        "label": "Spanish (LA)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903682.vtt",
+                        "label": "Swedish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903724.vtt",
+                        "label": "Thai",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903679.vtt",
+                        "label": "Turkish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903676.vtt",
+                        "label": "Ukrainian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903742.vtt",
+                        "label": "Urdu",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/11903716.vtt",
+                        "label": "Vietnamese",
+                        "kind": "captions"
+                    }
+                ],
+                captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
+                sharing: {
+                    sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+                    code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+                    link: "<?php echo $sharing;?>"
+                }
+            })
+        </script>
+    </div>
+</body>
+
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+
+</html>
+
+<!-- hlslabels: {
+    '160': '160p',
+    '415': '240p',
+    '460': '320p',
+    '515': '160p',
+    '650': '480p',
+    '881': '252p',
+    '1200': '720p',
+    '1600': '432p',
+    '2300': '1080p',
+    '3200': '720p'
+}, -->

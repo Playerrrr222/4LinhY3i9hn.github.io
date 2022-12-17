@@ -2,7 +2,75 @@
 <html lang="en" style="background-color: black; width: 100%; height: 100%;">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
 
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
     <meta charset="UTF-8">
 
     <link rel="apple-touch-icon" type="image/png"
@@ -17,17 +85,18 @@
     <link rel='stylesheet' href='https://cdn.plyr.io/3.4.6/plyr.css'>
     <style>
         :root {
-            --plyr-color-main: #1ac266;
-            padding-top: 0vh;
+
             margin: auto auto;
             width: 100%;
-        
+            height: 100%;
+            --plyr-color-main: #00b3ff;
+            /* --plyr-color-main: #1ac266; */
+            --plyr-font-size-xlarge: 27px;
         }
 
-        .player {
-
-            --plyr-color-main: #1ac266;
-        }
+        /* .container {
+            padding-top: 9vh;
+        } */
     </style>
 
     <script>
@@ -46,7 +115,7 @@
 
 </head>
 
-<body translate="no">
+<body translate="no" onLoad="disableClick()">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/plyr@3/dist/plyr.css">
 
@@ -54,17 +123,14 @@
     <script src="https://unpkg.com/plyr@3"></script>
     <script src="./plyr-hls.js"></script>
 
-    <div class="container">
+    <div style='max-width: 100%; position: relative; margin: 0 auto; margin-top: 0px; margin-top: 64px;'>
         <video controls crossorigin playsinline 
         poster="https://image.tmdb.org/t/p/original/8vn4eis4xk6cnOnAuAcyzPbqVb0.jpg">
-        <source src="https://c-1.dokicloud.one/_v8/06ddd367fc0b4522148e3242c8c0e29c9fc199e0e25f12937844db185be2614952ea61415c6ca823a1c8c022b9aac3dd2d3ed6f39bb3a3b78913d0d6919699ec72f2b7c348a05667fed2b7abfd1d43ee5ab86dd5d25a6b21948cf4ccf30249fe01cda16023bf3191fd20ac26189b2eff9d6a86bfd6cf3e9d65080a1692eaa749/1080/index.m3u8" type="application/x-mpegURL" data-quality="1080p" title='1080p' label='1080p'
-            res='1080' size='1080'>
-        <source src="https://c-1.dokicloud.one/_v8/06ddd367fc0b4522148e3242c8c0e29c9fc199e0e25f12937844db185be2614952ea61415c6ca823a1c8c022b9aac3dd2d3ed6f39bb3a3b78913d0d6919699ec72f2b7c348a05667fed2b7abfd1d43ee5ab86dd5d25a6b21948cf4ccf30249fe01cda16023bf3191fd20ac26189b2eff9d6a86bfd6cf3e9d65080a1692eaa749/720/index.m3u8" type="application/x-mpegURL" data-quality="720p" title='720p' label='720p' res='720p'
-            size='720p'>
+        <source src="../playlist.m3u8" type="application/x-mpegURL" data-quality="1080p" size="1080">
 
-        <track kind="subtitles" src="https://cc.2cdns.com/ca/26/ca2646935b9891b7b1cf05501e78773d/ara-4.vtt" srclang="ar" label="Arabic" default>
-        <track kind="subtitles" src="https://cc.2cdns.com/ca/26/ca2646935b9891b7b1cf05501e78773d/eng-3.vtt" srclang="en" label="English">
-    </video>
+        <track kind="subtitles" src="https://cc.2cdns.com/ca/26/ca2646935b9891b7b1cf05501e78773d/ara-4.vtt" srclang="ar" label="Arabic">
+    <track kind="subtitles" src="https://cc.2cdns.com/ca/26/ca2646935b9891b7b1cf05501e78773d/eng-3.vtt" srclang="en" label="English">
+</video>
     </div>
 
     <script>
@@ -121,5 +187,9 @@
         });
     </script>
 </body>
+
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
 
 </html>

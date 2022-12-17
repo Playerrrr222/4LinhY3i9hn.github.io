@@ -2,6 +2,44 @@
 <html lang="en">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
     <SCRIPT language=JavaScript>
 
         <!-- http://www.spacegun.co.uk -->
@@ -68,27 +106,27 @@
                 image: "https://image.tmdb.org/t/p/original/1SdFi2KuhuzmjaykIjTE7YbjJzw.jpg",
                 sources: [
                     {
-                        file: "https://c-3.dokicloud.one/_v8/976d91ca79c6667241061be991d8bec8ced9dc2894070c7d043741d9705af81ab0608fc7f064f2028d7c66c420957a8e931637e964c78cf84c6ed6550ff84c6b7e432520bbc28a78404f2b01e72c536a40dff5841f6cf05da8bca88bd54102cb85fe9bfb7aaa1c51dcdc137aa726b841e203715dce988a807f73a851b5510d63/1080/index.m3u8",
-                        type: "application/x-mpegURL",
-                        label: '1080p',
-                        res: 1080,
-
-                    },
-                    {
-                        file: "https://c-3.dokicloud.one/_v8/976d91ca79c6667241061be991d8bec8ced9dc2894070c7d043741d9705af81ab0608fc7f064f2028d7c66c420957a8e931637e964c78cf84c6ed6550ff84c6b7e432520bbc28a78404f2b01e72c536a40dff5841f6cf05da8bca88bd54102cb85fe9bfb7aaa1c51dcdc137aa726b841e203715dce988a807f73a851b5510d63/720/index.m3u8",
-                        type: "application/x-mpegURL",
-                        label: '720p',
-                        res: 720,
+                        file: "../playlist.m3u8",
+                        type: "application/x-mpegURL"
 
                     }
+
                 ],
                 primary: "html5",
                 hlshtml: true,
                 hlsjsdefault: true,
                 tracks: [
-                    { "file": "https://navidered.monster/storage5/1670283429/movies/11851548-esther-2-les-origines-2022-1660892841/subtitles/ar_03b13766d9c2592b1667d3fb5b491c18.vtt", "label": "Arabic", "kind": "captions" },
-                    { "file": "https://cc.2cdns.com/61/d6/61d62fa65d99ed594be12e139bf28f34/eng-2.vtt", "label": "English", "kind": "captions", "false": "false" }
-
+                    {
+                        "file": "https://navidered.monster/storage5/1670283429/movies/11851548-esther-2-les-origines-2022-1660892841/subtitles/ar_03b13766d9c2592b1667d3fb5b491c18.vtt",
+                        "label": "Arabic - العربية",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/61/d6/61d62fa65d99ed594be12e139bf28f34/eng-2.vtt",
+                        "label": "English - English",
+                        "kind": "captions",
+                        "default": true
+                    },
                 ],
                 captions: { color: '#ffffff', fontSize: 12, backgroundOpacity: 50 },
                 // sharing: {
@@ -102,5 +140,9 @@
         </script>
 
 </body>
+
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
 
 </html>

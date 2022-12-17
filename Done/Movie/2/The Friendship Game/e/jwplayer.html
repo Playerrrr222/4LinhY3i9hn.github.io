@@ -2,6 +2,75 @@
 <html lang="en">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
     <meta charset="UTF-8">
     <title>JW Player DNA Plugin</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,15 +87,15 @@
     <!-- JW Player Builds -->
     <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
 
-    <!-- Streamroot Plugin -->
+    <!-- Streamroot Plugin
     <script
-        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script>
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script> -->
 
     <!-- Graphs -->
     <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
 </head>
 
-<body style="background-color: rgb(0, 0, 0);">
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
     <div class='video'>
         <script src="https://use.fontawesome.com/20603b964f.js"></script>
         <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
@@ -40,21 +109,31 @@
                 //aspectratio: "16:9",
                 // width: '100%',
                 height: window.innerHeight,
-                image: "https://image.tmdb.org/t/p/original/729a5iDNxr5l2Zbc8lcwndlJavN.jpg",
                 autostart: false,
+                image: "https://image.tmdb.org/t/p/original/729a5iDNxr5l2Zbc8lcwndlJavN.jpg",
                 sources: [
                     {
-                        file: "https://c-1.dokicloud.one/_v8/5f85e6be0baf6557b31c6b6fb8d3ae4b2314f57b5c9c2a6a4ec1311a81af73df112d1531a1b5bd0f24382ddbfdf0cfb3f2a988c34013597f3ed582aec252bc1ca3c2a663ba03bc86371ce4483d32bcac5dd6810c84f960fb655d5f5a8232b60af2d390e89337dc0db17e2d50fc75915f6de57ac568fa46b1875a582ae8b602ef/1080/index.m3u8",
-                        type: "application/vnd.apple.mpegurl",
-                        label: '1080',
-                        res: 1080,
+                        file: "../playlist.m3u8",
+                        type: "application/x-mpegURL"
 
-                    }],
-                // title: 'Tom and Jerry: Snowmans Land',
-                aboutlink: 'https://www.jwplayer.com/',
-                tracks: [{ "file": "../Arabic.vtt", "label": "Arabic", "kind": "captions" },
-                        { "file": "https://ledgetitaling.monster/storage2/1669894497/movies/7339862-the-friendship-game-2022-1668434776/subtitles/en_c9c841ae8f4b2165d9552d62d0f82d5a.vtt", "label": "English", "kind": "captions", "false": "false" }
+                    }
 
+                ],
+                primary: "html5",
+                hlshtml: true,
+                hlsjsdefault: true,
+                tracks: [
+                    {
+                        "file": "../Arabic.vtt",
+                        "label": "Arabic - العربية",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://ledgetitaling.monster/storage2/1669894497/movies/7339862-the-friendship-game-2022-1668434776/subtitles/en_c9c841ae8f4b2165d9552d62d0f82d5a.vtt",
+                        "label": "English",
+                        "kind": "captions",
+                        "default": true
+                    },
                 ],
                 captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
                 sharing: {
@@ -67,4 +146,21 @@
     </div>
 </body>
 
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+
 </html>
+
+<!-- hlslabels: {
+    '160': '160p',
+    '415': '240p',
+    '460': '320p',
+    '515': '160p',
+    '650': '480p',
+    '881': '252p',
+    '1200': '720p',
+    '1600': '432p',
+    '2300': '1080p',
+    '3200': '720p'
+}, -->

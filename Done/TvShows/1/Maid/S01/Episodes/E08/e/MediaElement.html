@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>MediaElement.js - HTML5 video and audio unification framework</title>
+    <meta name="description"
+        content="HTML5 video and audio player with support for YouTube, SoundCloud, Facebook, Vimeo, HLS, Dash, and others." />
+    <meta name="keywords" content="HTML5, video, H.264, Javascript, media, mp3, mp4" />
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i">
+
+    <!-- site -->
+    <link rel="stylesheet" href="css/mejs-site.css">
+
+    <!-- library -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/mediaelementplayer.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            font-family: "Exo", sans-serif;
+            color: #fff;
+            background: rgb(0, 0, 0);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        #player-wrapper {
+            margin: 0 auto;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .player {
+            margin: 0 auto;
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no" onLoad="disableClick()">
+    <div id="player-wrapper">
+        <video class="player" width="640" height="360" preload="none" style="max-width: 100%" controls playsinline webkit-playsinline 
+            poster="https://image.tmdb.org/t/p/original/yv5oliNUwu82JT1XUbz1WSKm18E.jpg">
+            <source src="../playlist.m3u8" type="application/x-mpegURL" data-quality="1080p" size="1080">
+    
+            <track kind="captions" src="https://cc.2cdns.com/a2/40/a240288d989393b258e524a8f6dfd5aa/ara-4.vtt" srclang="ar" label="Arabic">
+            <track kind="captions" src="https://cc.2cdns.com/a2/40/a240288d989393b258e524a8f6dfd5aa/eng-2.vtt" srclang="en" label="English">
+    </video>
+    </div>
+    <script
+        src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/mediaelement-and-player.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/renderers/dailymotion.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/renderers/facebook.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/renderers/soundcloud.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/renderers/twitch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/renderers/vimeo.min.js"></script>
+    <script src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <script id="rendered-js">
+        var
+            sourcesSelector = document.body.querySelectorAll('select'),
+            sourcesTotal = sourcesSelector.length
+            ;
+
+        for (var i = 0; i < sourcesTotal; i++) {
+            sourcesSelector[i].addEventListener('change', function (e) {
+                var
+                    media = e.target.closest('.media-container').querySelector('.mejs__container').id,
+                    player = mejs.players[media]
+                    ;
+
+                player.setSrc(e.target.value.replace('&amp;', '&'));
+                player.setPoster('');
+                player.load();
+
+            });
+
+            // These media types cannot play at all on iOS, so disabling them
+            if (mejs.Features.isiOS) {
+                if (sourcesSelector[i].querySelector('option[value^="rtmp"]')) {
+                    sourcesSelector[i].querySelector('option[value^="rtmp"]').disabled = true;
+                }
+                if (sourcesSelector[i].querySelector('option[value$="webm"]')) {
+                    sourcesSelector[i].querySelector('option[value$="webm"]').disabled = true;
+                }
+                if (sourcesSelector[i].querySelector('option[value$=".mpd"]')) {
+                    sourcesSelector[i].querySelector('option[value$=".mpd"]').disabled = true;
+                }
+                if (sourcesSelector[i].querySelector('option[value$=".ogg"]')) {
+                    sourcesSelector[i].querySelector('option[value$=".ogg"]').disabled = true;
+                }
+                if (sourcesSelector[i].querySelector('option[value$=".flv"]')) {
+                    sourcesSelector[i].querySelector('option[value*=".flv"]').disabled = true;
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
+
+            for (var i = 0; i < total; i++) {
+                new MediaElementPlayer(mediaElements[i], {
+                    pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.16/build/',
+                    shimScriptAccess: 'always',
+                    success: function () {
+                        var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
+                        for (var j = 0; j < targetTotal; j++) {
+                            target[j].style.visibility = 'visible';
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+
+
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+</body>
+
+</html>

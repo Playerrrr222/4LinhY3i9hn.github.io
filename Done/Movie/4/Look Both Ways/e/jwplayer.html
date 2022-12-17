@@ -2,6 +2,44 @@
 <html lang="en">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
     <SCRIPT language=JavaScript>
 
         <!-- http://www.spacegun.co.uk -->
@@ -49,9 +87,9 @@
     <!-- JW Player Builds -->
     <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
 
-    <!-- Streamroot Plugin -->
+    <!-- Streamroot Plugin
     <script
-        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script>
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script> -->
 
     <!-- Graphs -->
     <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
@@ -75,27 +113,27 @@
                 image: "https://image.tmdb.org/t/p/original/fW1SbOA17W78ccXpJHxCwugi3tw.jpg",
                 sources: [
                     {
-                        file: "https://e-10.dokicloud.one/_v8/7c681c30e5e89316283af6695ee9f4528395d97710c1058d137118c5533a90e5ff9aa7bd8bc3d99da223f7eb8a71d99a637d00540e199a591b10f7d97b90dfa0c22f2554e1c00b326414d3b8e831b0b1bf1f00e11fe1220d66dcee7c4c122a6a710cc543b11b413f585709d5bb041ce916e4175efd696ca05741e13cc91e7972/1080/index.m3u8",
-                        type: "application/x-mpegURL",
-                        label: '1080p',
-                        res: 1080,
-
-                    },
-                    {
-                        file: "https://e-10.dokicloud.one/_v8/7c681c30e5e89316283af6695ee9f4528395d97710c1058d137118c5533a90e5ff9aa7bd8bc3d99da223f7eb8a71d99a637d00540e199a591b10f7d97b90dfa0c22f2554e1c00b326414d3b8e831b0b1bf1f00e11fe1220d66dcee7c4c122a6a710cc543b11b413f585709d5bb041ce916e4175efd696ca05741e13cc91e7972/720/index.m3u8",
-                        type: "application/x-mpegURL",
-                        label: '720p',
-                        res: 720,
+                        file: "../playlist.m3u8",
+                        type: "application/x-mpegURL"
 
                     }
+
                 ],
                 primary: "html5",
                 hlshtml: true,
                 hlsjsdefault: true,
                 tracks: [
-                    { "file": "https://cc.2cdns.com/c2/ae/c2ae3cf2907c00ba35217ee87d7b095a/ara-4.vtt", "label": "Arabic", "kind": "captions" },
-                    { "file": "https://cc.2cdns.com/c2/ae/c2ae3cf2907c00ba35217ee87d7b095a/eng-3.vtt", "label": "English", "kind": "captions", "false": "false" }
-
+                    {
+                        "file": "https://cc.2cdns.com/c2/ae/c2ae3cf2907c00ba35217ee87d7b095a/ara-4.vtt",
+                        "label": "Arabic - العربية",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/c2/ae/c2ae3cf2907c00ba35217ee87d7b095a/eng-3.vtt",
+                        "label": "English - English",
+                        "kind": "captions",
+                        "default": true
+                    },
                 ],
                 captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
                 sharing: {
@@ -108,4 +146,21 @@
     </div>
 </body>
 
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+
 </html>
+
+<!-- hlslabels: {
+    '160': '160p',
+    '415': '240p',
+    '460': '320p',
+    '515': '160p',
+    '650': '480p',
+    '881': '252p',
+    '1200': '720p',
+    '1600': '432p',
+    '2300': '1080p',
+    '3200': '720p'
+}, -->

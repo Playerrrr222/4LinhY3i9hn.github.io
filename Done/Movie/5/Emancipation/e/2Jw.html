@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="UTF-8">
+    <title>JW Player DNA Plugin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://cdn.jwplayer.com/libraries/Xt5rBv5b.js"></script>
+    <script src="demo.js"></script>
+    <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3_dai.js"></script>
+    <script src="dai.js"></script>
+    <link rel="stylesheet" href="dai.css" type="text/css">
+    <link rel="stylesheet" href="https://hook.jwplayer.com/jw-design-library/5.2.4/css/fonts.css">
+    <link rel="stylesheet" href="https://hook.jwplayer.com/components/0.3.1/ds-components.min.css">
+    <link rel="stylesheet" href="https://hook.jwplayer.com/ds-layout/1.0.6/ds-page.css">
+</head>
+
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
+
+    <div id="myElement">Loading the player...</div>
+    <div class='video'>
+        <script src="https://use.fontawesome.com/20603b964f.js"></script>
+        <script type="text/javascript">
+
+            jwplayer("myElement").setup({
+                height: window.innerHeight,
+                sharing: false,
+                image: "https://image.tmdb.org/t/p/original/1jZ3wNpON50whGEH7YOcTQrU45B.jpg",
+                sources: [
+                    {
+                        file: "../index.m3u8",
+                        type: "application/x-mpegURL"
+
+                    }
+
+                ],
+                primary: "html5",
+                hlshtml: true,
+                hlsjsdefault: true,
+                tracks: [
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/ara-5.vtt",
+                        "label": "Arabic - العربية",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/eng-3.vtt",
+                        "label": "English - English",
+                        "kind": "captions",
+                        "default": true
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/eng-11.vtt",
+                        "label": "English - English (CC)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/eng-4.vtt",
+                        "label": "English - English (SDH)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/bul-6.vtt",
+                        "label": "Bulgarian - български",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/chi-43.vtt",
+                        "label": "Chinese - 中文（简体）",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/chi-44.vtt",
+                        "label": "Chinese - 中文（繁體）",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/chi-45.vtt",
+                        "label": "Chinese - 廣東話",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/cze-7.vtt",
+                        "label": "Czech - Čeština",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/dut-28.vtt",
+                        "label": "Dutch - Nederlands",
+                        "kind": "captions"
+                    },
+
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/est-14.vtt",
+                        "label": "Estonian - eesti",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/fin-15.vtt",
+                        "label": "Finnish - Suomi",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/fre-17.vtt",
+                        "label": "French - Français (Canada)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/fre-16.vtt",
+                        "label": "French - Français (France)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/ger-9.vtt",
+                        "label": "German - Deutsch",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/gre-10.vtt",
+                        "label": "Greek - Ελληνικά",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/heb-18.vtt",
+                        "label": "Hebrew - עברית",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/hin-19.vtt",
+                        "label": "Hindi - हिन्दी",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/hun-20.vtt",
+                        "label": "Hungarian - magyar",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/ind-21.vtt",
+                        "label": "Indonesian - Bahasa Indonesia",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/ita-22.vtt",
+                        "label": "Italian - Italiano",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/jpn-23.vtt",
+                        "label": "Japanese - 日本語",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/kor-24.vtt",
+                        "label": "Korean - 한국어",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/lav-26.vtt",
+                        "label": "Latvian - latviešu",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/lit-25.vtt",
+                        "label": "Lithuanian - lietuvių",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/may-27.vtt",
+                        "label": "Malay - Bahasa Melayu",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/por-32.vtt",
+                        "label": "Portuguese - Português",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/por-31.vtt",
+                        "label": "Portuguese - Português (Brasil)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/rus-33.vtt",
+                        "label": "Russian - Русский",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/slo-34.vtt",
+                        "label": "Slovak - Slovenčina",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/slv-35.vtt",
+                        "label": "Slovene - slovenščina",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/spa-13.vtt",
+                        "label": "Spanish - Español (España)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/spa-12.vtt",
+                        "label": "Spanish - Español (Latinoamérica)",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/swe-36.vtt",
+                        "label": "Swedish - Svenska",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/tam-37.vtt",
+                        "label": "Tamil - தமிழ்",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/tel-38.vtt",
+                        "label": "Telugu - తెలుగు",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/tha-39.vtt",
+                        "label": "Thai - ไทย",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/tur-40.vtt",
+                        "label": "Turkish - Türkçe",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/fb/00/fb00d65b3646f104f850f444705b10ac/ukr-41.vtt",
+                        "label": "Ukrainian - українська",
+                        "kind": "captions"
+                    }
+                ],
+                captions: { color: '#ffffff', fontSize: 12, backgroundOpacity: 50 },
+                // sharing: {
+                //     sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+                //     code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+                //     link: "<?php echo $sharing;?>"
+                // }
+
+            });
+
+        </script>
+
+</body>
+
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+
+</html>

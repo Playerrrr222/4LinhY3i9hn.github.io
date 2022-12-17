@@ -65,20 +65,11 @@
             jwplayer("myElement").setup({
                 height: window.innerHeight,
                 sharing: false,
-                image: "https://image.tmdb.org/t/p/original/AAAA.jpg",
+                image: "https://image.tmdb.org/t/p/original/yn3ILqs85UNItFn3NmzlUvpM5nO.jpg",
                 sources: [
                     {
-                        file: "AAAA",
-                        type: '	video/mp4',
-                        label: '1080p',
-                        res: 1080,
-
-                    },
-                    {
-                        file: "AAAA",
-                        type: '	video/mp4',
-                        label: '720p',
-                        res: 720,
+                        file: "../index.m3u8",
+                        type: "application/x-mpegURL"
 
                     }
                 ],
@@ -86,8 +77,8 @@
                 hlshtml: true,
                 hlsjsdefault: true,
                 tracks: [
-                    { "file": "AAA", "label": "Arabic", "kind": "captions" },
-                    { "file": "AAA", "label": "English", "kind": "captions", "false": "false" }
+                    { "file": "https://s1.bunnycdn.ru/sub/cache2/subtitle/12056061.vtt", "label": "Arabic", "kind": "captions" },
+                    { "file": "https://cc.2cdns.com/2c/ec/2cec498b9b4956b909c90e0bb3a9f836/eng-2.vtt", "label": "English", "kind": "captions", "false": "false" }
 
                 ],
                 captions: { color: '#ffffff', fontSize: 12, backgroundOpacity: 50 },

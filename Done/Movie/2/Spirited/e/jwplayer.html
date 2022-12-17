@@ -2,6 +2,75 @@
 <html lang="en">
 
 <head>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "Right Click Disabled";
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <SCRIPT language=JavaScript>
+
+        <!-- http://www.spacegun.co.uk -->
+
+        var message = "**This page is no longer active**";
+
+        function rtclickcheck(keyp) {
+            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+        }
+
+        document.onmousedown = rtclickcheck;
+
+    </SCRIPT>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
     <meta charset="UTF-8">
     <title>JW Player DNA Plugin</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,15 +87,15 @@
     <!-- JW Player Builds -->
     <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
 
-    <!-- Streamroot Plugin -->
+    <!-- Streamroot Plugin
     <script
-        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script>
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script> -->
 
     <!-- Graphs -->
     <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
 </head>
 
-<body style="background-color: rgb(0, 0, 0);">
+<body style="background-color: rgb(0, 0, 0);" onLoad="disableClick()">
     <div class='video'>
         <script src="https://use.fontawesome.com/20603b964f.js"></script>
         <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
@@ -40,21 +109,227 @@
                 //aspectratio: "16:9",
                 // width: '100%',
                 height: window.innerHeight,
-                image: "https://image.tmdb.org/t/p/original/fHDvGGPFry65ou79WLi6JsjCZrM.jpg",
                 autostart: false,
+                image: "https://image.tmdb.org/t/p/original/fHDvGGPFry65ou79WLi6JsjCZrM.jpg",
                 sources: [
                     {
-                        file: "https://c-4.dokicloud.one/_v8/3e0287500b5817cb3c66cb1f5db47377f15a3d50f772fa2f80336578ff6fb5ba906c73e33ee7a0018a9e023347828d53385f5ab94eff5012125f0bc5dcd5122e4e88188021a964e5331c22e907d8b82ef83927bb0107709b9df2027aaf8055dcf4580fdd12adf5975591423668d4314009079cd451c1ebca0a43aeba78c2d7f6/1080/index.m3u8",
-                        type: "application/vnd.apple.mpegurl",
-                        label: '1080',
-                        res: 1080,
+                        file: "../playlist.m3u8",
+                        type: "application/x-mpegURL"
 
-                    }],
-                // title: 'Tom and Jerry: Snowmans Land',
-                aboutlink: 'https://www.jwplayer.com/',
-                tracks: [{ "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/ara-4.vtt", "label": "Arabic", "kind": "captions" },
-                { "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/eng-2.vtt", "label": "English", "kind": "captions", "false": "false" }
+                    }
 
+                ],
+                primary: "html5",
+                hlshtml: true,
+                hlsjsdefault: true,
+                tracks: [
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/ara-4.vtt",
+                        "label": "Arabic - العربية",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/eng-2.vtt",
+                        "label": "English - English",
+                        "kind": "captions",
+                        "default": true
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/eng-3.vtt",
+                        "label": "English - English [SDH]",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/bul-5.vtt",
+                        "label": "Bulgarian - Bulgarian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/chi-6.vtt",
+                        "label": "Chinese - Chinese Simplified",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/chi-7.vtt",
+                        "label": "Chinese - Chinese Traditional",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/chi-8.vtt",
+                        "label": "Chinese - Chinese Yue",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/cze-9.vtt",
+                        "label": "Czech - Czech",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/dan-10.vtt",
+                        "label": "Danish - Danish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/dut-11.vtt",
+                        "label": "Dutch - Dutch",
+                        "kind": "captions"
+                    },
+                   
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/est-12.vtt",
+                        "label": "Estonian - Estonian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/fin-14.vtt",
+                        "label": "Finnish - Finnish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/fre-15.vtt",
+                        "label": "French - French",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/fre-16.vtt",
+                        "label": "French - French Canadian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/ger-17.vtt",
+                        "label": "German - German",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/gre-18.vtt",
+                        "label": "Greek - Greek",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/heb-19.vtt",
+                        "label": "Hebrew - Hebrew",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/hin-20.vtt",
+                        "label": "Hindi - Hindi",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/hun-21.vtt",
+                        "label": "Hungarian - Hungarian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/ind-22.vtt",
+                        "label": "Indonesian - Indonesian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/ita-23.vtt",
+                        "label": "Italian - Italian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/jpn-24.vtt",
+                        "label": "Japanese - Japanese",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/kor-25.vtt",
+                        "label": "Korean - Korean",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/lav-27.vtt",
+                        "label": "Latvian - Latvian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/lit-28.vtt",
+                        "label": "Lithuanian - Lithuanian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/may-29.vtt",
+                        "label": "Malay - Malay",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/nor-30.vtt",
+                        "label": "Norwegian - Norwegian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/pol-31.vtt",
+                        "label": "Polish - Polish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/por-32.vtt",
+                        "label": "Portuguese - Portuguese",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/por-33.vtt",
+                        "label": "Portuguese - Portuguese Brazilian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/rus-34.vtt",
+                        "label": "Russian - Russian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/slo-35.vtt",
+                        "label": "Slovak - Slovak",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/slv-36.vtt",
+                        "label": "Slovene - Slovenian",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/spa-13.vtt",
+                        "label": "Spanish - European Spanish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/spa-26.vtt",
+                        "label": "Spanish - Latin America Spanish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/swe-37.vtt",
+                        "label": "Swedish - Swedish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/tam-38.vtt",
+                        "label": "Tamil - Tamil",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/tel-39.vtt",
+                        "label": "Telugu - Telugu",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/tha-40.vtt",
+                        "label": "Thai - Thai",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/tur-41.vtt",
+                        "label": "Turkish - Turkish",
+                        "kind": "captions"
+                    },
+                    {
+                        "file": "https://cc.2cdns.com/93/56/9356138e74e301f9ec15d401b1fa3c91/ukr-42.vtt",
+                        "label": "Ukrainian - Ukrainian",
+                        "kind": "captions"
+                    }
                 ],
                 captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
                 sharing: {
@@ -67,4 +342,21 @@
     </div>
 </body>
 
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+
 </html>
+
+<!-- hlslabels: {
+    '160': '160p',
+    '415': '240p',
+    '460': '320p',
+    '515': '160p',
+    '650': '480p',
+    '881': '252p',
+    '1200': '720p',
+    '1600': '432p',
+    '2300': '1080p',
+    '3200': '720p'
+}, -->
