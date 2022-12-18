@@ -89,6 +89,9 @@
             margin: auto auto;
             width: 100%;
             height: 100%;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
             --plyr-color-main: #00b3ff;
             /* --plyr-color-main: #1ac266; */
             --plyr-font-size-xlarge: 27px;
@@ -97,7 +100,9 @@
         /* .container {
             padding-top: 9vh;
         } */
+       
     </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
     <script>
         window.console = window.console || function (t) { };
@@ -123,14 +128,16 @@
     <script src="https://unpkg.com/plyr@3"></script>
     <script src="./plyr-hls.js"></script>
 
-    <div style='max-width: 100%; position: relative; margin: 0 auto; margin-top: 0px; margin-top: 64px;'>
-        <video controls crossorigin playsinline 
-        poster="https://image.tmdb.org/t/p/original/3hPKf2eriMi6B2L5brfQH0A7MNe.jpg">
-        <source src="../playlist.m3u8" type="application/x-mpegURL" data-quality="1080p" size="1080">
+    <div style='max-width: 100%; position: relative; margin: 0 auto; margin-top: 0px; '>
+        <video controls crossorigin playsinline
+            poster="https://image.tmdb.org/t/p/original/3hPKf2eriMi6B2L5brfQH0A7MNe.jpg">
+            <source src="../playlist.m3u8" type="application/x-mpegURL" data-quality="1080p" size="1080">
 
-        <track kind="captions" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12353723.vtt" srclang="ar" label="Arabic">
-        <track kind="captions" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12353698.vtt" srclang="en" label="English">
-    </video>
+            <track kind="captions" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12353723.vtt" srclang="ar"
+                label="Arabic">
+            <track kind="captions" src="https://s1.bunnycdn.ru/sub/cache2/subtitle/12353698.vtt" srclang="en"
+                label="English">
+        </video>
     </div>
 
     <script>
@@ -186,9 +193,9 @@
             }
         });
     </script>
-<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
-<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
-<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+    <script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+    <script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+    <script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
 </body>
 
 
