@@ -2,6 +2,30 @@
 <html lang="en">
 
 <head>
+    <system.webServer>
+
+        <httpProtocol>
+            <customHeaders>
+                <add name="X-Frame-Options" value="ALLOW-FROM https://example.com/" />
+            </customHeaders>
+        </httpProtocol>
+
+    </system.webServer>
+    <http>
+
+
+        <headers defaults-disable="true">
+            <cache-control />
+        </headers>
+    </http>
+    <script>
+        if (window.top.location.host != "hostname") {
+            document.body.innerHTML = "Access Denied";
+        }
+    </script>
+    <meta http-equiv="Content-Security-Policy"
+        content="frame-ancestors 'self' https://example.org https://example.com https://store.example.com" />
+    <meta http-equiv="X-Frame-Options" content="ALLOW-FROM https://example.com/" />
     <meta charset="UTF-8">
     <title>JW Player DNA Plugin</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -73,12 +97,11 @@
             })
         </script>
     </div>
-    <script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js"
-    defer></script>
-<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
-<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
-<script type="text/javascript" src="../../../watch.js"></script>
-<script data-cfasync="false" type="text/javascript" src="../../../watch.min.js"></script>
+    <script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+    <script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+    <script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+    <script type="text/javascript" src="../../../watch.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="../../../watch.min.js"></script>
 </body>
 
 </html>
