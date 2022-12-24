@@ -24,7 +24,7 @@
         status = "Right Click Disabled";
         function disableclick(event) {
             if (event.button == 2) {
-                alert(status);
+                (status);
                 return false;
             }
         }
@@ -34,7 +34,7 @@
         status = "Right Click Disabled";
         function disableclick(event) {
             if (event.button == 2) {
-                alert(status);
+                (status);
                 return false;
             }
         }
@@ -46,9 +46,9 @@
         var message = "**This page is no longer active**";
 
         function rtclickcheck(keyp) {
-            if (navigator.appName == "Netscape" && keyp.which == 3) { alert(message); return false; }
+            if (navigator.appName == "Netscape" && keyp.which == 3) { (message); return false; }
 
-            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; }
+            if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { (message); return false; }
         }
 
         document.onmousedown = rtclickcheck;

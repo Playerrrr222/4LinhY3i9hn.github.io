@@ -1,0 +1,146 @@
+{
+    "sources": [
+        {
+            "file": "https://t-eu-3.onthecloudcdn.com/_v9/9fe5afdc5f6f90b83edb63597e6a0e97650ff946580f352a1bdef479c1d7a2bc9ebd5006fddc160835cd99ff06a7de2d224712ddefbf9e1495a0b77bc78d4d5ca3c6edb90113e95dcbce586ee50d67e1766a83ac730b2e0d19eef2acd775c845c1d32b29f945823866f1ec02f0dbea41e4acb9ca5c6a9569140fdf1278d7ed51/playlist.m3u8",
+            "type": "hls"
+        }
+    ],
+    "tracks": [
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/ara-2.vtt",
+            "label": "Arabic",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/chi-27.vtt",
+            "label": "Chinese - 中文（简体）",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/chi-28.vtt",
+            "label": "Chinese - 中文（繁體）",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/dan-3.vtt",
+            "label": "Danish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/dut-18.vtt",
+            "label": "Dutch",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/eng-6.vtt",
+            "label": "English - SDH",
+            "kind": "captions",
+            "default": true
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/fin-9.vtt",
+            "label": "Finnish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/fre-10.vtt",
+            "label": "French",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/ger-4.vtt",
+            "label": "German",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/heb-11.vtt",
+            "label": "Hebrew",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/hin-12.vtt",
+            "label": "Hindi",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/ind-13.vtt",
+            "label": "Indonesian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/ita-14.vtt",
+            "label": "Italian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/jpn-15.vtt",
+            "label": "Japanese",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/kor-16.vtt",
+            "label": "Korean",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/nob-17.vtt",
+            "label": "Norwegian Bokmål",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/pol-19.vtt",
+            "label": "Polish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/por-20.vtt",
+            "label": "Portuguese",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/rus-21.vtt",
+            "label": "Russian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/spa-8.vtt",
+            "label": "Spanish - España",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/spa-7.vtt",
+            "label": "Spanish - Latinoamérica",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/swe-22.vtt",
+            "label": "Swedish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/tam-23.vtt",
+            "label": "Tamil",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/tel-24.vtt",
+            "label": "Telugu",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/tha-25.vtt",
+            "label": "Thai",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/1e/fe/1efe27893de758ef4803c1f02aa2762e/tur-26.vtt",
+            "label": "Turkish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://prev.2cdns.com/_m_preview/d6/d62deb421fd652493ce8d8d6d64a573f/thumbnails/sprite.vtt",
+            "kind": "thumbnails"
+        }
+    ],
+    "server": 29
+}

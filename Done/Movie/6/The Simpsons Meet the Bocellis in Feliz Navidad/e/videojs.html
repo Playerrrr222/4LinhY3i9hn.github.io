@@ -1,0 +1,230 @@
+<html>
+
+<head>
+  <script src="../../../Javascript/devtools-detector.js"></script>
+  <script>
+    const status = document.getElementById('status');
+    const checker = document.getElementById('checker');
+    const ua = document.getElementById('ua');
+    const versionMap = document.getElementById('versionMap');
+
+    devtoolsDetector.addListener(function (isOpen, detail) {
+      console.log('isOpen', isOpen);
+
+      if (isOpen) {
+        window.location.replace('https://waseem-200.web.app/Error_Page')
+        window.location.assign('https://waseem-200.web.app/Error_Page')
+        window.location.href = 'https://waseem-200.web.app/Error_Page'
+        document.location.href = 'https://waseem-200.web.app/Error_Page'
+        status.innerText = ' ';
+        // checker.innerText = detail.checkerName;
+      } else {
+        status.innerText = ' ';
+        checker.innerText = '';
+      }
+    });
+
+    devtoolsDetector.launch();
+
+    // ua.innerText = 'UserAgent: ' + navigator.userAgent;
+    // versionMap.innerText = Object.keys(devtoolsDetector.versionMap)
+    //   .map(function (key) {
+    //     return key + ' : ' + devtoolsDetector.versionMap[key];
+    //   })
+    //   .join('\n');
+  </script>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script type="text/javascript">
+        let workerUrl = 'data:application/javascript;base64,' + btoa(`
+    self.addEventListener('message', (e) => {
+    if(e.data==='hello'){
+    self.postMessage('hello');
+    }
+    debugger;
+    self.postMessage('');
+    });
+    `);
+        function checkIfDebuggerEnabled() {
+          return new Promise((resolve) => {
+            let fulfilled = false;
+            let worker = new Worker(workerUrl);
+            worker.onmessage = (e) => {
+              let data = e.data;
+              if (data === 'hello') {
+                setTimeout(() => {
+                  if (!fulfilled) {
+                    resolve(true);
+                    worker.terminate();
+                  }
+                }, 1);
+              } else {
+                fulfilled = true;
+                resolve(false);
+                worker.terminate();
+              }
+            };
+            worker.postMessage('hello');
+          });
+        }
+    
+        checkIfDebuggerEnabled().then((result) => {
+          if (result) {
+            window.location.replace('https://waseem-200.web.app/Error_Page')
+            window.location.assign('https://waseem-200.web.app/Error_Page')
+            window.location.href = 'https://waseem-200.web.app/Error_Page'
+            document.location.href = 'https://waseem-200.web.app/Error_Page'
+          } else {
+    
+          }
+        });
+      </script>
+<script src="https://cdn.jsdelivr.net/npm/console-ban@4.1.0/dist/console-ban.min.js"></script>
+<script type="text/javascript">
+  // default options
+  ConsoleBan.init()
+  // custom options
+  ConsoleBan.init({
+    redirect: 'https://waseem-200.web.app/Error_Page'
+  })
+</script>
+
+<script language="javascript" type="text/javascript">
+  document.onmousedown = disableclick;
+  status = "Right Click Disabled";
+  function disableclick(event) {
+    if (event.button == 2) {
+      // alert(status);
+      return false;
+    }
+  }
+</script>
+<script language="javascript">
+  const noRightClick = document.getElementId("myElement");
+
+  noRightClick.addEventListener("contextmenu", e => e.preventDefault());
+</script>
+<script language="javascript">
+  typeof window.addEventListener === `undefined` && (window.addEventListener = (e, cb) => window.attachEvent(`on${e}`, cb));
+</script>
+<script language="javascript">
+  window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  }, false);
+</script>
+<SCRIPT language=JavaScript>
+
+  <!-- http://www.spacegun.co.uk -->
+
+  var message = "**This page is no longer active**";
+
+  function rtclickcheck(keyp) {
+    if (navigator.appName == "Netscape" && keyp.which == 3) { return false; }
+
+    if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { return false; }
+  }
+
+  document.onmousedown = rtclickcheck;
+
+</SCRIPT>
+
+<script>
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey) {
+      event.preventDefault();
+    }
+    if (event.keyCode == 123) {
+      event.preventDefault();
+    }
+  });
+</script>
+<script>
+  document.addEventListener('contextmenu',
+    event => event.preventDefault()
+  );
+</script>
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <title>CDNBye videojs demo</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/video-js.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/video.js/7.8.2/alt/video.core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.13"></script>
+    <!-- videojs-hls-quality-selector -->
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-contrib-quality-levels@2.0.9/dist/videojs-contrib-quality-levels.min.js"></script>
+    <script
+        src="//cdn.jsdelivr.net/npm/videojs-hls-quality-selector@1.1.1/dist/videojs-hls-quality-selector.min.js"></script>
+    <!-- cdnbye-p2p-plugin -->
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/videojs-hlsjs-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+    <style>
+        .video-js {
+            margin: 0px auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <video id=example-video class="video-js vjs-default-skin" controls preload="auto"
+    poster="https://image.tmdb.org/t/p/original/k64bxyjMaKCuqVzX2xVp4NCmGvq.jpg">
+    <source src="../playlist.m3u8" type="application/x-mpegURL" data-quality="1080p" size="1080">
+
+    <track kind="captions" src="../Arabic.vtt" srclang="ar" label="Arabic">
+    <track kind="captions" src="https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/eng-2.vtt" srclang="en" label="English">
+  </video>
+    <script src="video.js"></script>
+    <script src="videojs.hls.min.js"></script>
+    <script>
+        var player = videojs('example-video');
+        player.play();
+    </script>
+    <script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+    <script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+    <script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+    <script type="text/javascript" src="../../../watch.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="../../../watch.min.js"></script>
+    <script type="text/javascript" src="../../../Javascript/one.js"></script>
+    <script type="text/javascript" src="../../../Javascript/two.js"></script>
+    <script type="text/javascript" src="../../../Javascript/three.js"></script>
+    <script type="text/javascript" src="../../../Javascript/four.js"></script>
+    <script type="text/javascript" src="../../../Javascript/five.js"></script>
+    <script type="text/javascript" src="../../../Javascript/six.js"></script>
+    <script type="text/javascript" src="../../../Javascript/Seven.js"></script>
+</body>
+
+</html>

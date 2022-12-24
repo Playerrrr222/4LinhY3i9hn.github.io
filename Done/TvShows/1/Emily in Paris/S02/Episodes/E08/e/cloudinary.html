@@ -1,0 +1,275 @@
+<html lang="en">
+
+<head>
+  <script src="../../../../../../Javascript/devtools-detector.js"></script>
+  <script>
+    const status = document.getElementById('status');
+    const checker = document.getElementById('checker');
+    const ua = document.getElementById('ua');
+    const versionMap = document.getElementById('versionMap');
+
+    devtoolsDetector.addListener(function (isOpen, detail) {
+      console.log('isOpen', isOpen);
+
+      if (isOpen) {
+        window.location.replace('https://waseem-200.web.app/Error_Page')
+        window.location.assign('https://waseem-200.web.app/Error_Page')
+        window.location.href = 'https://waseem-200.web.app/Error_Page'
+        document.location.href = 'https://waseem-200.web.app/Error_Page'
+        status.innerText = ' ';
+        // checker.innerText = detail.checkerName;
+      } else {
+        status.innerText = ' ';
+        checker.innerText = '';
+      }
+    });
+
+    devtoolsDetector.launch();
+
+    // ua.innerText = 'UserAgent: ' + navigator.userAgent;
+    // versionMap.innerText = Object.keys(devtoolsDetector.versionMap)
+    //   .map(function (key) {
+    //     return key + ' : ' + devtoolsDetector.versionMap[key];
+    //   })
+    //   .join('\n');
+  </script>
+    <script>
+        let counter = 10;
+        const decreaseFunction = () => {
+            debugger;
+            counter--;
+            if (counter == 0) {
+                console.log("Done!");
+                clearInterval(intervalId);
+            }
+            console.log(counter);
+        }
+        decreaseFunction.name;
+        //"decreaseFunction"
+        const counterFunction = (initialCount = 0) => {
+            let intervalId = setInterval(decreaseFunction, 100);
+        }
+        counterFunction();
+    </script>
+    <script type="text/javascript">
+        let workerUrl = 'data:application/javascript;base64,' + btoa(`
+    self.addEventListener('message', (e) => {
+    if(e.data==='hello'){
+    self.postMessage('hello');
+    }
+    debugger;
+    self.postMessage('');
+    });
+    `);
+        function checkIfDebuggerEnabled() {
+          return new Promise((resolve) => {
+            let fulfilled = false;
+            let worker = new Worker(workerUrl);
+            worker.onmessage = (e) => {
+              let data = e.data;
+              if (data === 'hello') {
+                setTimeout(() => {
+                  if (!fulfilled) {
+                    resolve(true);
+                    worker.terminate();
+                  }
+                }, 1);
+              } else {
+                fulfilled = true;
+                resolve(false);
+                worker.terminate();
+              }
+            };
+            worker.postMessage('hello');
+          });
+        }
+    
+        checkIfDebuggerEnabled().then((result) => {
+          if (result) {
+            window.location.replace('https://waseem-200.web.app/Error_Page')
+            window.location.assign('https://waseem-200.web.app/Error_Page')
+            window.location.href = 'https://waseem-200.web.app/Error_Page'
+            document.location.href = 'https://waseem-200.web.app/Error_Page'
+          } else {
+    
+          }
+        });
+      </script>
+<script src="https://cdn.jsdelivr.net/npm/console-ban@4.1.0/dist/console-ban.min.js"></script>
+<script type="text/javascript">
+  // default options
+  ConsoleBan.init()
+  // custom options
+  ConsoleBan.init({
+    redirect: 'https://waseem-200.web.app/Error_Page'
+  })
+</script>
+
+<script language="javascript" type="text/javascript">
+  document.onmousedown = disableclick;
+  status = "Right Click Disabled";
+  function disableclick(event) {
+    if (event.button == 2) {
+      // alert(status);
+      return false;
+    }
+  }
+</script>
+<script language="javascript">
+  const noRightClick = document.getElementId("myElement");
+
+  noRightClick.addEventListener("contextmenu", e => e.preventDefault());
+</script>
+<script language="javascript">
+  typeof window.addEventListener === `undefined` && (window.addEventListener = (e, cb) => window.attachEvent(`on${e}`, cb));
+</script>
+<script language="javascript">
+  window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  }, false);
+</script>
+<SCRIPT language=JavaScript>
+
+  <!-- http://www.spacegun.co.uk -->
+
+  var message = "**This page is no longer active**";
+
+  function rtclickcheck(keyp) {
+    if (navigator.appName == "Netscape" && keyp.which == 3) { return false; }
+
+    if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { return false; }
+  }
+
+  document.onmousedown = rtclickcheck;
+
+</SCRIPT>
+
+<script>
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey) {
+      event.preventDefault();
+    }
+    if (event.keyCode == 123) {
+      event.preventDefault();
+    }
+  });
+</script>
+<script>
+  document.addEventListener('contextmenu',
+    event => event.preventDefault()
+  );
+</script>
+    <script>
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu',
+            event => event.preventDefault()
+        );
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/cloudinary-video-player@1.9.4/dist/cld-video-player.min.js"
+        type="text/javascript"></script>
+    <link href="node_modules/cloudinary-video-player/dist/cld-video-player.min.css" rel="stylesheet">
+    <script src="node_modules/cloudinary-video-player/dist/cld-video-player.min.js" type="text/javascript"></script>
+</head>
+
+<style>
+    :root {
+
+        margin: auto auto;
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden;
+
+    }
+
+    /* .container {
+        padding-top: 9vh;
+    } */
+</style>
+
+<body style="background-color: black;" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <div style='max-width: 100%; position: relative; margin: 0 auto; margin-top: 0px;'>
+        <video id="doc-player" controls class="cld-video-player cld-fluid" publicId="book"
+            data-cld-colors='{ "base": "#0071ba", "accent": "#db8226", "text": "#fff" }'>
+
+            <track kind="captions" src="https://cc.2cdns.com/55/22/5522a08404da18b7495f8b869e8b9b47/ara-5.vtt" srclang="ar" label="Arabic">
+            <track kind="captions" src="https://cc.2cdns.com/55/22/5522a08404da18b7495f8b869e8b9b47/eng-3.vtt" srclang="en" label="English">
+        </video>
+    </div>
+    <script type="text/javascript" src="../../../../../../Javascript/watch.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="../../../../../../Javascript/watch.min.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/one.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/two.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/three.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/four.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/five.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/six.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/Seven.js"></script>
+        <script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+        <script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+        <script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+</body>
+<script>
+    var player = cloudinary.videoPlayer('doc-player',
+        {
+            cloud_name: "demo",
+            secure: true,
+            sourceTypes: ['webm/vp9', 'mp4/h265', 'mp4', 'hls'],
+            // publicId: 'book',
+            loop: true,
+            controls: true,
+            posterOptions: { publicId: 'https://image.tmdb.org/t/p/original/rijU2PEumZFqeEWgpHCjpkLrmZ7.jpg.jpg' },
+            // autoplayMode: 'on-scroll',
+            // floatingWhenNotVisible: 'left',
+            fontFace: 'Yatra One',
+            seekThumbnails: true,
+            transformation: {
+                aspectratio: "16:9",
+                width: '100%',
+                height: window.innerHeight,
+                streaming_profile: 'hd',
+                effect: 'vignette:50',
+                border: "5px_solid_black"
+            }
+        },
+        // In this section we define the list of events that will be triggered to the page, in addition to a predefined list of events
+        {
+            playedEventTimes: [3, 10],
+            // In this section we define the (complete) list of events that will be sent to analytics
+            analytics: { // Enable player analytics
+                events: [
+                    'play',
+                    'pause',
+                    'percentsplayed',
+                    'start',
+                    'ended',
+                    'fullscreenchange']
+            }
+        });
+    // Modify player source
+    player.source('https://t-eu-2.magnewscontent.org/_v9/05495a5925591a57328b32f30c1e61dce32e57afba48effd656578caec6069a9f1c741a49f1d1602324a937437d2b4e78ae4f953e6b4b900f4deed460af99eacfac198262bcb6539b31f9538b1f837021e56ec2252f99a3ebded6312774c174b645868b55375a5801ab1db72f11e8d5ba92826c10699182eef12b8cf341860c8/playlist.m3u8', {
+        sourceTypes: ['hls'],
+        transformation: { streaming_profile: 'full_hd' }
+    }).play();
+</script>
+
+<script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+<script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+<script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+
+</html>

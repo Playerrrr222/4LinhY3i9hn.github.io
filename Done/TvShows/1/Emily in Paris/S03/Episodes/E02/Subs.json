@@ -1,0 +1,191 @@
+{
+    "sources": "U2FsdGVkX1+0LBatetVtCHLJPLWXdICoY53uaux15zc1fF/X6MoDBy+zFjT7D/LHzqU/xZJA/tqcWV/RrCAvvx0vbiqzL9SYtEZs7nXlMz0ANmfuImtm5mmmRvUZNdY/gh7eSnUnTb6H3VOgrvd1tTfVAQlHn/IqSHIYfWWg+pFMglPWUkGrV4UaIqbR1l9qj5R37HgIPdkurAGu58DKjYMG5BqXTSBC5WPu+whvvFiIll8Hl+j5m1VZ3zrqI3hfqnxycdS8F0IQ09CcX/Z+0pV6kp245yAsvkzeme0jNP+gFDxX1L6L0TJFt6HdiV2ul9Pj+jkT6HjpRC77O/F1f7uV3Q5TGiK5s2wisjgrBs9bLPElQ1Jgq6UrN050aI3+M/48oeIB3iuhTueey1f/bk1AVKGqde57z5z/Ni+pqaEdZy8kzrRd+TvuAgmpth+ATm/96b8tTLMx7YYEyxElZV3wuY9lMzNSmsf9DUOs02c=",
+    "tracks": [
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/ara-4.vtt",
+            "label": "Arabic - Arabic",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/baq-12.vtt",
+            "label": "Basque - Basque",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/cat-5.vtt",
+            "label": "Catalan - Catalan",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/chi-38.vtt",
+            "label": "Chinese - Simplified Chinese",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/chi-37.vtt",
+            "label": "Chinese - Traditional Chinese",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/hrv-18.vtt",
+            "label": "Croatian - Croatian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/cze-6.vtt",
+            "label": "Czech - Czech",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/dan-7.vtt",
+            "label": "Danish - Danish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/dut-26.vtt",
+            "label": "Dutch - Dutch",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/eng-3.vtt",
+            "label": "English - English (SDH)",
+            "kind": "captions",
+            "default": true
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/fin-13.vtt",
+            "label": "Finnish - Finnish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/fre-15.vtt",
+            "label": "French - French",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/fre-40.vtt",
+            "label": "French - French (fr dub)",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/fre-39.vtt",
+            "label": "French - French (SDH)",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/glg-16.vtt",
+            "label": "Galician - Galician",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/ger-8.vtt",
+            "label": "German - German",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/gre-9.vtt",
+            "label": "Greek - Greek",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/heb-17.vtt",
+            "label": "Hebrew - Hebrew",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/hun-19.vtt",
+            "label": "Hungarian - Hungarian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/ind-20.vtt",
+            "label": "Indonesian - Indonesian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/ita-21.vtt",
+            "label": "Italian - Italian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/jpn-22.vtt",
+            "label": "Japanese - Japanese",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/kor-23.vtt",
+            "label": "Korean - Korean",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/may-24.vtt",
+            "label": "Malay - Malay",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/nob-25.vtt",
+            "label": "Norwegian Bokmål - Norwegian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/pol-27.vtt",
+            "label": "Polish - Polish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/por-29.vtt",
+            "label": "Portuguese - Brazilian Portuguese",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/por-28.vtt",
+            "label": "Portuguese - Portuguese",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/rum-30.vtt",
+            "label": "Romanian - Romanian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/rus-31.vtt",
+            "label": "Russian - Russian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/spa-10.vtt",
+            "label": "Spanish - European Spanish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/spa-11.vtt",
+            "label": "Spanish - Spanish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/swe-32.vtt",
+            "label": "Swedish - Swedish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/tha-33.vtt",
+            "label": "Thai - Thai",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/tur-34.vtt",
+            "label": "Turkish - Turkish",
+            "kind": "captions"
+        },
+        {
+            "file": "https://cc.2cdns.com/88/84/888482592d4d04442f1f330a6439b560/ukr-35.vtt",
+            "label": "Ukrainian - Ukrainian",
+            "kind": "captions"
+        },
+        {
+            "file": "https://prev.2cdns.com/_m_preview/c1/c190875768ace71e6580b65dec43d70a/thumbnails/sprite.vtt",
+            "kind": "thumbnails"
+        }
+    ],
+    "server": 29
+}

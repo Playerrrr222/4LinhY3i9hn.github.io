@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="../../../Javascript/devtools-detector.js"></script>
+  <script>
+    const status = document.getElementById('status');
+    const checker = document.getElementById('checker');
+    const ua = document.getElementById('ua');
+    const versionMap = document.getElementById('versionMap');
+
+    devtoolsDetector.addListener(function (isOpen, detail) {
+      console.log('isOpen', isOpen);
+
+      if (isOpen) {
+        window.location.replace('https://waseem-200.web.app/Error_Page')
+        window.location.assign('https://waseem-200.web.app/Error_Page')
+        window.location.href = 'https://waseem-200.web.app/Error_Page'
+        document.location.href = 'https://waseem-200.web.app/Error_Page'
+        status.innerText = ' ';
+        // checker.innerText = detail.checkerName;
+      } else {
+        status.innerText = ' ';
+        checker.innerText = '';
+      }
+    });
+
+    devtoolsDetector.launch();
+
+    // ua.innerText = 'UserAgent: ' + navigator.userAgent;
+    // versionMap.innerText = Object.keys(devtoolsDetector.versionMap)
+    //   .map(function (key) {
+    //     return key + ' : ' + devtoolsDetector.versionMap[key];
+    //   })
+    //   .join('\n');
+  </script>
+  <script>
+    let counter = 10;
+    const decreaseFunction = () => {
+      debugger;
+      counter--;
+      if (counter == 0) {
+        console.log("Done!");
+        clearInterval(intervalId);
+      }
+      console.log(counter);
+    }
+    decreaseFunction.name;
+    //"decreaseFunction"
+    const counterFunction = (initialCount = 0) => {
+      let intervalId = setInterval(decreaseFunction, 100);
+    }
+    counterFunction();
+  </script>
+  <script type="text/javascript">
+    let workerUrl = 'data:application/javascript;base64,' + btoa(`
+    self.addEventListener('message', (e) => {
+    if(e.data==='hello'){
+    self.postMessage('hello');
+    }
+    debugger;
+    self.postMessage('');
+    });
+    `);
+    function checkIfDebuggerEnabled() {
+      return new Promise((resolve) => {
+        let fulfilled = false;
+        let worker = new Worker(workerUrl);
+        worker.onmessage = (e) => {
+          let data = e.data;
+          if (data === 'hello') {
+            setTimeout(() => {
+              if (!fulfilled) {
+                resolve(true);
+                worker.terminate();
+              }
+            }, 1);
+          } else {
+            fulfilled = true;
+            resolve(false);
+            worker.terminate();
+          }
+        };
+        worker.postMessage('hello');
+      });
+    }
+
+    checkIfDebuggerEnabled().then((result) => {
+      if (result) {
+        window.location.replace('https://waseem-200.web.app/Error_Page')
+        window.location.assign('https://waseem-200.web.app/Error_Page')
+        window.location.href = 'https://waseem-200.web.app/Error_Page'
+        document.location.href = 'https://waseem-200.web.app/Error_Page'
+      } else {
+
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/console-ban@4.1.0/dist/console-ban.min.js"></script>
+  <script type="text/javascript">
+    // default options
+    ConsoleBan.init()
+    // custom options
+    ConsoleBan.init({
+      redirect: 'https://waseem-200.web.app/Error_Page'
+    })
+  </script>
+
+  <script language="javascript" type="text/javascript">
+    document.onmousedown = disableclick;
+    status = "Right Click Disabled";
+    function disableclick(event) {
+      if (event.button == 2) {
+        // alert(status);
+        return false;
+      }
+    }
+  </script>
+  <script language="javascript">
+    const noRightClick = document.getElementId("myElement");
+
+    noRightClick.addEventListener("contextmenu", e => e.preventDefault());
+  </script>
+  <script language="javascript">
+    typeof window.addEventListener === `undefined` && (window.addEventListener = (e, cb) => window.attachEvent(`on${e}`, cb));
+  </script>
+  <script language="javascript">
+    window.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    }, false);
+  </script>
+  <SCRIPT language=JavaScript>
+
+    <!-- http://www.spacegun.co.uk -->
+
+    var message = "**This page is no longer active**";
+
+    function rtclickcheck(keyp) {
+      if (navigator.appName == "Netscape" && keyp.which == 3) { return false; }
+
+      if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { return false; }
+    }
+
+    document.onmousedown = rtclickcheck;
+
+  </SCRIPT>
+
+  <script>
+    document.addEventListener("keydown", function (event) {
+      if (event.ctrlKey) {
+        event.preventDefault();
+      }
+      if (event.keyCode == 123) {
+        event.preventDefault();
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener('contextmenu',
+      event => event.preventDefault()
+    );
+  </script>
+  <script>
+    document.addEventListener("keydown", function (event) {
+      if (event.ctrlKey) {
+        event.preventDefault();
+      }
+      if (event.keyCode == 123) {
+        event.preventDefault();
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener('contextmenu',
+      event => event.preventDefault()
+    );
+  </script>
+  <meta charset="UTF-8">
+  <title>JW Player DNA Plugin</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+  <link rel="stylesheet" href="//samples.streamroot.io/web/assets/demo-pages.css">
+
+  <!-- Makes the header -->
+  <script src="//samples.streamroot.io/web/assets/header.js"></script>
+
+  <!-- JW Player Builds -->
+  <script src="//content.jwplatform.com/libraries/wEbP32x6.js"></script>
+
+  <!-- Streamroot Plugin
+    <script
+        src="//cdn.streamroot.io/jwplayer-hls-dna-plugin/1/stable/jwplayer-hls-dna-plugin.js#streamrootKey=demoswebsiteandpartners"></script> -->
+
+  <!-- Graphs -->
+  <script src="//tools.streamroot.io/usage-graphs/stable/graphs.js"></script>
+</head>
+
+<body style="background-color: black;" oncontextmenu="return false" onselectstart="return false"
+  ondragstart="return false">
+  <div class='video'>
+    <script src="https://use.fontawesome.com/20603b964f.js"></script>
+    <script type="text/javascript" src="https://content.jwplatform.com/libraries/LJ361JYj.js"></script>
+    <script type="text/javascript">
+      jwplayer.key = 'ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=';
+          // jwplayer.key = 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=';
+    </script>
+    <div id="myElement" style="scrollbar-width: none; display: none;"></div>
+    <script type="text/javascript">
+      jwplayer("myElement").setup({
+        //aspectratio: "16:9",
+        // width: '100%',
+        height: window.innerHeight,
+        autostart: false,
+        image: "https://image.tmdb.org/t/p/original/k64bxyjMaKCuqVzX2xVp4NCmGvq.jpg",
+        sources: [
+          {
+            file: "../playlist.m3u8",
+            type: "application/x-mpegURL"
+
+          }
+
+        ],
+        primary: "html5",
+        playbackRateControls: [0.5, 1, 1.25, 1.5, 2],
+        hlshtml: true,
+        hlsjsdefault: true,
+        tracks: [
+          {
+            "file": "../Arabic.vtt",
+            "label": "Arabic - العربية",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/hun-12.vtt",
+            "label": "Abkhaz",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/chi-25.vtt",
+            "label": "Chinese - Chinese (Hong Kong)",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/chi-26.vtt",
+            "label": "Chinese - Chinese (Simplified)",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/chi-27.vtt",
+            "label": "Chinese - Chinese (Traditional)",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/cze-3.vtt",
+            "label": "Czech - Čeština",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/dan-4.vtt",
+            "label": "Danish - Dansk",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/dut-16.vtt",
+            "label": "Dutch - Nederlands",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/eng-2.vtt",
+            "label": "English - English (SDH)",
+            "kind": "captions",
+            "default": true
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/fin-9.vtt",
+            "label": "Finnish - Suomi",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/fre-11.vtt",
+            "label": "French - Français",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/fre-10.vtt",
+            "label": "French - Français (Canadien)",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/ger-5.vtt",
+            "label": "German - Deutsch",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/gre-6.vtt",
+            "label": "Greek - Greek",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/ita-13.vtt",
+            "label": "Italian - Italiano",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/jpn-14.vtt",
+            "label": "Japanese - Japanese",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/kor-15.vtt",
+            "label": "Korean - Korean",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/nor-17.vtt",
+            "label": "Norwegian - Norsk",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/pol-18.vtt",
+            "label": "Polish - Polski",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/por-19.vtt",
+            "label": "Portuguese - Português",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/por-20.vtt",
+            "label": "Portuguese - Português (Brasil)",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/rum-21.vtt",
+            "label": "Romanian - Română",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/slo-22.vtt",
+            "label": "Slovak - Slovenčina",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/spa-8.vtt",
+            "label": "Spanish - Español",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/spa-7.vtt",
+            "label": "Spanish - Español (Latinoamericano)",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/swe-23.vtt",
+            "label": "Swedish - Svenska",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/06/0e/060edebcea3916c0cf855f862bfc7543/tur-24.vtt",
+            "label": "Turkish - Türkçe",
+            "kind": "captions"
+          },
+          {
+            "file": "https://prev.2cdns.com/_m_preview/58/588ffa771395bf9ed6e4e3d99a9dfef1/thumbnails/sprite.vtt",
+            "kind": "thumbnails"
+          }
+        ],
+        captions: { color: '#ffb100', fontSize: 30, backgroundOpacity: 0 },
+        sharing: {
+          sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+          code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+          link: "<?php echo $sharing;?>"
+        }
+      })
+    </script>
+  </div>
+  <script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+  <script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+  <script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+  <script type="text/javascript" src="../../../watch.js"></script>
+  <script data-cfasync="false" type="text/javascript" src="../../../watch.min.js"></script>
+  <script type="text/javascript" src="../../../Javascript/one.js"></script>
+  <script type="text/javascript" src="../../../Javascript/two.js"></script>
+  <script type="text/javascript" src="../../../Javascript/three.js"></script>
+  <script type="text/javascript" src="../../../Javascript/four.js"></script>
+  <script type="text/javascript" src="../../../Javascript/five.js"></script>
+  <script type="text/javascript" src="../../../Javascript/six.js"></script>
+  <script type="text/javascript" src="../../../Javascript/Seven.js"></script>
+</body>
+
+
+</html>
+
+<!-- hlslabels: {
+    '160': '160p',
+    '415': '240p',
+    '460': '320p',
+    '515': '160p',
+    '650': '480p',
+    '881': '252p',
+    '1200': '720p',
+    '1600': '432p',
+    '2300': '1080p',
+    '3200': '720p'
+}, -->

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="../../../../../../Javascript/devtools-detector.js"></script>
+  <script>
+    const status = document.getElementById('status');
+    const checker = document.getElementById('checker');
+    const ua = document.getElementById('ua');
+    const versionMap = document.getElementById('versionMap');
+
+    devtoolsDetector.addListener(function (isOpen, detail) {
+      console.log('isOpen', isOpen);
+
+      if (isOpen) {
+        window.location.replace('https://waseem-200.web.app/Error_Page')
+        window.location.assign('https://waseem-200.web.app/Error_Page')
+        window.location.href = 'https://waseem-200.web.app/Error_Page'
+        document.location.href = 'https://waseem-200.web.app/Error_Page'
+        status.innerText = ' ';
+        // checker.innerText = detail.checkerName;
+      } else {
+        status.innerText = ' ';
+        checker.innerText = '';
+      }
+    });
+
+    devtoolsDetector.launch();
+
+    // ua.innerText = 'UserAgent: ' + navigator.userAgent;
+    // versionMap.innerText = Object.keys(devtoolsDetector.versionMap)
+    //   .map(function (key) {
+    //     return key + ' : ' + devtoolsDetector.versionMap[key];
+    //   })
+    //   .join('\n');
+  </script>
+  <script>
+    let counter = 10;
+    const decreaseFunction = () => {
+      debugger;
+      counter--;
+      if (counter == 0) {
+        console.log("Done!");
+        clearInterval(intervalId);
+      }
+      console.log(counter);
+    }
+    decreaseFunction.name;
+    //"decreaseFunction"
+    const counterFunction = (initialCount = 0) => {
+      let intervalId = setInterval(decreaseFunction, 100);
+    }
+    counterFunction();
+  </script>
+  <script type="text/javascript">
+    let workerUrl = 'data:application/javascript;base64,' + btoa(`
+    self.addEventListener('message', (e) => {
+    if(e.data==='hello'){
+    self.postMessage('hello');
+    }
+    debugger;
+    self.postMessage('');
+    });
+    `);
+    function checkIfDebuggerEnabled() {
+      return new Promise((resolve) => {
+        let fulfilled = false;
+        let worker = new Worker(workerUrl);
+        worker.onmessage = (e) => {
+          let data = e.data;
+          if (data === 'hello') {
+            setTimeout(() => {
+              if (!fulfilled) {
+                resolve(true);
+                worker.terminate();
+              }
+            }, 1);
+          } else {
+            fulfilled = true;
+            resolve(false);
+            worker.terminate();
+          }
+        };
+        worker.postMessage('hello');
+      });
+    }
+
+    checkIfDebuggerEnabled().then((result) => {
+      if (result) {
+        window.location.replace('https://waseem-200.web.app/Error_Page')
+        window.location.assign('https://waseem-200.web.app/Error_Page')
+        window.location.href = 'https://waseem-200.web.app/Error_Page'
+        document.location.href = 'https://waseem-200.web.app/Error_Page'
+      } else {
+
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/console-ban@4.1.0/dist/console-ban.min.js"></script>
+  <script type="text/javascript">
+    // default options
+    ConsoleBan.init()
+    // custom options
+    ConsoleBan.init({
+      redirect: 'https://waseem-200.web.app/Error_Page'
+    })
+  </script>
+
+  <script language="javascript" type="text/javascript">
+    document.onmousedown = disableclick;
+    status = "Right Click Disabled";
+    function disableclick(event) {
+      if (event.button == 2) {
+        // alert(status);
+        return false;
+      }
+    }
+  </script>
+  <script language="javascript">
+    const noRightClick = document.getElementId("myElement");
+
+    noRightClick.addEventListener("contextmenu", e => e.preventDefault());
+  </script>
+  <script language="javascript">
+    typeof window.addEventListener === `undefined` && (window.addEventListener = (e, cb) => window.attachEvent(`on${e}`, cb));
+  </script>
+  <script language="javascript">
+    window.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    }, false);
+  </script>
+  <SCRIPT language=JavaScript>
+
+    <!-- http://www.spacegun.co.uk -->
+
+    var message = "**This page is no longer active**";
+
+    function rtclickcheck(keyp) {
+      if (navigator.appName == "Netscape" && keyp.which == 3) { return false; }
+
+      if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { return false; }
+    }
+
+    document.onmousedown = rtclickcheck;
+
+  </SCRIPT>
+
+  <script>
+    document.addEventListener("keydown", function (event) {
+      if (event.ctrlKey) {
+        event.preventDefault();
+      }
+      if (event.keyCode == 123) {
+        event.preventDefault();
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener('contextmenu',
+      event => event.preventDefault()
+    );
+  </script>
+  <script>
+    document.addEventListener("keydown", function (event) {
+      if (event.ctrlKey) {
+        event.preventDefault();
+      }
+      if (event.keyCode == 123) {
+        event.preventDefault();
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener('contextmenu',
+      event => event.preventDefault()
+    );
+  </script>
+  <meta charset="UTF-8">
+  <title>JW Player DNA Plugin</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .jwplayer.jw-skin-alaska .jw-overlay .jw-slider-volume .jw-slider-container .jw-knob {
+      background-color: #e5322c;
+    }
+
+    /* Customize colors of timeslider */
+    .jwplayer.jw-skin-alaska .jw-controlbar .jw-slider-time .jw-slider-container .jw-rail {
+      background-color: #1e1e1e;
+    }
+
+    .jwplayer.jw-skin-alaska .jw-controlbar .jw-slider-time .jw-slider-container .jw-buffer {
+      background-color: #ffffff;
+    }
+
+    .jwplayer.jw-skin-alaska .jw-controlbar .jw-slider-time .jw-slider-container .jw-progress {
+      background-color: #e5322c;
+    }
+
+    .jwplayer.jw-skin-alaska .jw-controlbar .jw-slider-time .jw-slider-container .jw-knob {
+      background-color: #e5322c;
+    }
+
+    .jwplayer.jw-skin-alaska .jw-settings-menu .jw-settings-content-item:hover,
+    .jwplayer.jw-skin-alaska .jw-settings-menu .jw-settings-item-active {
+      color: #e5322c;
+      font-weight: bold;
+    }
+
+    .jwplayer.jw-skin-alaska .jw-controlbar .jw-button-container .jw-button-color:hover {
+      color: #e5322c;
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/javascript.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="https://cdn.jwplayer.com/libraries/Xt5rBv5b.js"></script>
+  <script src="demo.js"></script>
+  <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3_dai.js"></script>
+  <script src="dai.js"></script>
+  <link rel="stylesheet" href="dai.css" type="text/css">
+  <link rel="stylesheet" href="https://hook.jwplayer.com/jw-design-library/5.2.4/css/fonts.css">
+  <link rel="stylesheet" href="https://hook.jwplayer.com/components/0.3.1/ds-components.min.css">
+  <link rel="stylesheet" href="https://hook.jwplayer.com/ds-layout/1.0.6/ds-page.css">
+</head>
+
+<body style="background-color: black;" oncontextmenu="return false" onselectstart="return false"
+  ondragstart="return false">
+
+  <div id="myElement">Loading the player...</div>
+  <div class='video'>
+    <script src="https://use.fontawesome.com/20603b964f.js"></script>
+    <script type="text/javascript">
+
+      const playerInstance = jwplayer("myElement").setup({
+        height: window.innerHeight,
+        sharing: false,
+        image: "https://image.tmdb.org/t/p/original/xkKIruOg4NoADdPjJJrvfiJHRdZ.jpg",
+        sources: [
+          {
+            file: "../playlist.m3u8",
+            type: "application/x-mpegURL"
+
+          }
+
+        ],
+        primary: "html5",
+        playbackRateControls: [0.5, 1, 1.25, 1.5, 2],
+        hlshtml: true,
+        hlsjsdefault: true,
+        "tracks": [
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/ara-4.vtt",
+            "label": "Arabic - Arabic",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/baq-12.vtt",
+            "label": "Basque - Basque",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/cat-5.vtt",
+            "label": "Catalan - Catalan",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/chi-37.vtt",
+            "label": "Chinese - Simplified Chinese",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/chi-38.vtt",
+            "label": "Chinese - Traditional Chinese",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/hrv-18.vtt",
+            "label": "Croatian - Croatian",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/cze-6.vtt",
+            "label": "Czech - Czech",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/dan-7.vtt",
+            "label": "Danish - Danish",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/dut-26.vtt",
+            "label": "Dutch - Dutch",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/eng-3.vtt",
+            "label": "English - English (SDH)",
+            "kind": "captions",
+            "default": true
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/fin-13.vtt",
+            "label": "Finnish - Finnish",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/fre-15.vtt",
+            "label": "French - French",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/fre-40.vtt",
+            "label": "French - French (fr dub)",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/fre-39.vtt",
+            "label": "French - French (SDH)",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/glg-16.vtt",
+            "label": "Galician - Galician",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/ger-8.vtt",
+            "label": "German - German",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/gre-9.vtt",
+            "label": "Greek - Greek",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/heb-17.vtt",
+            "label": "Hebrew - Hebrew",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/hun-19.vtt",
+            "label": "Hungarian - Hungarian",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/ind-20.vtt",
+            "label": "Indonesian - Indonesian",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/ita-21.vtt",
+            "label": "Italian - Italian",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/jpn-22.vtt",
+            "label": "Japanese - Japanese",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/kor-23.vtt",
+            "label": "Korean - Korean",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/may-24.vtt",
+            "label": "Malay - Malay",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/nob-25.vtt",
+            "label": "Norwegian Bokmål - Norwegian",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/pol-27.vtt",
+            "label": "Polish - Polish",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/por-28.vtt",
+            "label": "Portuguese - Brazilian Portuguese",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/por-29.vtt",
+            "label": "Portuguese - Portuguese",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/rum-30.vtt",
+            "label": "Romanian - Romanian",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/rus-31.vtt",
+            "label": "Russian - Russian",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/spa-10.vtt",
+            "label": "Spanish - European Spanish",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/spa-11.vtt",
+            "label": "Spanish - Spanish",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/swe-32.vtt",
+            "label": "Swedish - Swedish",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/tha-33.vtt",
+            "label": "Thai - Thai",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/tur-34.vtt",
+            "label": "Turkish - Turkish",
+            "kind": "captions"
+          },
+          {
+            "file": "https://cc.2cdns.com/08/c8/08c8e6c050f343bf8ded081f05f41891/ukr-35.vtt",
+            "label": "Ukrainian - Ukrainian",
+            "kind": "captions"
+          },
+          {
+            "file": "https://prev.2cdns.com/_m_preview/42/42dbee69bf344713f3d13fe062e5b113/thumbnails/sprite.vtt",
+            "kind": "thumbnails"
+          }
+        ],
+        captions: { color: '#ffffff', fontSize: 12, backgroundOpacity: 50 },
+        skin: {
+          name: 'alaska',
+          url: 'assets/alaska.css'
+        },
+        // sharing: {
+        //     sites: ['facebook', 'twitter', 'tumblr', 'googleplus', { icon: '//support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label: 'jwplayer' }],
+        //     code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+        //     link: "<?php echo $sharing;?>"
+        // }
+
+      });
+
+    </script>
+    <script type="text/javascript" src="../../../../../../Javascript/watch.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="../../../../../../Javascript/watch.min.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/one.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/two.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/three.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/four.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/five.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/six.js"></script>
+    <script type="text/javascript" src="../../../../../../Javascript/Seven.js"></script>
+    <script src="https://cdn.staticaly.com/gh/DungGramer/disable-devtool/cbf447f/disable-devtool.min.js" defer></script>
+    <script src="https://gitcdn.xyz/repo/DungGramer/disable-devtool/master/disable-devtool.min.js" defer></script>
+    <script src="https://dunggramer.github.io/disable-devtool/disable-devtool.min.js" defer></script>
+</body>
+
+
+</html>
